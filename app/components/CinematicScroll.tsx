@@ -21,9 +21,9 @@ export default function CinematicScroll() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    // iOS Safari's momentum scroll doesn't fire synchronous JS scroll events —
-    // ScrollTrigger.onUpdate misses the coasting phase entirely without this.
-    try { ScrollTrigger.normalizeScroll(true); } catch { /* ignore if Observer unavailable */ }
+    // Prevent ScrollTrigger from fighting iOS resize events (address bar
+    // show/hide) without taking over touch handling via normalizeScroll.
+    ScrollTrigger.config({ ignoreMobileResize: true });
 
     const video = videoRef.current;
     if (!video) return;
@@ -31,9 +31,6 @@ export default function CinematicScroll() {
     let scrollInitialized = false;
     let raf: number;
 
-    // ── Scroll init ─────────────────────────────────────────────────────────
-    // Sets up GSAP ScrollTrigger. Independent of video load state so it can
-    // run as early as possible (desktop: on canplaythrough, iOS: on first touch).
     const initScroll = () => {
       if (scrollInitialized) return;
       scrollInitialized = true;
@@ -71,45 +68,37 @@ export default function CinematicScroll() {
       });
     };
 
-    // Ensure the video is paused and at frame 0 once data is available.
     const onVideoData = () => { video.pause(); video.currentTime = 0; };
     video.addEventListener("loadeddata", onVideoData, { once: true });
 
-    // ── iOS Safari unlock ────────────────────────────────────────────────────
-    // iOS ignores preload and won't fetch any video data until play() is called
-    // inside a user gesture. We listen on every touchstart (not `once`) and retry
-    // until play() succeeds — it can fail if the src hasn't resolved yet.
+    // iOS Safari blocks video seeking until play() is called inside a real user
+    // gesture. normalizeScroll intercepts touches so they no longer count as
+    // gestures — removed. Instead we use { capture: true } to fire before any
+    // other handler, call load() first to ensure src is registered, then play().
     let iosUnlocked = false;
     const unlockIOS = () => {
       if (iosUnlocked) return;
+      video.load();
       video.play().then(() => {
         iosUnlocked = true;
-        document.removeEventListener("touchstart", unlockIOS);
+        document.removeEventListener("touchstart", unlockIOS, { capture: true });
         video.pause();
         video.currentTime = 0;
-        // Ensure scroll is ready now that iOS has given us a user gesture
         initScroll();
       }).catch(() => {});
     };
-    document.addEventListener("touchstart", unlockIOS, { passive: true });
+    document.addEventListener("touchstart", unlockIOS, { capture: true, passive: true });
 
-    // ── Video load ────────────────────────────────────────────────────────────
-    const supportsWebM = video.canPlayType('video/webm; codecs="vp9"') !== '';
-    video.src = supportsWebM ? "/hero-scrub.webm" : "/hero-scrub.mp4";
-    video.preload = "auto";
-    video.muted = true;
-    video.load();
-
-    // Desktop: set up scroll once the browser has enough data
+    // Desktop: init scroll once the browser has buffered enough data
     video.addEventListener("canplaythrough", initScroll, { once: true });
 
-    // Fallback: set up scroll after 2 s regardless of load state
+    // Fallback: init scroll after 2 s regardless of load state
     const fallback = setTimeout(initScroll, 2000);
 
     return () => {
       clearTimeout(fallback);
       cancelAnimationFrame(raf);
-      document.removeEventListener("touchstart", unlockIOS);
+      document.removeEventListener("touchstart", unlockIOS, { capture: true });
       video.removeEventListener("loadeddata", onVideoData);
       video.removeEventListener("canplaythrough", initScroll);
       ScrollTrigger.getAll().forEach(t => t.kill());
@@ -119,12 +108,15 @@ export default function CinematicScroll() {
   return (
     <section ref={containerRef} className="relative" style={{ height: "500vh" }}>
       <div className="sticky top-0 w-full h-screen overflow-hidden bg-[#0a0a0a]">
+        {/* src in JSX so iOS registers it before any JS runs, preload="none"
+            so the browser doesn't autoplay/buffer; we call load() on first touch */}
         <video
           ref={videoRef}
+          src="/hero-scrub.mp4"
+          preload="none"
           muted
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ opacity: 1 }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/20 to-transparent z-10" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_50%,rgba(10,10,10,0.6)_100%)] z-10" />
