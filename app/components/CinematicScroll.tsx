@@ -24,25 +24,24 @@ export default function CinematicScroll() {
     const video = videoRef.current;
     if (!video) return;
 
-    const duration = 20;
-
-    const supportsWebM = video.canPlayType('video/webm; codecs="vp9"') !== '';
-    video.src = supportsWebM ? "/hero-scrub.webm" : "/hero-scrub.mp4";
-    video.preload = "auto";
-    video.muted = true;
-    video.load();
+    let initialized = false;
+    let raf: number;
 
     const setupScroll = () => {
+      if (initialized) return;
+      initialized = true;
+
       video.pause();
       video.currentTime = 0;
       setVideoReady(true);
+
+      const duration = video.duration || 20;
 
       gsap.set(textRefs.current[0], { opacity: 1, y: 0 });
       textRefs.current.slice(1).forEach(el => el && gsap.set(el, { opacity: 0, y: 24 }));
       gsap.set(dotRefs.current[0], { scale: 1.5, backgroundColor: "#a855f7" });
       dotRefs.current.slice(1).forEach(el => el && gsap.set(el, { scale: 1, backgroundColor: "#3f3f46" }));
 
-      let raf: number;
       ScrollTrigger.create({
         trigger: containerRef.current,
         start: "top top",
@@ -73,10 +72,18 @@ export default function CinematicScroll() {
       });
     };
 
+    const supportsWebM = video.canPlayType('video/webm; codecs="vp9"') !== '';
+    video.src = supportsWebM ? "/hero-scrub.webm" : "/hero-scrub.mp4";
+    video.preload = "auto";
+    video.muted = true;
+    video.load();
+
     video.addEventListener("canplaythrough", setupScroll, { once: true });
-    setTimeout(setupScroll, 3000);
+    const fallback = setTimeout(setupScroll, 4000);
 
     return () => {
+      clearTimeout(fallback);
+      cancelAnimationFrame(raf);
       ScrollTrigger.getAll().forEach(t => t.kill());
     };
   }, []);
@@ -84,8 +91,6 @@ export default function CinematicScroll() {
   return (
     <section ref={containerRef} className="relative" style={{ height: "500vh" }}>
       <div className="sticky top-0 w-full h-screen overflow-hidden bg-[#0a0a0a]">
-
-        {/* Scroll-scrubbed video — src set in JS to prevent autoplay */}
         <video
           ref={videoRef}
           muted
@@ -93,12 +98,8 @@ export default function CinematicScroll() {
           className="absolute inset-0 w-full h-full object-cover"
           style={{ opacity: videoReady ? 1 : 0, transition: "opacity 0.5s" }}
         />
-
-        {/* Dark gradient overlays */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/20 to-transparent z-10" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_50%,rgba(10,10,10,0.6)_100%)] z-10" />
-
-        {/* Text overlays — one per scene, animated by GSAP */}
         {scenes.map((scene, i) => (
           <div
             key={scene.id}
@@ -117,8 +118,6 @@ export default function CinematicScroll() {
             </p>
           </div>
         ))}
-
-        {/* Progress dots — right side, animated by GSAP */}
         <div className="absolute right-8 top-1/2 -translate-y-1/2 z-30 flex flex-col gap-4 items-center">
           {scenes.map((_, i) => (
             <div
@@ -129,8 +128,6 @@ export default function CinematicScroll() {
             />
           ))}
         </div>
-
-        {/* Scene counter — top right */}
         <div className="absolute top-8 right-8 z-30 text-right">
           <span className="text-[#a855f7] font-mono text-sm font-bold">
             {String(activeScene + 1).padStart(2, "0")}
@@ -139,8 +136,6 @@ export default function CinematicScroll() {
             /{String(scenes.length).padStart(2, "0")}
           </span>
         </div>
-
-        {/* Purple ambient glow */}
         <div className="absolute bottom-0 left-1/4 w-[500px] h-[200px] rounded-full bg-[#a855f7]/8 blur-[100px] pointer-events-none z-10" />
       </div>
     </section>
