@@ -64,13 +64,17 @@ export default function CinematicScroll() {
     const video = videoRef.current;
     if (!video) return;
 
-    // Pause & rewind — we drive playback with scroll
+    // Set src via JS so we control it before any autoplay
+    video.src = "/hero-scrub.mp4";
+    video.load();
     video.pause();
     video.currentTime = 0;
 
     const duration = 20; // known length of hero-video.mp4
 
     const init = () => {
+      video.pause();
+      video.currentTime = 0;
       setVideoReady(true);
 
       const ctx = gsap.context(() => {
@@ -168,10 +172,9 @@ export default function CinematicScroll() {
       {/* Sticky viewport */}
       <div className="sticky top-0 w-full h-screen overflow-hidden bg-[#0a0a0a]">
 
-        {/* Scroll-scrubbed video */}
+        {/* Scroll-scrubbed video — src set via JS to prevent autoplay */}
         <video
           ref={videoRef}
-          src="/hero-video.mp4"
           preload="auto"
           muted
           playsInline
