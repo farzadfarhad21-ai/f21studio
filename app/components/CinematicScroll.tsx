@@ -21,25 +21,34 @@ export default function CinematicScroll() {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+
+    // iOS Safari's native momentum scroll doesn't fire synchronous JS scroll
+    // events, so ScrollTrigger.onUpdate misses the momentum phase entirely.
+    // normalizeScroll replaces iOS's native scroll with a pointer-event-driven
+    // JS equivalent that fires events on every frame.
+    ScrollTrigger.normalizeScroll(true);
+
     const video = videoRef.current;
     if (!video) return;
 
     let initialized = false;
     let raf: number;
 
-    // iOS Safari blocks video.currentTime seeking until a user gesture has occurred.
-    // Calling play().then(pause) on the first touchstart unlocks seeking for the session.
-    // This fires before the scroll itself, so seeking works from the first frame.
+    // iOS Safari blocks video.currentTime until a user gesture occurs.
+    // We retry on every touchstart (no `once`) so that if play() fails
+    // because the video hasn't buffered yet on the very first touch,
+    // the next touch will succeed.
     let iosUnlocked = false;
     const unlockIOS = () => {
       if (iosUnlocked) return;
-      iosUnlocked = true;
       video.play().then(() => {
+        iosUnlocked = true;
         video.pause();
         video.currentTime = 0;
+        document.removeEventListener("touchstart", unlockIOS);
       }).catch(() => {});
     };
-    document.addEventListener("touchstart", unlockIOS, { once: true, passive: true });
+    document.addEventListener("touchstart", unlockIOS, { passive: true });
 
     const setupScroll = () => {
       if (initialized) return;
