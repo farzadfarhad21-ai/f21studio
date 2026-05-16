@@ -85,6 +85,11 @@ export default function CinematicScroll() {
         video.pause();
         video.currentTime = 0;
         initScroll();
+        // ScrollTrigger.create() fires onUpdate immediately if the section is
+        // already in view, scheduling a RAF that would set currentTime to the
+        // non-zero scroll position. Cancel it and force back to frame 0.
+        cancelAnimationFrame(raf);
+        video.currentTime = 0;
       }).catch(() => {});
     };
     document.addEventListener("touchstart", unlockIOS, { capture: true, passive: true });
