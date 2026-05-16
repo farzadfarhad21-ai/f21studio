@@ -1,5 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const scenes = [
   { id: 1, name: "THE VOID",   tagline: "Before the idea,\nthere is silence.",   desc: "Every brand begins in darkness — a blank canvas waiting for direction.",                                     start: 0,   end: 0.2 },
@@ -9,89 +11,73 @@ const scenes = [
   { id: 5, name: "THE RESULT", tagline: "The world sees you\ndifferently now.",  desc: "A brand that scales. A presence that lasts. Built by F21 Studio.",                                         start: 0.8, end: 1.0 },
 ];
 
-const VIDEO_DURATION = 20;
-
-type TextStyle = { opacity: number; y: number };
-
-function computeStyles(progress: number): { styles: TextStyle[]; active: number } {
-  const styles = scenes.map((scene) => {
-    const { start, end } = scene;
-    const fadeW = (end - start) * 0.25;
-    const fadeInEnd = start + fadeW;
-    const fadeOutStart = end - fadeW;
-
-    if (progress < start || progress > end) {
-      return { opacity: 0, y: progress <= start ? 20 : -20 };
-    }
-    if (progress < fadeInEnd) {
-      const t = (progress - start) / fadeW;
-      return { opacity: t, y: 20 * (1 - t) };
-    }
-    if (progress > fadeOutStart) {
-      const t = (progress - fadeOutStart) / fadeW;
-      return { opacity: 1 - t, y: -20 * t };
-    }
-    return { opacity: 1, y: 0 };
-  });
-
-  const idx = scenes.findIndex((s) => progress >= s.start && progress < s.end);
-  return { styles, active: idx === -1 ? scenes.length - 1 : idx };
-}
-
 export default function CinematicScroll() {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const textRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const dotRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [videoReady, setVideoReady] = useState(false);
   const [activeScene, setActiveScene] = useState(0);
-  const [textStyles, setTextStyles] = useState<TextStyle[]>(
-    scenes.map((_, i) => ({ opacity: i === 0 ? 1 : 0, y: i === 0 ? 0 : 20 }))
-  );
 
   useEffect(() => {
-    const isMobile = window.innerWidth < 768;
-    if (isMobile) {
-      setVideoReady(true);
-      return;
-    }
-
+    gsap.registerPlugin(ScrollTrigger);
     const video = videoRef.current;
-    const container = containerRef.current;
-    if (!video || !container) return;
+    if (!video) return;
 
-    // WebM (VP9) for Chrome/Firefox — faster seek. MP4 fallback for Safari.
+    const duration = 20;
+
     const supportsWebM = video.canPlayType('video/webm; codecs="vp9"') !== '';
     video.src = supportsWebM ? "/hero-scrub.webm" : "/hero-scrub.mp4";
+    video.preload = "auto";
+    video.muted = true;
     video.load();
-    video.play().then(() => video.pause()).catch(() => {});
-    video.currentTime = 0;
-    setVideoReady(true);
 
-    let rafId: number;
-
-    const update = () => {
-      const rect = container.getBoundingClientRect();
-      const scrollable = container.offsetHeight - window.innerHeight;
-      const progress = Math.min(1, Math.max(0, -rect.top / scrollable));
-
+    const setupScroll = () => {
       video.pause();
-      video.currentTime = progress * VIDEO_DURATION;
+      video.currentTime = 0;
+      setVideoReady(true);
 
-      const { styles, active } = computeStyles(progress);
-      setTextStyles(styles);
-      setActiveScene(active);
+      gsap.set(textRefs.current[0], { opacity: 1, y: 0 });
+      textRefs.current.slice(1).forEach(el => el && gsap.set(el, { opacity: 0, y: 24 }));
+      gsap.set(dotRefs.current[0], { scale: 1.5, backgroundColor: "#a855f7" });
+      dotRefs.current.slice(1).forEach(el => el && gsap.set(el, { scale: 1, backgroundColor: "#3f3f46" }));
+
+      let raf: number;
+      ScrollTrigger.create({
+        trigger: containerRef.current,
+        start: "top top",
+        end: "bottom bottom",
+        scrub: true,
+        onUpdate: (self) => {
+          cancelAnimationFrame(raf);
+          raf = requestAnimationFrame(() => {
+            video.currentTime = self.progress * duration;
+          });
+
+          const progress = self.progress;
+          const newIdx = progress < 0.2 ? 0 : progress < 0.4 ? 1 : progress < 0.6 ? 2 : progress < 0.8 ? 3 : 4;
+
+          setActiveScene(prev => {
+            if (prev === newIdx) return prev;
+            const prevEl = textRefs.current[prev];
+            const currEl = textRefs.current[newIdx];
+            const prevDot = dotRefs.current[prev];
+            const currDot = dotRefs.current[newIdx];
+            if (prevEl) gsap.to(prevEl, { opacity: 0, y: newIdx > prev ? -20 : 20, duration: 0.3 });
+            if (currEl) gsap.fromTo(currEl, { opacity: 0, y: newIdx > prev ? 24 : -24 }, { opacity: 1, y: 0, duration: 0.4 });
+            if (prevDot) gsap.to(prevDot, { scale: 1, backgroundColor: "#3f3f46", duration: 0.3 });
+            if (currDot) gsap.to(currDot, { scale: 1.5, backgroundColor: "#a855f7", duration: 0.3 });
+            return newIdx;
+          });
+        },
+      });
     };
 
-    const onScroll = () => {
-      cancelAnimationFrame(rafId);
-      rafId = requestAnimationFrame(update);
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    update();
+    video.addEventListener("canplaythrough", setupScroll, { once: true });
+    setTimeout(setupScroll, 3000);
 
     return () => {
-      window.removeEventListener("scroll", onScroll);
-      cancelAnimationFrame(rafId);
+      ScrollTrigger.getAll().forEach(t => t.kill());
     };
   }, []);
 
@@ -102,7 +88,6 @@ export default function CinematicScroll() {
         {/* Scroll-scrubbed video — src set in JS to prevent autoplay */}
         <video
           ref={videoRef}
-          preload="auto"
           muted
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
@@ -113,16 +98,13 @@ export default function CinematicScroll() {
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/20 to-transparent z-10" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_50%,rgba(10,10,10,0.6)_100%)] z-10" />
 
-        {/* Text overlays — one per scene */}
+        {/* Text overlays — one per scene, animated by GSAP */}
         {scenes.map((scene, i) => (
           <div
             key={scene.id}
+            ref={(el) => { textRefs.current[i] = el; }}
             className="absolute bottom-24 left-10 md:left-16 z-20 max-w-lg"
-            style={{
-              opacity: textStyles[i].opacity,
-              transform: `translateY(${textStyles[i].y}px)`,
-              willChange: "opacity, transform",
-            }}
+            style={{ opacity: 0 }}
           >
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#a855f7] block mb-4">
               {String(scene.id).padStart(2, "0")} — {scene.name}
@@ -136,17 +118,14 @@ export default function CinematicScroll() {
           </div>
         ))}
 
-        {/* Progress dots — right side */}
+        {/* Progress dots — right side, animated by GSAP */}
         <div className="absolute right-8 top-1/2 -translate-y-1/2 z-30 flex flex-col gap-4 items-center">
           {scenes.map((_, i) => (
             <div
               key={i}
-              className="rounded-full transition-all duration-300"
-              style={{
-                width:           i === activeScene ? "10px" : "6px",
-                height:          i === activeScene ? "10px" : "6px",
-                backgroundColor: i === activeScene ? "#a855f7" : "#3f3f46",
-              }}
+              ref={(el) => { dotRefs.current[i] = el; }}
+              className="w-1.5 h-1.5 rounded-full"
+              style={{ backgroundColor: "#3f3f46" }}
             />
           ))}
         </div>
