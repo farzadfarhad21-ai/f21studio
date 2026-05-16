@@ -14,25 +14,25 @@ const scenes = [
     id: 2,
     name: "STRATEGIZE",
     tagline: "AI finds\nyour edge.",
-    desc: "We process market signals and audience behavior to pinpoint exactly what makes your brand unforgettable.",
+    desc: "We process market signals and audience behavior to identify exactly what makes your brand unforgettable.",
   },
   {
     id: 3,
     name: "CREATE",
     tagline: "Design systems built\nto perform.",
-    desc: "Visual identity, website architecture, and automation workflows assembled with precision.",
+    desc: "Visual identity, website architecture, and automation — assembled with precision.",
   },
   {
     id: 4,
-    name: "LAUNCH",
-    tagline: "Your brand,\nlive everywhere.",
-    desc: "Websites, visuals, and assets deployed across every platform — built for attention and conversion.",
+    name: "BUILD",
+    tagline: "Your brand, coded\nto perfection.",
+    desc: "High-performance websites and creative infrastructure built to convert at every touchpoint.",
   },
   {
     id: 5,
-    name: "SCALE",
-    tagline: "Growth becomes\nthe default.",
-    desc: "With the right foundation, every campaign compounds. Built by F21 Studio to last.",
+    name: "LAUNCH",
+    tagline: "The world sees you\ndifferently now.",
+    desc: "Live across every platform. Built by F21 Studio to scale.",
   },
 ];
 
@@ -54,7 +54,7 @@ export default function CinematicScroll() {
     let raf = 0;
     let scrollReady = false;
 
-    // Scene 1 starts visible; all others hidden
+    // Scene 1 visible on mount, rest hidden
     gsap.set(textRefs.current[0], { opacity: 1, y: 0 });
     textRefs.current.slice(1).forEach(el => el && gsap.set(el, { opacity: 0, y: 24 }));
     gsap.set(dotRefs.current[0], { scale: 1.5, backgroundColor: "#a855f7" });
@@ -110,8 +110,8 @@ export default function CinematicScroll() {
             video.currentTime = 0;
             document.removeEventListener("touchstart", unlockIOS, { capture: true });
             initScroll();
-            // Cancel any RAF queued by the immediate onUpdate if the section
-            // was already in view at unlock time, then force back to frame 0.
+            // Cancel any RAF queued by an immediate onUpdate (section already in
+            // view) and force back to frame 0 so scene 1 always shows first.
             cancelAnimationFrame(raf);
             video.currentTime = 0;
           })
@@ -148,7 +148,6 @@ export default function CinematicScroll() {
     <section ref={containerRef} className="relative" style={{ height: "500vh" }}>
       <div className="sticky top-0 w-full h-screen overflow-hidden bg-[#0a0a0a]">
 
-        {/* src set via JS — no src attr here so each code path controls it */}
         <video
           ref={videoRef}
           muted
@@ -156,12 +155,12 @@ export default function CinematicScroll() {
           className="absolute inset-0 w-full h-full object-cover"
         />
 
-        {/* Gradient overlays */}
+        {/* Dark overlays */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/20 to-transparent z-10" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_50%,rgba(10,10,10,0.6)_100%)] z-10" />
 
-        {/* Bottom fade — blends into the Services section */}
-        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-b from-transparent to-[#0a0a0a] z-20" />
+        {/* Bottom fade into next section */}
+        <div className="absolute bottom-0 w-full h-40 bg-gradient-to-b from-transparent to-[#0a0a0a] z-20" />
 
         {/* Text overlays */}
         {scenes.map((scene, i) => (
