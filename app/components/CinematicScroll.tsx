@@ -11,28 +11,6 @@ const scenes = [
   { id: 5, name: "THE RESULT", tagline: "The world sees you\ndifferently now.",  desc: "A brand that scales. A presence that lasts. Built by F21 Studio." },
 ];
 
-function MobileScenes() {
-  return (
-    <section className="bg-[#0a0a0a] py-24 px-6">
-      <div className="max-w-lg mx-auto flex flex-col gap-16">
-        {scenes.map((scene) => (
-          <div key={scene.id}>
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#a855f7] block mb-3">
-              {String(scene.id).padStart(2, "0")} — {scene.name}
-            </span>
-            <h2 className="text-3xl font-black text-[#fafafa] leading-[1.1] mb-3 whitespace-pre-line">
-              {scene.tagline}
-            </h2>
-            <p className="text-[#a3a3a3] text-sm leading-relaxed">
-              {scene.desc}
-            </p>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
-
 export default function CinematicScroll() {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -40,21 +18,28 @@ export default function CinematicScroll() {
   const dotRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [videoReady, setVideoReady] = useState(false);
   const [activeScene, setActiveScene] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    setIsMobile(window.innerWidth < 768);
-  }, []);
-
-  useEffect(() => {
-    if (isMobile) return;
-
     gsap.registerPlugin(ScrollTrigger);
     const video = videoRef.current;
     if (!video) return;
 
     let initialized = false;
     let raf: number;
+
+    // iOS Safari blocks video.currentTime seeking until a user gesture has occurred.
+    // Calling play().then(pause) on the first touchstart unlocks seeking for the session.
+    // This fires before the scroll itself, so seeking works from the first frame.
+    let iosUnlocked = false;
+    const unlockIOS = () => {
+      if (iosUnlocked) return;
+      iosUnlocked = true;
+      video.play().then(() => {
+        video.pause();
+        video.currentTime = 0;
+      }).catch(() => {});
+    };
+    document.addEventListener("touchstart", unlockIOS, { once: true, passive: true });
 
     const setupScroll = () => {
       if (initialized) return;
@@ -110,11 +95,10 @@ export default function CinematicScroll() {
     return () => {
       clearTimeout(fallback);
       cancelAnimationFrame(raf);
+      document.removeEventListener("touchstart", unlockIOS);
       ScrollTrigger.getAll().forEach(t => t.kill());
     };
-  }, [isMobile]);
-
-  if (isMobile) return <MobileScenes />;
+  }, []);
 
   return (
     <section ref={containerRef} className="relative" style={{ height: "500vh" }}>
