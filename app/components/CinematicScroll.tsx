@@ -10,8 +10,8 @@ const scenes = [
     tagline: "Before the idea,\nthere is silence.",
     description:
       "Every brand begins in darkness — a blank canvas waiting for direction.",
-    src: "/scenes/scene-1-void.png",
-    fallback: "linear-gradient(135deg, #0a0a0a 0%, #160a2e 60%, #0a0a0a 100%)",
+    timeStart: 0,
+    timeEnd: 4,
   },
   {
     id: 2,
@@ -19,8 +19,8 @@ const scenes = [
     tagline: "Then intelligence\nignites.",
     description:
       "AI processes thousands of signals to find the thread that makes your brand unforgettable.",
-    src: "/scenes/scene-2-spark.png",
-    fallback: "linear-gradient(135deg, #0a0a0a 0%, #2e0a1a 40%, #1a0535 100%)",
+    timeStart: 4,
+    timeEnd: 8,
   },
   {
     id: 3,
@@ -28,8 +28,8 @@ const scenes = [
     tagline: "Strategy meets\nexecution.",
     description:
       "Design systems, automation, and precision tools assembled in real time.",
-    src: "/scenes/scene-3-tools.png",
-    fallback: "linear-gradient(135deg, #080820 0%, #0a1535 50%, #1a0535 100%)",
+    timeStart: 8,
+    timeEnd: 12,
   },
   {
     id: 4,
@@ -37,8 +37,8 @@ const scenes = [
     tagline: "Your brand,\nmaterialized.",
     description:
       "Websites, visuals, and assets that command attention across every surface.",
-    src: "/scenes/scene-4-output.png",
-    fallback: "linear-gradient(135deg, #0a0a0a 0%, #1a0535 40%, #2d0a4e 100%)",
+    timeStart: 12,
+    timeEnd: 16,
   },
   {
     id: 5,
@@ -46,74 +46,117 @@ const scenes = [
     tagline: "The world sees you\ndifferently now.",
     description:
       "A brand that scales. A presence that lasts. Built by F21 Studio.",
-    src: "/scenes/scene-5-result.png",
-    fallback: "linear-gradient(135deg, #0a0010 0%, #1a0535 30%, #a855f7 200%)",
+    timeStart: 16,
+    timeEnd: 20,
   },
 ];
 
 export default function CinematicScroll() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const textRefs = useRef<(HTMLDivElement | null)[]>([]);
   const dotRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [activeScene, setActiveScene] = useState(0);
+  const [videoReady, setVideoReady] = useState(false);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+    const video = videoRef.current;
+    if (!video) return;
 
-    const ctx = gsap.context(() => {
-      const images = imageRefs.current;
-      const texts = textRefs.current;
-      const dots = dotRefs.current;
+    // Pause & rewind — we drive playback with scroll
+    video.pause();
+    video.currentTime = 0;
 
-      // Set initial state: only first scene visible
-      gsap.set(images.slice(1), { opacity: 0 });
-      gsap.set(texts.slice(1), { opacity: 0, y: 30 });
-      gsap.set(dots, { scale: 1, backgroundColor: "#3f3f46" });
-      gsap.set(dots[0], { scale: 1.4, backgroundColor: "#a855f7" });
+    const duration = 20; // known length of hero-video.mp4
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
+    const init = () => {
+      setVideoReady(true);
+
+      const ctx = gsap.context(() => {
+        // Set all texts invisible except first
+        textRefs.current.forEach((el, i) => {
+          if (!el) return;
+          gsap.set(el, { opacity: i === 0 ? 1 : 0, y: i === 0 ? 0 : 24 });
+        });
+        dotRefs.current.forEach((el, i) => {
+          if (!el) return;
+          gsap.set(el, {
+            scale: i === 0 ? 1.5 : 1,
+            backgroundColor: i === 0 ? "#a855f7" : "#3f3f46",
+          });
+        });
+
+        ScrollTrigger.create({
           trigger: containerRef.current,
           start: "top top",
           end: "bottom bottom",
-          scrub: 1.2,
-        },
-      });
+          scrub: 0.5,
+          onUpdate: (self) => {
+            // Scrub video
+            video.currentTime = self.progress * duration;
 
-      scenes.forEach((_, i) => {
-        if (i === 0) return;
+            // Determine active scene
+            const t = self.progress * duration;
+            const idx = scenes.findIndex(
+              (s) => t >= s.timeStart && t < s.timeEnd
+            );
+            const newIdx = idx === -1 ? scenes.length - 1 : idx;
 
-        const prev = images[i - 1];
-        const curr = images[i];
-        const prevText = texts[i - 1];
-        const currText = texts[i];
-        const prevDot = dots[i - 1];
-        const currDot = dots[i];
+            setActiveScene((prev) => {
+              if (prev === newIdx) return prev;
 
-        tl.to(prevText, { opacity: 0, y: -24, duration: 0.25, ease: "power2.in" })
-          .to(prev, { opacity: 0, duration: 0.4, ease: "power1.inOut" }, "<0.1")
-          .to(prevDot, { scale: 1, backgroundColor: "#3f3f46", duration: 0.3 }, "<")
-          .to(curr, { opacity: 1, duration: 0.4, ease: "power1.inOut" }, "<0.15")
-          .to(currDot, { scale: 1.4, backgroundColor: "#a855f7", duration: 0.3 }, "<")
-          .to(currText, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, "<0.1")
-          // Hold at this scene for some scrolling distance
-          .to({}, { duration: 0.5 });
-      });
+              // Animate text out → in
+              const prevEl = textRefs.current[prev];
+              const currEl = textRefs.current[newIdx];
+              const prevDot = dotRefs.current[prev];
+              const currDot = dotRefs.current[newIdx];
 
-      // Track active scene for the label
-      scenes.forEach((_, i) => {
-        ScrollTrigger.create({
-          trigger: containerRef.current,
-          start: `top+=${(i / scenes.length) * 80}% top`,
-          end: `top+=${((i + 1) / scenes.length) * 80}% top`,
-          onEnter: () => setActiveScene(i),
-          onEnterBack: () => setActiveScene(i),
+              if (prevEl)
+                gsap.to(prevEl, {
+                  opacity: 0,
+                  y: newIdx > prev ? -20 : 20,
+                  duration: 0.35,
+                  ease: "power2.in",
+                });
+              if (currEl)
+                gsap.fromTo(
+                  currEl,
+                  { opacity: 0, y: newIdx > prev ? 24 : -24 },
+                  { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }
+                );
+              if (prevDot)
+                gsap.to(prevDot, {
+                  scale: 1,
+                  backgroundColor: "#3f3f46",
+                  duration: 0.3,
+                });
+              if (currDot)
+                gsap.to(currDot, {
+                  scale: 1.5,
+                  backgroundColor: "#a855f7",
+                  duration: 0.3,
+                });
+
+              return newIdx;
+            });
+          },
         });
-      });
-    }, containerRef);
+      }, containerRef);
 
-    return () => ctx.revert();
+      return () => ctx.revert();
+    };
+
+    if (video.readyState >= 2) {
+      init();
+    } else {
+      video.addEventListener("canplay", init, { once: true });
+    }
+
+    return () => {
+      video.removeEventListener("canplay", init);
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+    };
   }, []);
 
   return (
@@ -123,35 +166,30 @@ export default function CinematicScroll() {
       style={{ height: `${scenes.length * 120}vh` }}
     >
       {/* Sticky viewport */}
-      <div className="sticky top-0 w-full h-screen overflow-hidden">
+      <div className="sticky top-0 w-full h-screen overflow-hidden bg-[#0a0a0a]">
 
-        {/* Scene images stacked */}
+        {/* Scroll-scrubbed video */}
+        <video
+          ref={videoRef}
+          src="/hero-video.mp4"
+          preload="auto"
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ opacity: videoReady ? 1 : 0, transition: "opacity 0.5s" }}
+        />
+
+        {/* Dark gradient overlays for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/20 to-transparent z-10" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_50%,#0a0a0a/60_100%)] z-10" />
+
+        {/* Text overlays — one per scene, stacked */}
         {scenes.map((scene, i) => (
           <div
             key={scene.id}
-            ref={(el) => { imageRefs.current[i] = el; }}
-            className="absolute inset-0 w-full h-full"
-          >
-            {/* Try real image, fallback to gradient */}
-            <div
-              className="w-full h-full bg-cover bg-center"
-              style={{
-                backgroundImage: `url(${scene.src}), ${scene.fallback}`,
-              }}
-            />
-            {/* Bottom gradient overlay for text readability */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/10 to-transparent" />
-            {/* Subtle vignette */}
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,#0a0a0a_100%)]" />
-          </div>
-        ))}
-
-        {/* Text overlays stacked */}
-        {scenes.map((scene, i) => (
-          <div
-            key={`text-${scene.id}`}
             ref={(el) => { textRefs.current[i] = el; }}
             className="absolute bottom-24 left-10 md:left-16 z-20 max-w-lg"
+            style={{ opacity: 0 }}
           >
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#a855f7] block mb-4">
               {String(scene.id).padStart(2, "0")} — {scene.name}
@@ -167,18 +205,17 @@ export default function CinematicScroll() {
 
         {/* Progress dots — right side */}
         <div className="absolute right-8 top-1/2 -translate-y-1/2 z-30 flex flex-col gap-4 items-center">
-          {scenes.map((scene, i) => (
-            <div key={i} className="flex flex-col items-center gap-1">
-              <div
-                ref={(el) => { dotRefs.current[i] = el; }}
-                className="w-1.5 h-1.5 rounded-full transition-colors duration-300"
-                style={{ backgroundColor: "#3f3f46" }}
-              />
-            </div>
+          {scenes.map((_, i) => (
+            <div
+              key={i}
+              ref={(el) => { dotRefs.current[i] = el; }}
+              className="w-1.5 h-1.5 rounded-full"
+              style={{ backgroundColor: "#3f3f46" }}
+            />
           ))}
         </div>
 
-        {/* Scene counter top-right */}
+        {/* Scene counter — top right */}
         <div className="absolute top-8 right-8 z-30 text-right">
           <span className="text-[#a855f7] font-mono text-sm font-bold">
             {String(activeScene + 1).padStart(2, "0")}
