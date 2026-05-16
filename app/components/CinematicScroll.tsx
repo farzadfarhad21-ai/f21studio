@@ -4,18 +4,43 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const scenes = [
-  { id: 1, name: "THE VOID",   tagline: "Before the idea,\nthere is silence.",   desc: "Every brand begins in darkness — a blank canvas waiting for direction." },
-  { id: 2, name: "THE SPARK",  tagline: "Then intelligence\nignites.",            desc: "AI processes thousands of signals to find the thread that makes your brand unforgettable." },
-  { id: 3, name: "THE TOOLS",  tagline: "Strategy meets\nexecution.",             desc: "Design systems, automation, and precision tools assembled in real time." },
-  { id: 4, name: "THE OUTPUT", tagline: "Your brand,\nmaterialized.",             desc: "Websites, visuals, and assets that command attention across every surface." },
-  { id: 5, name: "THE RESULT", tagline: "The world sees you\ndifferently now.",  desc: "A brand that scales. A presence that lasts. Built by F21 Studio." },
+  {
+    id: 1,
+    name: "DISCOVER",
+    tagline: "We start with\nyour story.",
+    desc: "Deep discovery into your brand, market, and goals. Every decision that follows flows from this foundation.",
+  },
+  {
+    id: 2,
+    name: "STRATEGIZE",
+    tagline: "AI finds\nyour edge.",
+    desc: "We process market signals and audience behavior to pinpoint exactly what makes your brand unforgettable.",
+  },
+  {
+    id: 3,
+    name: "CREATE",
+    tagline: "Design systems built\nto perform.",
+    desc: "Visual identity, website architecture, and automation workflows assembled with precision.",
+  },
+  {
+    id: 4,
+    name: "LAUNCH",
+    tagline: "Your brand,\nlive everywhere.",
+    desc: "Websites, visuals, and assets deployed across every platform — built for attention and conversion.",
+  },
+  {
+    id: 5,
+    name: "SCALE",
+    tagline: "Growth becomes\nthe default.",
+    desc: "With the right foundation, every campaign compounds. Built by F21 Studio to last.",
+  },
 ];
 
 export default function CinematicScroll() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const videoRef    = useRef<HTMLVideoElement>(null);
-  const textRefs    = useRef<(HTMLDivElement | null)[]>([]);
-  const dotRefs     = useRef<(HTMLDivElement | null)[]>([]);
+  const videoRef     = useRef<HTMLVideoElement>(null);
+  const textRefs     = useRef<(HTMLDivElement | null)[]>([]);
+  const dotRefs      = useRef<(HTMLDivElement | null)[]>([]);
   const [activeScene, setActiveScene] = useState(0);
 
   useEffect(() => {
@@ -29,13 +54,12 @@ export default function CinematicScroll() {
     let raf = 0;
     let scrollReady = false;
 
-    // ── Scene text / dot initialisation ────────────────────────────────────
+    // Scene 1 starts visible; all others hidden
     gsap.set(textRefs.current[0], { opacity: 1, y: 0 });
     textRefs.current.slice(1).forEach(el => el && gsap.set(el, { opacity: 0, y: 24 }));
     gsap.set(dotRefs.current[0], { scale: 1.5, backgroundColor: "#a855f7" });
     dotRefs.current.slice(1).forEach(el => el && gsap.set(el, { scale: 1, backgroundColor: "#3f3f46" }));
 
-    // ── ScrollTrigger setup ─────────────────────────────────────────────────
     const initScroll = () => {
       if (scrollReady) return;
       scrollReady = true;
@@ -74,7 +98,7 @@ export default function CinematicScroll() {
       });
     };
 
-    // ── iOS path ────────────────────────────────────────────────────────────
+    // ── iOS ──────────────────────────────────────────────────────────────────
     if (isIOS) {
       video.src     = "/hero-scrub.mp4";
       video.preload = "none";
@@ -86,8 +110,8 @@ export default function CinematicScroll() {
             video.currentTime = 0;
             document.removeEventListener("touchstart", unlockIOS, { capture: true });
             initScroll();
-            // Cancel any RAF that initScroll's onUpdate may have queued with a
-            // non-zero progress if the section was already scrolled into view.
+            // Cancel any RAF queued by the immediate onUpdate if the section
+            // was already in view at unlock time, then force back to frame 0.
             cancelAnimationFrame(raf);
             video.currentTime = 0;
           })
@@ -103,7 +127,7 @@ export default function CinematicScroll() {
       };
     }
 
-    // ── Desktop path ────────────────────────────────────────────────────────
+    // ── Desktop ───────────────────────────────────────────────────────────────
     const supportsWebM = video.canPlayType('video/webm; codecs="vp9"') !== "";
     video.src     = supportsWebM ? "/hero-scrub.webm" : "/hero-scrub.mp4";
     video.preload = "auto";
@@ -124,8 +148,7 @@ export default function CinematicScroll() {
     <section ref={containerRef} className="relative" style={{ height: "500vh" }}>
       <div className="sticky top-0 w-full h-screen overflow-hidden bg-[#0a0a0a]">
 
-        {/* No src here — set via JS in useEffect so each path controls its own
-            src, preload, and load() call cleanly */}
+        {/* src set via JS — no src attr here so each code path controls it */}
         <video
           ref={videoRef}
           muted
@@ -133,14 +156,19 @@ export default function CinematicScroll() {
           className="absolute inset-0 w-full h-full object-cover"
         />
 
+        {/* Gradient overlays */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/20 to-transparent z-10" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_50%,rgba(10,10,10,0.6)_100%)] z-10" />
 
+        {/* Bottom fade — blends into the Services section */}
+        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-b from-transparent to-[#0a0a0a] z-20" />
+
+        {/* Text overlays */}
         {scenes.map((scene, i) => (
           <div
             key={scene.id}
             ref={(el) => { textRefs.current[i] = el; }}
-            className="absolute bottom-24 left-10 md:left-16 z-20 max-w-lg"
+            className="absolute bottom-32 left-10 md:left-16 z-30 max-w-lg"
             style={{ opacity: 0 }}
           >
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#a855f7] block mb-4">
@@ -155,6 +183,7 @@ export default function CinematicScroll() {
           </div>
         ))}
 
+        {/* Progress dots */}
         <div className="absolute right-8 top-1/2 -translate-y-1/2 z-30 flex flex-col gap-4 items-center">
           {scenes.map((_, i) => (
             <div
@@ -166,6 +195,7 @@ export default function CinematicScroll() {
           ))}
         </div>
 
+        {/* Scene counter */}
         <div className="absolute top-8 right-8 z-30 text-right">
           <span className="text-[#a855f7] font-mono text-sm font-bold">
             {String(activeScene + 1).padStart(2, "0")}
@@ -175,6 +205,7 @@ export default function CinematicScroll() {
           </span>
         </div>
 
+        {/* Purple ambient glow */}
         <div className="absolute bottom-0 left-1/4 w-[500px] h-[200px] rounded-full bg-[#a855f7]/8 blur-[100px] pointer-events-none z-10" />
       </div>
     </section>
