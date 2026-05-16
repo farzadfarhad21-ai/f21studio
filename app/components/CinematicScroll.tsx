@@ -22,42 +22,22 @@ export default function CinematicScroll() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    // iOS Safari's native momentum scroll doesn't fire synchronous JS scroll
-    // events, so ScrollTrigger.onUpdate misses the momentum phase entirely.
-    // normalizeScroll replaces iOS's native scroll with a pointer-event-driven
-    // JS equivalent that fires events on every frame.
-    ScrollTrigger.normalizeScroll(true);
+    // iOS Safari's momentum scroll doesn't fire synchronous JS scroll events —
+    // ScrollTrigger.onUpdate misses the coasting phase entirely without this.
+    try { ScrollTrigger.normalizeScroll(true); } catch { /* ignore if Observer unavailable */ }
 
     const video = videoRef.current;
     if (!video) return;
 
-    let initialized = false;
+    let scrollInitialized = false;
     let raf: number;
 
-    // iOS Safari blocks video.currentTime until a user gesture occurs.
-    // We retry on every touchstart (no `once`) so that if play() fails
-    // because the video hasn't buffered yet on the very first touch,
-    // the next touch will succeed.
-    let iosUnlocked = false;
-    const unlockIOS = () => {
-      if (iosUnlocked) return;
-      video.play().then(() => {
-        iosUnlocked = true;
-        video.pause();
-        video.currentTime = 0;
-        document.removeEventListener("touchstart", unlockIOS);
-      }).catch(() => {});
-    };
-    document.addEventListener("touchstart", unlockIOS, { passive: true });
-
-    const setupScroll = () => {
-      if (initialized) return;
-      initialized = true;
-      video.pause();
-      video.currentTime = 0;
-      setVideoReady(true);
-
-      const duration = video.duration || 20;
+    // ── Scroll init ─────────────────────────────────────────────────────────
+    // Sets up GSAP ScrollTrigger. Independent of video load state so it can
+    // run as early as possible (desktop: on canplaythrough, iOS: on first touch).
+    const initScroll = () => {
+      if (scrollInitialized) return;
+      scrollInitialized = true;
 
       gsap.set(textRefs.current[0], { opacity: 1, y: 0 });
       textRefs.current.slice(1).forEach(el => el && gsap.set(el, { opacity: 0, y: 24 }));
@@ -72,10 +52,10 @@ export default function CinematicScroll() {
         onUpdate: (self) => {
           cancelAnimationFrame(raf);
           raf = requestAnimationFrame(() => {
-            video.currentTime = self.progress * duration;
+            video.currentTime = self.progress * (video.duration || 20);
           });
-          const progress = self.progress;
-          const newIdx = progress < 0.2 ? 0 : progress < 0.4 ? 1 : progress < 0.6 ? 2 : progress < 0.8 ? 3 : 4;
+          const p = self.progress;
+          const newIdx = p < 0.2 ? 0 : p < 0.4 ? 1 : p < 0.6 ? 2 : p < 0.8 ? 3 : 4;
           setActiveScene(prev => {
             if (prev === newIdx) return prev;
             const prevEl = textRefs.current[prev];
@@ -92,19 +72,53 @@ export default function CinematicScroll() {
       });
     };
 
+    // ── Video visibility ─────────────────────────────────────────────────────
+    // Show the video only when it actually has frame data. On desktop this fires
+    // shortly after load. On iOS it fires after play() is called (below).
+    const onVideoData = () => {
+      video.pause();
+      video.currentTime = 0;
+      setVideoReady(true);
+    };
+    video.addEventListener("loadeddata", onVideoData, { once: true });
+
+    // ── iOS Safari unlock ────────────────────────────────────────────────────
+    // iOS ignores preload and won't fetch any video data until play() is called
+    // inside a user gesture. We listen on every touchstart (not `once`) and retry
+    // until play() succeeds — it can fail if the src hasn't resolved yet.
+    let iosUnlocked = false;
+    const unlockIOS = () => {
+      if (iosUnlocked) return;
+      video.play().then(() => {
+        iosUnlocked = true;
+        document.removeEventListener("touchstart", unlockIOS);
+        video.pause();
+        video.currentTime = 0;
+        // Ensure scroll is ready now that iOS has given us a user gesture
+        initScroll();
+      }).catch(() => {});
+    };
+    document.addEventListener("touchstart", unlockIOS, { passive: true });
+
+    // ── Video load ────────────────────────────────────────────────────────────
     const supportsWebM = video.canPlayType('video/webm; codecs="vp9"') !== '';
     video.src = supportsWebM ? "/hero-scrub.webm" : "/hero-scrub.mp4";
     video.preload = "auto";
     video.muted = true;
     video.load();
 
-    video.addEventListener("canplaythrough", setupScroll, { once: true });
-    const fallback = setTimeout(setupScroll, 4000);
+    // Desktop: set up scroll once the browser has enough data
+    video.addEventListener("canplaythrough", initScroll, { once: true });
+
+    // Fallback: set up scroll after 2 s regardless of load state
+    const fallback = setTimeout(initScroll, 2000);
 
     return () => {
       clearTimeout(fallback);
       cancelAnimationFrame(raf);
       document.removeEventListener("touchstart", unlockIOS);
+      video.removeEventListener("loadeddata", onVideoData);
+      video.removeEventListener("canplaythrough", initScroll);
       ScrollTrigger.getAll().forEach(t => t.kill());
     };
   }, []);
