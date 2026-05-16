@@ -21,17 +21,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden">
 
-      {/* ── Cinematic background video ── */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-        style={{ zIndex: 0 }}
-      >
-        <source src="/hero-video.mp4" type="video/mp4" />
-      </video>
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#160a2e] to-[#0a0a0a]" style={{ zIndex: 0 }} />
 
       {/* Dark overlay so text stays readable */}
       <div className="absolute inset-0 bg-[#0a0a0a]/60" style={{ zIndex: 1 }} />
