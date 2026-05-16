@@ -16,7 +16,6 @@ export default function CinematicScroll() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const textRefs = useRef<(HTMLDivElement | null)[]>([]);
   const dotRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const [videoReady, setVideoReady] = useState(false);
   const [activeScene, setActiveScene] = useState(0);
 
   useEffect(() => {
@@ -72,14 +71,8 @@ export default function CinematicScroll() {
       });
     };
 
-    // ── Video visibility ─────────────────────────────────────────────────────
-    // Show the video only when it actually has frame data. On desktop this fires
-    // shortly after load. On iOS it fires after play() is called (below).
-    const onVideoData = () => {
-      video.pause();
-      video.currentTime = 0;
-      setVideoReady(true);
-    };
+    // Ensure the video is paused and at frame 0 once data is available.
+    const onVideoData = () => { video.pause(); video.currentTime = 0; };
     video.addEventListener("loadeddata", onVideoData, { once: true });
 
     // ── iOS Safari unlock ────────────────────────────────────────────────────
@@ -131,7 +124,7 @@ export default function CinematicScroll() {
           muted
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ opacity: videoReady ? 1 : 0, transition: "opacity 0.5s" }}
+          style={{ opacity: 1 }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/20 to-transparent z-10" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_50%,rgba(10,10,10,0.6)_100%)] z-10" />
