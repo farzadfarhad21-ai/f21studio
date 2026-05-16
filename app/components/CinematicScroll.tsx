@@ -4,12 +4,34 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const scenes = [
-  { id: 1, name: "THE VOID",   tagline: "Before the idea,\nthere is silence.",   desc: "Every brand begins in darkness — a blank canvas waiting for direction.",                                     start: 0,   end: 0.2 },
-  { id: 2, name: "THE SPARK",  tagline: "Then intelligence\nignites.",            desc: "AI processes thousands of signals to find the thread that makes your brand unforgettable.",                 start: 0.2, end: 0.4 },
-  { id: 3, name: "THE TOOLS",  tagline: "Strategy meets\nexecution.",             desc: "Design systems, automation, and precision tools assembled in real time.",                                   start: 0.4, end: 0.6 },
-  { id: 4, name: "THE OUTPUT", tagline: "Your brand,\nmaterialized.",             desc: "Websites, visuals, and assets that command attention across every surface.",                                start: 0.6, end: 0.8 },
-  { id: 5, name: "THE RESULT", tagline: "The world sees you\ndifferently now.",  desc: "A brand that scales. A presence that lasts. Built by F21 Studio.",                                         start: 0.8, end: 1.0 },
+  { id: 1, name: "THE VOID",   tagline: "Before the idea,\nthere is silence.",   desc: "Every brand begins in darkness — a blank canvas waiting for direction." },
+  { id: 2, name: "THE SPARK",  tagline: "Then intelligence\nignites.",            desc: "AI processes thousands of signals to find the thread that makes your brand unforgettable." },
+  { id: 3, name: "THE TOOLS",  tagline: "Strategy meets\nexecution.",             desc: "Design systems, automation, and precision tools assembled in real time." },
+  { id: 4, name: "THE OUTPUT", tagline: "Your brand,\nmaterialized.",             desc: "Websites, visuals, and assets that command attention across every surface." },
+  { id: 5, name: "THE RESULT", tagline: "The world sees you\ndifferently now.",  desc: "A brand that scales. A presence that lasts. Built by F21 Studio." },
 ];
+
+function MobileScenes() {
+  return (
+    <section className="bg-[#0a0a0a] py-24 px-6">
+      <div className="max-w-lg mx-auto flex flex-col gap-16">
+        {scenes.map((scene) => (
+          <div key={scene.id}>
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#a855f7] block mb-3">
+              {String(scene.id).padStart(2, "0")} — {scene.name}
+            </span>
+            <h2 className="text-3xl font-black text-[#fafafa] leading-[1.1] mb-3 whitespace-pre-line">
+              {scene.tagline}
+            </h2>
+            <p className="text-[#a3a3a3] text-sm leading-relaxed">
+              {scene.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
 
 export default function CinematicScroll() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -18,8 +40,15 @@ export default function CinematicScroll() {
   const dotRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [videoReady, setVideoReady] = useState(false);
   const [activeScene, setActiveScene] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile) return;
+
     gsap.registerPlugin(ScrollTrigger);
     const video = videoRef.current;
     if (!video) return;
@@ -30,7 +59,6 @@ export default function CinematicScroll() {
     const setupScroll = () => {
       if (initialized) return;
       initialized = true;
-
       video.pause();
       video.currentTime = 0;
       setVideoReady(true);
@@ -52,10 +80,8 @@ export default function CinematicScroll() {
           raf = requestAnimationFrame(() => {
             video.currentTime = self.progress * duration;
           });
-
           const progress = self.progress;
           const newIdx = progress < 0.2 ? 0 : progress < 0.4 ? 1 : progress < 0.6 ? 2 : progress < 0.8 ? 3 : 4;
-
           setActiveScene(prev => {
             if (prev === newIdx) return prev;
             const prevEl = textRefs.current[prev];
@@ -86,7 +112,9 @@ export default function CinematicScroll() {
       cancelAnimationFrame(raf);
       ScrollTrigger.getAll().forEach(t => t.kill());
     };
-  }, []);
+  }, [isMobile]);
+
+  if (isMobile) return <MobileScenes />;
 
   return (
     <section ref={containerRef} className="relative" style={{ height: "500vh" }}>
@@ -120,21 +148,12 @@ export default function CinematicScroll() {
         ))}
         <div className="absolute right-8 top-1/2 -translate-y-1/2 z-30 flex flex-col gap-4 items-center">
           {scenes.map((_, i) => (
-            <div
-              key={i}
-              ref={(el) => { dotRefs.current[i] = el; }}
-              className="w-1.5 h-1.5 rounded-full"
-              style={{ backgroundColor: "#3f3f46" }}
-            />
+            <div key={i} ref={(el) => { dotRefs.current[i] = el; }} className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#3f3f46" }} />
           ))}
         </div>
         <div className="absolute top-8 right-8 z-30 text-right">
-          <span className="text-[#a855f7] font-mono text-sm font-bold">
-            {String(activeScene + 1).padStart(2, "0")}
-          </span>
-          <span className="text-[#3f3f46] font-mono text-sm">
-            /{String(scenes.length).padStart(2, "0")}
-          </span>
+          <span className="text-[#a855f7] font-mono text-sm font-bold">{String(activeScene + 1).padStart(2, "0")}</span>
+          <span className="text-[#3f3f46] font-mono text-sm">/{String(scenes.length).padStart(2, "0")}</span>
         </div>
         <div className="absolute bottom-0 left-1/4 w-[500px] h-[200px] rounded-full bg-[#a855f7]/8 blur-[100px] pointer-events-none z-10" />
       </div>
