@@ -13,32 +13,35 @@ const scenes = [
 
 export default function CinematicScroll() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const textRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const dotRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const videoRef    = useRef<HTMLVideoElement>(null);
+  const textRefs    = useRef<(HTMLDivElement | null)[]>([]);
+  const dotRefs     = useRef<(HTMLDivElement | null)[]>([]);
   const [activeScene, setActiveScene] = useState(0);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-
-    // Prevent ScrollTrigger from fighting iOS resize events (address bar
-    // show/hide) without taking over touch handling via normalizeScroll.
     ScrollTrigger.config({ ignoreMobileResize: true });
 
     const video = videoRef.current;
     if (!video) return;
 
-    let scrollInitialized = false;
-    let raf: number;
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    let raf = 0;
+    let scrollReady = false;
 
+    // ── Scene text / dot initialisation ────────────────────────────────────
+    gsap.set(textRefs.current[0], { opacity: 1, y: 0 });
+    textRefs.current.slice(1).forEach(el => el && gsap.set(el, { opacity: 0, y: 24 }));
+    gsap.set(dotRefs.current[0], { scale: 1.5, backgroundColor: "#a855f7" });
+    dotRefs.current.slice(1).forEach(el => el && gsap.set(el, { scale: 1, backgroundColor: "#3f3f46" }));
+
+    // ── ScrollTrigger setup ─────────────────────────────────────────────────
     const initScroll = () => {
-      if (scrollInitialized) return;
-      scrollInitialized = true;
+      if (scrollReady) return;
+      scrollReady = true;
 
-      gsap.set(textRefs.current[0], { opacity: 1, y: 0 });
-      textRefs.current.slice(1).forEach(el => el && gsap.set(el, { opacity: 0, y: 24 }));
-      gsap.set(dotRefs.current[0], { scale: 1.5, backgroundColor: "#a855f7" });
-      dotRefs.current.slice(1).forEach(el => el && gsap.set(el, { scale: 1, backgroundColor: "#3f3f46" }));
+      video.pause();
+      video.currentTime = 0;
 
       ScrollTrigger.create({
         trigger: containerRef.current,
@@ -48,19 +51,22 @@ export default function CinematicScroll() {
         onUpdate: (self) => {
           cancelAnimationFrame(raf);
           raf = requestAnimationFrame(() => {
-            video.currentTime = self.progress * (video.duration || 20);
+            if (isFinite(video.duration) && video.duration > 0) {
+              video.currentTime = self.progress * video.duration;
+            }
           });
+
           const p = self.progress;
           const newIdx = p < 0.2 ? 0 : p < 0.4 ? 1 : p < 0.6 ? 2 : p < 0.8 ? 3 : 4;
           setActiveScene(prev => {
             if (prev === newIdx) return prev;
-            const prevEl = textRefs.current[prev];
-            const currEl = textRefs.current[newIdx];
+            const prevEl  = textRefs.current[prev];
+            const currEl  = textRefs.current[newIdx];
             const prevDot = dotRefs.current[prev];
             const currDot = dotRefs.current[newIdx];
-            if (prevEl) gsap.to(prevEl, { opacity: 0, y: newIdx > prev ? -20 : 20, duration: 0.3 });
-            if (currEl) gsap.fromTo(currEl, { opacity: 0, y: newIdx > prev ? 24 : -24 }, { opacity: 1, y: 0, duration: 0.4 });
-            if (prevDot) gsap.to(prevDot, { scale: 1, backgroundColor: "#3f3f46", duration: 0.3 });
+            if (prevEl)  gsap.to(prevEl,  { opacity: 0, y: newIdx > prev ? -20 : 20, duration: 0.3 });
+            if (currEl)  gsap.fromTo(currEl, { opacity: 0, y: newIdx > prev ? 24 : -24 }, { opacity: 1, y: 0, duration: 0.4 });
+            if (prevDot) gsap.to(prevDot, { scale: 1,   backgroundColor: "#3f3f46", duration: 0.3 });
             if (currDot) gsap.to(currDot, { scale: 1.5, backgroundColor: "#a855f7", duration: 0.3 });
             return newIdx;
           });
@@ -68,51 +74,47 @@ export default function CinematicScroll() {
       });
     };
 
-    const onVideoData = () => { video.pause(); video.currentTime = 0; };
-    video.addEventListener("loadeddata", onVideoData, { once: true });
+    // ── iOS path ────────────────────────────────────────────────────────────
+    if (isIOS) {
+      video.src     = "/hero-scrub.mp4";
+      video.preload = "none";
 
-    // Desktop Chrome/Firefox support VP9 WebM which seeks faster than MP4.
-    // Override src here (after mount) so iOS still gets the JSX MP4 src registered
-    // in HTML before any JS runs — iOS needs that for the touchstart gesture unlock.
-    if (video.canPlayType('video/webm; codecs="vp9"') !== '') {
-      video.src = "/hero-scrub.webm";
-      video.load();
+      const unlockIOS = () => {
+        video.play()
+          .then(() => {
+            video.pause();
+            video.currentTime = 0;
+            document.removeEventListener("touchstart", unlockIOS, { capture: true });
+            initScroll();
+            // Cancel any RAF that initScroll's onUpdate may have queued with a
+            // non-zero progress if the section was already scrolled into view.
+            cancelAnimationFrame(raf);
+            video.currentTime = 0;
+          })
+          .catch(() => {});
+      };
+
+      document.addEventListener("touchstart", unlockIOS, { capture: true, passive: true });
+
+      return () => {
+        cancelAnimationFrame(raf);
+        document.removeEventListener("touchstart", unlockIOS, { capture: true });
+        ScrollTrigger.getAll().forEach(t => t.kill());
+      };
     }
 
-    // iOS Safari blocks video seeking until play() is called inside a real user
-    // gesture. normalizeScroll intercepts touches so they no longer count as
-    // gestures — removed. Instead we use { capture: true } to fire before any
-    // other handler, call load() first to ensure src is registered, then play().
-    let iosUnlocked = false;
-    const unlockIOS = () => {
-      if (iosUnlocked) return;
-      video.load();
-      video.play().then(() => {
-        iosUnlocked = true;
-        document.removeEventListener("touchstart", unlockIOS, { capture: true });
-        video.pause();
-        video.currentTime = 0;
-        initScroll();
-        // ScrollTrigger.create() fires onUpdate immediately if the section is
-        // already in view, scheduling a RAF that would set currentTime to the
-        // non-zero scroll position. Cancel it and force back to frame 0.
-        cancelAnimationFrame(raf);
-        video.currentTime = 0;
-      }).catch(() => {});
-    };
-    document.addEventListener("touchstart", unlockIOS, { capture: true, passive: true });
+    // ── Desktop path ────────────────────────────────────────────────────────
+    const supportsWebM = video.canPlayType('video/webm; codecs="vp9"') !== "";
+    video.src     = supportsWebM ? "/hero-scrub.webm" : "/hero-scrub.mp4";
+    video.preload = "auto";
+    video.load();
 
-    // Desktop: init scroll once the browser has buffered enough data
     video.addEventListener("canplaythrough", initScroll, { once: true });
-
-    // Fallback: init scroll after 2 s regardless of load state
-    const fallback = setTimeout(initScroll, 2000);
+    const fallback = setTimeout(initScroll, 3000);
 
     return () => {
       clearTimeout(fallback);
       cancelAnimationFrame(raf);
-      document.removeEventListener("touchstart", unlockIOS, { capture: true });
-      video.removeEventListener("loadeddata", onVideoData);
       video.removeEventListener("canplaythrough", initScroll);
       ScrollTrigger.getAll().forEach(t => t.kill());
     };
@@ -121,19 +123,19 @@ export default function CinematicScroll() {
   return (
     <section ref={containerRef} className="relative" style={{ height: "500vh" }}>
       <div className="sticky top-0 w-full h-screen overflow-hidden bg-[#0a0a0a]">
-        {/* src="/hero-scrub.mp4" in JSX so iOS registers it before JS runs.
-            preload="metadata" lets desktop browsers fetch duration/first frame
-            while iOS still ignores preload and waits for the touchstart gesture. */}
+
+        {/* No src here — set via JS in useEffect so each path controls its own
+            src, preload, and load() call cleanly */}
         <video
           ref={videoRef}
-          src="/hero-scrub.mp4"
-          preload="metadata"
           muted
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         />
+
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/20 to-transparent z-10" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_50%,rgba(10,10,10,0.6)_100%)] z-10" />
+
         {scenes.map((scene, i) => (
           <div
             key={scene.id}
@@ -152,15 +154,27 @@ export default function CinematicScroll() {
             </p>
           </div>
         ))}
+
         <div className="absolute right-8 top-1/2 -translate-y-1/2 z-30 flex flex-col gap-4 items-center">
           {scenes.map((_, i) => (
-            <div key={i} ref={(el) => { dotRefs.current[i] = el; }} className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#3f3f46" }} />
+            <div
+              key={i}
+              ref={(el) => { dotRefs.current[i] = el; }}
+              className="w-1.5 h-1.5 rounded-full"
+              style={{ backgroundColor: "#3f3f46" }}
+            />
           ))}
         </div>
+
         <div className="absolute top-8 right-8 z-30 text-right">
-          <span className="text-[#a855f7] font-mono text-sm font-bold">{String(activeScene + 1).padStart(2, "0")}</span>
-          <span className="text-[#3f3f46] font-mono text-sm">/{String(scenes.length).padStart(2, "0")}</span>
+          <span className="text-[#a855f7] font-mono text-sm font-bold">
+            {String(activeScene + 1).padStart(2, "0")}
+          </span>
+          <span className="text-[#3f3f46] font-mono text-sm">
+            /{String(scenes.length).padStart(2, "0")}
+          </span>
         </div>
+
         <div className="absolute bottom-0 left-1/4 w-[500px] h-[200px] rounded-full bg-[#a855f7]/8 blur-[100px] pointer-events-none z-10" />
       </div>
     </section>
