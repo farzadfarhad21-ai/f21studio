@@ -41,7 +41,6 @@ function computeStyles(progress: number): { styles: TextStyle[]; active: number 
 export default function CinematicScroll() {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const rafRef = useRef<number>(0);
   const [activeScene, setActiveScene] = useState(0);
   const [textStyles, setTextStyles] = useState<TextStyle[]>(
     scenes.map((_, i) => ({ opacity: i === 0 ? 1 : 0, y: i === 0 ? 0 : 20 }))
@@ -52,7 +51,9 @@ export default function CinematicScroll() {
     const container = containerRef.current;
     if (!video || !container) return;
 
-    video.src = "/hero-scrub.mp4";
+    // WebM (VP9) for Chrome/Firefox — faster seek. MP4 fallback for Safari.
+    const supportsWebM = video.canPlayType('video/webm; codecs="vp9"') !== '';
+    video.src = supportsWebM ? "/hero-scrub.webm" : "/hero-scrub.mp4";
     video.load();
     video.pause();
     video.currentTime = 0;
