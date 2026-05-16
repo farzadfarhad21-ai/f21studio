@@ -41,12 +41,19 @@ function computeStyles(progress: number): { styles: TextStyle[]; active: number 
 export default function CinematicScroll() {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [videoReady, setVideoReady] = useState(false);
   const [activeScene, setActiveScene] = useState(0);
   const [textStyles, setTextStyles] = useState<TextStyle[]>(
     scenes.map((_, i) => ({ opacity: i === 0 ? 1 : 0, y: i === 0 ? 0 : 20 }))
   );
 
   useEffect(() => {
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) {
+      setVideoReady(true);
+      return;
+    }
+
     const video = videoRef.current;
     const container = containerRef.current;
     if (!video || !container) return;
@@ -55,8 +62,9 @@ export default function CinematicScroll() {
     const supportsWebM = video.canPlayType('video/webm; codecs="vp9"') !== '';
     video.src = supportsWebM ? "/hero-scrub.webm" : "/hero-scrub.mp4";
     video.load();
-    video.pause();
+    video.play().then(() => video.pause()).catch(() => {});
     video.currentTime = 0;
+    setVideoReady(true);
 
     let rafId: number;
 
@@ -98,6 +106,7 @@ export default function CinematicScroll() {
           muted
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
+          style={{ opacity: videoReady ? 1 : 0, transition: "opacity 0.5s" }}
         />
 
         {/* Dark gradient overlays */}
