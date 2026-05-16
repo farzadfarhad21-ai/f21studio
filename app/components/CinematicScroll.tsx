@@ -71,6 +71,14 @@ export default function CinematicScroll() {
     const onVideoData = () => { video.pause(); video.currentTime = 0; };
     video.addEventListener("loadeddata", onVideoData, { once: true });
 
+    // Desktop Chrome/Firefox support VP9 WebM which seeks faster than MP4.
+    // Override src here (after mount) so iOS still gets the JSX MP4 src registered
+    // in HTML before any JS runs — iOS needs that for the touchstart gesture unlock.
+    if (video.canPlayType('video/webm; codecs="vp9"') !== '') {
+      video.src = "/hero-scrub.webm";
+      video.load();
+    }
+
     // iOS Safari blocks video seeking until play() is called inside a real user
     // gesture. normalizeScroll intercepts touches so they no longer count as
     // gestures — removed. Instead we use { capture: true } to fire before any
@@ -113,12 +121,13 @@ export default function CinematicScroll() {
   return (
     <section ref={containerRef} className="relative" style={{ height: "500vh" }}>
       <div className="sticky top-0 w-full h-screen overflow-hidden bg-[#0a0a0a]">
-        {/* src in JSX so iOS registers it before any JS runs, preload="none"
-            so the browser doesn't autoplay/buffer; we call load() on first touch */}
+        {/* src="/hero-scrub.mp4" in JSX so iOS registers it before JS runs.
+            preload="metadata" lets desktop browsers fetch duration/first frame
+            while iOS still ignores preload and waits for the touchstart gesture. */}
         <video
           ref={videoRef}
           src="/hero-scrub.mp4"
-          preload="none"
+          preload="metadata"
           muted
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
