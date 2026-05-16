@@ -1,6 +1,7 @@
 import CursorGlow from "./components/CursorGlow";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import CinematicScroll from "./components/CinematicScroll";
 import Services from "./components/Services";
 import Showcase from "./components/Showcase";
 import About from "./components/About";
@@ -13,6 +14,7 @@ export default function Home() {
       <CursorGlow />
       <Navbar />
       <Hero />
+      <CinematicScroll />
       <Services />
       <Showcase />
       <About />
