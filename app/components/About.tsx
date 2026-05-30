@@ -31,10 +31,23 @@ export default function About() {
   );
 
   return (
-    <section id="about" className="py-24 px-6 md:px-12">
-      <div ref={containerRef} className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-12 md:gap-16 items-center">
+    <section id="about" className="relative py-40 px-6 md:px-12 border-t border-white/5 bg-[#0a0a0a]">
+
+      {/* Big section number */}
+      <div
+        className="absolute top-16 left-6 text-[180px] font-black leading-none select-none pointer-events-none"
+        style={{ color: "rgba(168,85,247,0.06)", letterSpacing: "-0.04em" }}
+      >
+        02
+      </div>
+
+      <div ref={containerRef} className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-12 md:gap-16 items-center">
         <div className="about-col">
-          <h2 className="text-4xl md:text-5xl font-black text-[#fafafa] leading-tight">
+          <p className="text-[11px] font-black tracking-[0.45em] uppercase text-[#a855f7] mb-4">
+            About F21 Studio
+          </p>
+          <div className="w-10 h-[3px] bg-[#a855f7] mb-5" />
+          <h2 className="text-4xl md:text-5xl font-black text-[#fafafa] leading-[1.05] tracking-[-0.03em]">
             Built by one founder.
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#a855f7] to-[#c084fc]">
@@ -44,9 +57,6 @@ export default function About() {
         </div>
 
         <div className="about-col space-y-5">
-          <span className="block text-xs font-semibold tracking-[0.25em] uppercase text-[#a855f7]">
-            About F21 Studio
-          </span>
           <p className="text-[#a3a3a3] leading-relaxed">
             F21 Studio is a boutique creative agency built at the intersection
             of luxury design and AI innovation. We partner with small businesses

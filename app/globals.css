@@ -25,6 +25,34 @@ body {
   color: var(--text-primary);
   font-family: var(--font-inter), Inter, sans-serif;
   overflow-x: hidden;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity: 0.02;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+h1, h2 {
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
+
+h3 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+p {
+  max-width: 65ch;
+  line-height: 1.65;
 }
 
 @keyframes grid-move {

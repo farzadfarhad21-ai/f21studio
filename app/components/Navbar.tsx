@@ -25,19 +25,20 @@ export default function Navbar() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-6 md:px-12 h-16 transition-all duration-300 ${
         scrolled
-          ? "bg-[#0a0a0a]/90 backdrop-blur-md border-b border-[#262626]"
-          : "bg-[#0a0a0a]/60 backdrop-blur-sm border-b border-[#262626]"
+          ? "bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/5"
+          : "bg-transparent border-b border-white/5"
       }`}
     >
-      <span className="text-[#fafafa] font-black text-lg tracking-[0.2em]">
-        F21 STUDIO
+      <span className="font-black text-lg tracking-[0.15em] uppercase">
+        <span className="text-[#a855f7]">F21</span>
+        <span className="text-[#fafafa]"> STUDIO</span>
       </span>
       <ul className="hidden md:flex items-center gap-8">
         {links.map(({ label, href }) => (
           <li key={label}>
             <a
               href={href}
-              className="text-[#a3a3a3] hover:text-[#fafafa] text-sm font-medium tracking-wide transition-colors duration-200"
+              className="text-[#737373] hover:text-[#fafafa] text-xs font-black tracking-[0.1em] uppercase transition-colors duration-200"
             >
               {label}
             </a>

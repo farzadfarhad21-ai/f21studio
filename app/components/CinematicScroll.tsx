@@ -128,18 +128,17 @@ export default function CinematicScroll() {
     }
 
     // ── Desktop ───────────────────────────────────────────────────────────────
-    const supportsWebM = video.canPlayType('video/webm; codecs="vp9"') !== "";
-    video.src     = supportsWebM ? "/hero-scrub.webm" : "/hero-scrub.mp4";
-    video.preload = "auto";
+    video.src = "/hero-scrub.mp4";
+    video.preload = "metadata";
     video.load();
 
-    video.addEventListener("canplaythrough", initScroll, { once: true });
-    const fallback = setTimeout(initScroll, 3000);
+    video.addEventListener("loadedmetadata", initScroll, { once: true });
+    const fallback = setTimeout(initScroll, 1500);
 
     return () => {
       clearTimeout(fallback);
       cancelAnimationFrame(raf);
-      video.removeEventListener("canplaythrough", initScroll);
+      video.removeEventListener("loadedmetadata", initScroll);
       ScrollTrigger.getAll().forEach(t => t.kill());
     };
   }, []);

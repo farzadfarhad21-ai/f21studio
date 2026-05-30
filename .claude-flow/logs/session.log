@@ -1,0 +1,1 @@
+[2026-05-17T05:35:00Z] TASK: Add PulseAI to F21 Studio portfolio | STATUS: done | FILES: app/components/Showcase.tsx | NOTES: Added PulseAI as 4th card in portfolio grid. Live project badge, orange gradient, description, AI/Next.js/Claude API tags, link to pulseai-alpha-eight.vercel.app. Grid changed to 2-col (was 3-col). Deployed to www.f21studio.com.

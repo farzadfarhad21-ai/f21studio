@@ -36,15 +36,25 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-24 px-6 md:px-12 bg-[#0a0a0a]">
-      <div ref={containerRef} className="max-w-2xl mx-auto text-center">
-        <span className="text-xs font-semibold tracking-[0.25em] uppercase text-[#a855f7]">
+    <section id="contact" className="relative py-40 px-6 md:px-12 border-t border-white/5 bg-[#0a0a0a]">
+
+      {/* Big section number */}
+      <div
+        className="absolute top-16 left-6 text-[180px] font-black leading-none select-none pointer-events-none"
+        style={{ color: "rgba(168,85,247,0.06)", letterSpacing: "-0.04em" }}
+      >
+        03
+      </div>
+
+      <div ref={containerRef} className="max-w-2xl mx-auto text-center relative">
+        <p className="text-[11px] font-black tracking-[0.45em] uppercase text-[#a855f7] mb-3">
           Let&apos;s Talk
-        </span>
-        <h2 className="text-4xl md:text-5xl font-black text-[#fafafa] mt-4 mb-4">
+        </p>
+        <div className="w-10 h-[3px] bg-[#a855f7] mx-auto mb-5" />
+        <h2 className="text-4xl md:text-5xl font-black text-[#fafafa] mb-4 tracking-[-0.03em]">
           Ready to Grow?
         </h2>
-        <p className="text-[#a3a3a3] mb-10 leading-relaxed">
+        <p className="text-[#737373] mb-10 leading-relaxed mx-auto">
           Start a conversation — we&apos;ll respond within 24 hours.
         </p>
 
@@ -53,7 +63,7 @@ export default function Contact() {
           href="https://wa.me/971508082955"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-3 px-6 py-3 bg-[#25d366] hover:bg-[#1db954] text-white font-semibold rounded-lg transition-colors duration-200 mb-10 text-sm"
+          className="inline-flex items-center gap-3 px-8 py-4 bg-[#25d366] hover:bg-[#1db954] active:scale-95 text-white font-black text-sm uppercase tracking-[0.07em] transition-all duration-200 mb-10"
         >
           <svg
             className="w-5 h-5"
@@ -68,66 +78,66 @@ export default function Contact() {
 
         {/* Divider */}
         <div className="flex items-center gap-4 mb-10">
-          <div className="flex-1 h-px bg-[#262626]" />
-          <span className="text-[#525252] text-xs shrink-0">
+          <div className="flex-1 h-px bg-[#1f1f1f]" />
+          <span className="text-[#525252] text-xs shrink-0 font-black tracking-[0.2em] uppercase">
             or send a message
           </span>
-          <div className="flex-1 h-px bg-[#262626]" />
+          <div className="flex-1 h-px bg-[#1f1f1f]" />
         </div>
 
         {/* Form */}
         {sent ? (
-          <div className="bg-[#141414] border border-[#a855f7]/40 rounded-2xl p-12 text-center">
-            <p className="text-[#a855f7] font-semibold text-lg">
+          <div className="bg-[#141414] border border-[#a855f7]/30 rounded-2xl p-12 text-center">
+            <p className="text-[#a855f7] font-black text-lg uppercase tracking-wide">
               Message sent!
             </p>
-            <p className="text-[#a3a3a3] mt-2 text-sm">
+            <p className="text-[#737373] mt-2 text-sm">
               We&apos;ll be in touch within 24 hours.
             </p>
           </div>
         ) : (
           <form
             onSubmit={handleSubmit}
-            className="bg-[#141414] border border-[#262626] rounded-2xl p-8 text-left space-y-5"
+            className="bg-[#141414] border border-[#1f1f1f] rounded-2xl p-8 text-left space-y-5"
           >
             <div>
-              <label className="block text-[#a3a3a3] text-xs font-medium uppercase tracking-widest mb-2">
+              <label className="block text-[#737373] text-[10px] font-black uppercase tracking-widest mb-2">
                 Name
               </label>
               <input
                 type="text"
                 required
                 placeholder="Your name"
-                className="w-full bg-[#0a0a0a] border border-[#262626] focus:border-[#a855f7] rounded-lg px-4 py-3 text-[#fafafa] text-sm outline-none transition-colors duration-200 placeholder:text-[#404040]"
+                className="w-full bg-[#0a0a0a] border border-[#1f1f1f] focus:border-[#a855f7]/60 rounded-lg px-4 py-3 text-[#fafafa] text-sm outline-none transition-colors duration-200 placeholder:text-[#3f3f3f]"
               />
             </div>
             <div>
-              <label className="block text-[#a3a3a3] text-xs font-medium uppercase tracking-widest mb-2">
+              <label className="block text-[#737373] text-[10px] font-black uppercase tracking-widest mb-2">
                 Email
               </label>
               <input
                 type="email"
                 required
                 placeholder="your@email.com"
-                className="w-full bg-[#0a0a0a] border border-[#262626] focus:border-[#a855f7] rounded-lg px-4 py-3 text-[#fafafa] text-sm outline-none transition-colors duration-200 placeholder:text-[#404040]"
+                className="w-full bg-[#0a0a0a] border border-[#1f1f1f] focus:border-[#a855f7]/60 rounded-lg px-4 py-3 text-[#fafafa] text-sm outline-none transition-colors duration-200 placeholder:text-[#3f3f3f]"
               />
             </div>
             <div>
-              <label className="block text-[#a3a3a3] text-xs font-medium uppercase tracking-widest mb-2">
+              <label className="block text-[#737373] text-[10px] font-black uppercase tracking-widest mb-2">
                 Message
               </label>
               <textarea
                 required
                 rows={5}
                 placeholder="Tell us about your project..."
-                className="w-full bg-[#0a0a0a] border border-[#262626] focus:border-[#a855f7] rounded-lg px-4 py-3 text-[#fafafa] text-sm outline-none transition-colors duration-200 resize-none placeholder:text-[#404040]"
+                className="w-full bg-[#0a0a0a] border border-[#1f1f1f] focus:border-[#a855f7]/60 rounded-lg px-4 py-3 text-[#fafafa] text-sm outline-none transition-colors duration-200 resize-none placeholder:text-[#3f3f3f]"
               />
             </div>
             <button
               type="submit"
-              className="w-full py-3 bg-[#a855f7] hover:bg-[#c084fc] text-white font-semibold rounded-lg transition-colors duration-200 text-sm tracking-wide"
+              className="w-full py-4 bg-[#a855f7] hover:bg-[#c084fc] active:scale-95 text-white font-black text-sm uppercase tracking-[0.07em] transition-all duration-200"
             >
-              Send Message
+              Send Message →
             </button>
           </form>
         )}
