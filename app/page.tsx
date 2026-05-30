@@ -14,8 +14,8 @@ export default function Home() {
     <main className="bg-[#0a0a0a] min-h-screen">
       <CursorGlow />
       <Navbar />
-      <Hero />
       <CinematicScroll />
+      <Hero />
       <Process />
       <Services />
       <Showcase />

@@ -88,8 +88,14 @@ export default function CinematicScroll() {
             const currEl  = textRefs.current[newIdx];
             const prevDot = dotRefs.current[prev];
             const currDot = dotRefs.current[newIdx];
-            if (prevEl)  gsap.to(prevEl,  { opacity: 0, y: newIdx > prev ? -20 : 20, duration: 0.3 });
-            if (currEl)  gsap.fromTo(currEl, { opacity: 0, y: newIdx > prev ? 24 : -24 }, { opacity: 1, y: 0, duration: 0.4 });
+            if (prevEl) {
+              gsap.killTweensOf(prevEl);
+              gsap.set(prevEl, { opacity: 0 });
+            }
+            if (currEl) {
+              gsap.killTweensOf(currEl);
+              gsap.fromTo(currEl, { opacity: 0, y: newIdx > prev ? 24 : -24 }, { opacity: 1, y: 0, duration: 0.4 });
+            }
             if (prevDot) gsap.to(prevDot, { scale: 1,   backgroundColor: "#3f3f46", duration: 0.3 });
             if (currDot) gsap.to(currDot, { scale: 1.5, backgroundColor: "#a855f7", duration: 0.3 });
             return newIdx;
