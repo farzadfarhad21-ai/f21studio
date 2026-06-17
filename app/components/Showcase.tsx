@@ -11,6 +11,9 @@ type Project = {
   tag: string;
   gradient: string;
   accent: string;
+  brandColor: string;
+  brandSubColor: string;
+  brandLabel: string;
   description?: string;
   tags?: string[];
   href?: string;
@@ -21,30 +24,55 @@ const projects: Project[] = [
   {
     name: "PulseAI",
     tag: "AI Web App",
-    gradient: "from-orange-950 via-orange-900/60 to-[#0a0a0a]",
-    accent: "bg-orange-500/20 text-orange-300",
+    gradient: "from-[#0d1a06] via-[#0a120a] to-[#0a0a0a]",
+    accent: "bg-lime-500/20 text-lime-300",
+    brandColor: "#a3e635",
+    brandSubColor: "#3d5c10",
+    brandLabel: "AI Workout Coach",
     description: "AI-powered workout plan generator — personalized weekly training plans with exercise videos and muscle diagrams.",
     tags: ["AI", "Next.js", "Claude API"],
     href: "https://pulseai-alpha-eight.vercel.app",
     live: true,
   },
   {
+    name: "Rahil Therapy",
+    tag: "Full-Stack Practice Growth",
+    gradient: "from-[#1a0a0d] via-[#120a0e] to-[#0a0a0a]",
+    accent: "bg-rose-400/20 text-rose-300",
+    brandColor: "#C99488",
+    brandSubColor: "#6b3c35",
+    brandLabel: "روانشناس عمومی · Dubai · Diaspora",
+    description: "End-to-end digital practice for a Persian-speaking psychologist serving the Iranian diaspora. Persian RTL site + dedicated /parents hub targeting adult children of aging parents (logotherapy specialty), 11 SEO-optimized articles, daily AI blog automation, PageSpeed 100, Instagram pipeline with ElevenLabs voice cloning + Kling AI video, Telegram channel, Dubai landing page. Booking funnel converts at 4×, fully automated content engine runs 24/7.",
+    tags: ["معنادرمانی Niche", "PageSpeed 100", "Voice Clone", "Kling AI Video", "WCAG AA+", "11 Articles"],
+    href: "https://rahiltherapy.com",
+    live: true,
+  },
+  {
     name: "Aurora Coffee",
     tag: "Brand Identity + Website",
-    gradient: "from-amber-950 via-orange-900/70 to-purple-950",
+    gradient: "from-[#1a1006] via-[#120d08] to-[#0a0a0a]",
     accent: "bg-amber-500/20 text-amber-300",
+    brandColor: "#f59e0b",
+    brandSubColor: "#6b4c10",
+    brandLabel: "Specialty Coffee",
   },
   {
     name: "Lumen Yoga",
     tag: "Website + AI Visuals",
-    gradient: "from-teal-950 via-cyan-900/70 to-indigo-950",
+    gradient: "from-[#061a16] via-[#08120f] to-[#0a0a0a]",
     accent: "bg-teal-500/20 text-teal-300",
+    brandColor: "#2dd4bf",
+    brandSubColor: "#0f5c52",
+    brandLabel: "Mind & Body",
   },
   {
     name: "Northwind Consulting",
     tag: "Brand Identity + Automation",
-    gradient: "from-slate-900 via-blue-950 to-purple-950",
+    gradient: "from-[#060a1a] via-[#080a12] to-[#0a0a0a]",
     accent: "bg-blue-500/20 text-blue-300",
+    brandColor: "#60a5fa",
+    brandSubColor: "#1a3a6b",
+    brandLabel: "Strategy & Growth",
   },
 ];
 
@@ -130,18 +158,40 @@ export default function Showcase() {
             return (
               <CardWrapper key={p.name}>
                 <div
-                  className={`h-64 bg-gradient-to-br ${p.gradient} flex flex-col justify-end p-7`}
+                  className={`h-64 bg-gradient-to-br ${p.gradient} flex flex-col`}
                 >
-                  {p.live && (
-                    <span className="inline-flex items-center gap-1.5 text-[9px] font-black tracking-widest uppercase px-2.5 py-1 bg-[#f97316] text-black w-fit mb-3">
-                      <span className="w-1.5 h-1.5 rounded-full bg-black animate-pulse" />
-                      Live Project
-                    </span>
-                  )}
-                  <span className={`inline-block text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-full mb-3 w-fit ${p.accent}`}>
-                    {p.tag}
-                  </span>
-                  <h3 className="text-[#fafafa] font-black text-xl uppercase tracking-[-0.01em]">{p.name}</h3>
+                  {/* Brand visual area */}
+                  <div className="flex-1 flex items-center justify-center px-7 pt-7">
+                    <div className="text-center">
+                      <div
+                        className="font-black text-3xl tracking-[-0.03em] leading-none mb-2"
+                        style={{ color: p.brandColor }}
+                      >
+                        {p.name}
+                      </div>
+                      <div
+                        className="text-[10px] font-black tracking-[0.3em] uppercase"
+                        style={{ color: p.brandSubColor }}
+                      >
+                        {p.brandLabel}
+                      </div>
+                    </div>
+                  </div>
+                  {/* Bottom info */}
+                  <div className="flex flex-col px-7 pb-6 gap-2">
+                    {p.live && (
+                      <span className="inline-flex items-center gap-1.5 text-[9px] font-black tracking-widest uppercase px-2.5 py-1 bg-[#f97316] text-black w-fit">
+                        <span className="w-1.5 h-1.5 rounded-full bg-black animate-pulse" />
+                        Live Project
+                      </span>
+                    )}
+                    <div className="flex items-center justify-between">
+                      <span className={`inline-block text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-full w-fit ${p.accent}`}>
+                        {p.tag}
+                      </span>
+                      <h3 className="text-[#fafafa] font-black text-sm uppercase tracking-widest">{p.name}</h3>
+                    </div>
+                  </div>
                 </div>
 
                 {p.description && (
@@ -169,7 +219,7 @@ export default function Showcase() {
         </div>
 
         <p className="text-center text-[#3f3f3f] text-xs mt-8 tracking-wide font-black uppercase">
-          Spec projects showcase our capabilities · PulseAI is a live product
+          Rahil Therapy is a live client · PulseAI is a live product · Others are spec projects
         </p>
       </div>
     </section>
