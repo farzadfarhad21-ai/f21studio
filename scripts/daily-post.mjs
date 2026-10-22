@@ -195,7 +195,7 @@ async function findVideo(title, sourceUrl) {
       role: "user",
       content: `Find one YouTube video that helps a small business owner understand this AI story: "${title}" (source: ${sourceUrl}).
 
-Prefer, in order: the official announcement or demo from the company involved, then a clear explainer from a reputable tech channel. It must be specifically about this story, published recently, in English, and not a Short. Search YouTube, then reply with only the video URL, or NONE if nothing fits well. Never guess a URL you did not see in the search results.`,
+Prefer, in order: the official announcement or demo from the company involved, then a clear explainer from a reputable tech channel. It must be specifically about this story, published recently, in English, and not a Short. Skip clickbait: no titles in ALL CAPS or starting with "BREAKING", no hype like "changes everything" or "while you sleep", and skip small channels that mostly repost news. A calm, informative title from a well-known channel is what we want; NONE is better than a weak pick. Search YouTube, then reply with only the video URL, or NONE if nothing fits well. Never guess a URL you did not see in the search results.`,
     }];
     let msg;
     for (let turn = 0; turn < 3; turn++) {
