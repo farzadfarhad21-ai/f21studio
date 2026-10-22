@@ -13,6 +13,7 @@ export type Post = {
   tags: string[];
   image?: string;
   imageAlt: string;
+  imagePrompt?: string;
   readingMinutes: number;
   blocks: Block[];
   takeaways: string[];

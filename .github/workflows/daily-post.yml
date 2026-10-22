@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "0 4 * * *" # 08:00 Dubai
   workflow_dispatch:
+    inputs:
+      image_for:
+        description: "Only regenerate the picture for this post slug"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -27,19 +32,23 @@ jobs:
       - run: npm ci
 
       - name: Write today's post
-        run: node scripts/daily-post.mjs
+        run: node scripts/daily-post.mjs ${IMAGE_FOR:+--image-for=$IMAGE_FOR}
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           SEGMIND_API_KEY: ${{ secrets.SEGMIND_API_KEY }}
+          IMAGE_FOR: ${{ inputs.image_for }}
 
       - name: Check the site still builds
         run: npx next build
 
       - name: Publish
+        env:
+          IMAGE_FOR: ${{ inputs.image_for }}
         run: |
           git config user.name "F21 Studio Bot"
           git config user.email "bot@f21studio.com"
-          git add content/blog public/blog
+          git add -A content/blog public/blog
           if git diff --cached --quiet; then echo "nothing new"; exit 0; fi
-          git commit -m "blog: daily AI note $(date -u +%F)"
+          if [ -n "$IMAGE_FOR" ]; then msg="blog: new picture for $IMAGE_FOR"; else msg="blog: daily AI note $(date -u +%F)"; fi
+          git commit -m "$msg"
           git push

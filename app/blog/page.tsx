@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
+import BlogCover from "../components/BlogCover";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import JsonLd from "../components/JsonLd";
@@ -51,12 +51,9 @@ export default function Blog() {
 
         {lead && (
           <Link href={`/blog/${lead.slug}`} className="group mt-16 grid md:grid-cols-[1.2fr_1fr] gap-8 items-center">
-            {lead.image && (
-              <div className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-white/5">
-                <Image src={lead.image} alt={lead.imageAlt} fill sizes="(min-width: 768px) 55vw, 100vw" priority
-                  className="object-cover group-hover:scale-[1.03] transition-transform duration-700" />
-              </div>
-            )}
+            <div className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-white/5">
+              <BlogCover post={lead} sizes="(min-width: 768px) 55vw, 100vw" priority className="group-hover:scale-[1.03] transition-transform duration-700" />
+            </div>
             <div>
               <p className="text-[11px] font-black uppercase tracking-[0.25em] text-[#737373]">
                 {formatDate(lead.date)} · {lead.readingMinutes} min read
@@ -73,11 +70,9 @@ export default function Blog() {
           <div className="mt-20 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {rest.map((p) => (
               <Link key={p.slug} href={`/blog/${p.slug}`} className="group rounded-2xl border border-white/5 bg-[#111] overflow-hidden hover:border-white/15 transition-colors">
-                {p.image && (
-                  <div className="relative aspect-[16/10]">
-                    <Image src={p.image} alt={p.imageAlt} fill sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover" />
-                  </div>
-                )}
+                <div className="relative aspect-[16/10]">
+                  <BlogCover post={p} sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" />
+                </div>
                 <div className="p-6">
                   <p className="text-[10px] font-black uppercase tracking-[0.25em] text-[#737373]">{formatDate(p.date)}</p>
                   <h3 className="mt-2 text-lg font-black text-[#fafafa] group-hover:text-[#c084fc] transition-colors leading-snug">{p.title}</h3>

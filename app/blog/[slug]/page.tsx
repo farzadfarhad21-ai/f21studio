@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
+import BlogCover from "../../components/BlogCover";
 import { notFound } from "next/navigation";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
@@ -86,14 +86,12 @@ export default function PostPage({ params }: Params) {
         <h1 className="mt-4 text-4xl md:text-5xl font-black text-[#fafafa] tracking-[-0.03em] leading-[1.05]">{p.title}</h1>
         <p className="mt-5 text-xl text-[#a3a3a3]">{p.description}</p>
 
-        {p.image && (
-          <figure className="mt-10">
-            <div className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-white/5">
-              <Image src={p.image} alt={p.imageAlt} fill priority sizes="(min-width: 768px) 768px, 100vw" className="object-cover" />
-            </div>
-            <figcaption className="mt-2 text-xs text-[#525252]">Illustration: F21 Studio</figcaption>
-          </figure>
-        )}
+        <figure className="mt-10">
+          <div className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-white/5">
+            <BlogCover post={p} sizes="(min-width: 768px) 768px, 100vw" priority />
+          </div>
+          {p.image && <figcaption className="mt-2 text-xs text-[#525252]">AI illustration: F21 Studio</figcaption>}
+        </figure>
 
         {p.takeaways.length > 0 && (
           <aside className="mt-10 rounded-xl border border-[#a855f7]/25 bg-[#a855f7]/[0.06] p-6">

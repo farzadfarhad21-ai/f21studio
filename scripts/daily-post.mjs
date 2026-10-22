@@ -4,7 +4,8 @@
 // 2. Claude picks the most useful, positive story for small business owners.
 // 3. Read the source article, Claude writes an original post in our voice.
 // 4. Generate an illustration, save content/blog/<slug>.json + public/blog/<slug>.jpg.
-// Env: ANTHROPIC_API_KEY (required), SEGMIND_API_KEY (optional, better images).
+// Env: ANTHROPIC_API_KEY (required), SEGMIND_API_KEY (optional; without it posts get a branded cover).
+// One-off: --image-for=<slug> regenerates the picture of an existing post.
 
 import fs from "node:fs";
 import path from "node:path";
@@ -184,33 +185,45 @@ Accuracy rules:
 
 // ---------- images ----------
 
-async function makeImage(prompt, file) {
+// Segmind only: free services watermark their images. If it fails the post
+// ships without a picture and the site draws a branded cover instead.
+async function makeImage(prompt, slug) {
+  if (!process.env.SEGMIND_API_KEY) {
+    log("SEGMIND_API_KEY not set; using the branded cover");
+    return undefined;
+  }
   const full = `${prompt}. Editorial photograph, natural light, shallow depth of field, cinematic, subtle purple accent tones, realistic, high detail. No text, no logos, no watermarks.`;
-  if (process.env.SEGMIND_API_KEY) {
-    try {
-      const res = await fetch("https://api.segmind.com/v1/flux-schnell", {
-        method: "POST",
-        signal: AbortSignal.timeout(90000),
-        headers: { "x-api-key": process.env.SEGMIND_API_KEY, "content-type": "application/json" },
-        body: JSON.stringify({ prompt: full, steps: 4, seed: Math.floor(Math.random() * 1e6), sampler: "euler", scheduler: "simple", width: 1216, height: 768, base64: false }),
-      });
-      if (!res.ok) throw new Error(`segmind ${res.status}`);
-      fs.writeFileSync(file, Buffer.from(await res.arrayBuffer()));
-      return true;
-    } catch (e) {
-      log(`segmind failed (${e.message}), trying pollinations`);
-    }
-  }
   try {
-    const url = `https://image.pollinations.ai/prompt/${encodeURIComponent(full)}?width=1216&height=768&nologo=true&seed=${Date.now() % 1e6}`;
-    const res = await fetch(url, { signal: AbortSignal.timeout(120000) });
-    if (!res.ok || !res.headers.get("content-type")?.startsWith("image/")) throw new Error(`pollinations ${res.status}`);
-    fs.writeFileSync(file, Buffer.from(await res.arrayBuffer()));
-    return true;
+    const res = await fetch("https://api.segmind.com/v1/flux-schnell", {
+      method: "POST",
+      signal: AbortSignal.timeout(90000),
+      headers: { "x-api-key": process.env.SEGMIND_API_KEY, "content-type": "application/json" },
+      body: JSON.stringify({ prompt: full, steps: 4, seed: Math.floor(Math.random() * 1e6), sampler: "euler", scheduler: "simple", width: 1216, height: 768, base64: false }),
+    });
+    if (!res.ok) throw new Error(`segmind ${res.status}: ${(await res.text()).slice(0, 200)}`);
+    // New file name each time so CDNs never serve an old picture.
+    const name = `${slug}-${Date.now().toString(36)}.jpg`;
+    fs.mkdirSync(IMAGES, { recursive: true });
+    fs.writeFileSync(path.join(IMAGES, name), Buffer.from(await res.arrayBuffer()));
+    return `/blog/${name}`;
   } catch (e) {
-    log(`image generation failed (${e.message}); posting without an image`);
-    return false;
+    log(`image generation failed (${e.message}); using the branded cover`);
+    return undefined;
   }
+}
+
+// --image-for=<slug>: regenerate the picture of an existing post and exit.
+const imageFor = process.argv.find((a) => a.startsWith("--image-for="))?.split("=")[1];
+if (imageFor) {
+  const file = path.join(POSTS, `${imageFor}.json`);
+  const existing = JSON.parse(fs.readFileSync(file, "utf8"));
+  const image = await makeImage(existing.imagePrompt || existing.imageAlt, existing.slug);
+  if (!image) throw new Error("could not generate a new image");
+  if (existing.image) fs.rmSync(path.join(ROOT, "public", existing.image), { force: true });
+  existing.image = image;
+  fs.writeFileSync(file, JSON.stringify(existing, null, 2) + "\n");
+  log(`new image for ${imageFor}: ${image}`);
+  process.exit(0);
 }
 
 // ---------- main ----------
@@ -289,6 +302,7 @@ const record = {
   date: today.toISOString(),
   tags: post.tags.slice(0, 5),
   imageAlt: post.imageAlt.trim(),
+  imagePrompt: post.imagePrompt.trim(),
   readingMinutes: Math.max(2, Math.round(words / 220)),
   blocks,
   takeaways: post.takeaways.slice(0, 3),
@@ -302,7 +316,7 @@ if (DRY) {
 }
 
 fs.mkdirSync(POSTS, { recursive: true });
-fs.mkdirSync(IMAGES, { recursive: true });
-if (await makeImage(post.imagePrompt, path.join(IMAGES, `${slug}.jpg`))) record.image = `/blog/${slug}.jpg`;
+const image = await makeImage(record.imagePrompt, slug);
+if (image) record.image = image;
 fs.writeFileSync(path.join(POSTS, `${slug}.json`), JSON.stringify(record, null, 2) + "\n");
 log(`published ${slug} (${words} words${record.image ? ", with image" : ""})`);
