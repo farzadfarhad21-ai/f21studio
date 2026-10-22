@@ -1,0 +1,132 @@
+{
+  "slug": "2026-10-22-anthropic-claude-duet-small-business-agent",
+  "title": "Anthropic's Claude Duet wants to be your small business sidekick",
+  "description": "Anthropic's new Claude Duet agent sends morning briefs, watches your apps and asks before big moves. Here's what it means for small business owners.",
+  "date": "2026-10-22T15:43:18.490Z",
+  "tags": [
+    "AI agents",
+    "Anthropic",
+    "Claude",
+    "Small business",
+    "Productivity"
+  ],
+  "imageAlt": "A café owner stands calmly behind the counter with a coffee and phone in the early morning while a staff member arranges pastries.",
+  "readingMinutes": 3,
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Anthropic has announced Claude Duet, an AI agent built specifically for professionals and small business owners. It's launching as a research preview, available as its own app on iOS and Android and inside Claude on the web, and it puts Anthropic up against Meta's Muse and OpenAI's Dots. The full write-up is over at [The Verge](https://www.theverge.com/ai-artificial-intelligence/1015843/anthropic-claude-duet-ai-agent)."
+    },
+    {
+      "type": "p",
+      "text": "The pitch is simple. Duet runs on Claude Opus 5.5, connects to the apps you already use, and behaves less like a chatbot you visit and more like an assistant that checks in with you."
+    },
+    {
+      "type": "h2",
+      "text": "What Duet actually does"
+    },
+    {
+      "type": "p",
+      "text": "Picture the owner of a dental clinic in Dubai Marina. Instead of opening email, the booking system and the team chat before her first coffee, she gets one short morning brief covering the most important items from her connected apps. Through the day, Duet keeps an eye on those apps and only messages her when something genuinely needs her."
+    },
+    {
+      "type": "p",
+      "text": "You can also hand it jobs. Anthropic describes a range from the dull, like scheduling meetings, to the ambitious: building dashboards across lots of tools, putting together financial or sales forecasts, prototyping, even building web apps. It borrows memory, skills and connected apps from your regular Claude setup, and it has its own virtual machine with a browser to do the work."
+    },
+    {
+      "type": "p",
+      "text": "That browser matters more than it sounds. It means Duet can click through websites the way a person would, rather than being stuck with whatever it can say in a chat window."
+    },
+    {
+      "type": "h2",
+      "text": "The safety bits are the interesting part"
+    },
+    {
+      "type": "p",
+      "text": "Any agent that acts on your behalf raises the obvious worry. What if it does something you didn't want? Anthropic's answer is that Duet messages you for approval before any big step, such as sending a payment or deleting something."
+    },
+    {
+      "type": "p",
+      "text": "There's also a dedicated classifier and safety system prompt designed to refuse requests to share the most sensitive tier of information, with credit card numbers given as the example. Good. That's exactly the kind of guardrail we'd want before letting anything near a business account."
+    },
+    {
+      "type": "p",
+      "text": "In related news, 1Password has introduced [1Password for Agents](https://www.theverge.com/ai-artificial-intelligence/1016399/1password-ai-agent-password-sign-in), which lets AI agents sign into your accounts without ever seeing your passwords. You still approve each sign-in request. Put the two together and you can see a sensible direction forming: agents do the legwork, humans keep the keys."
+    },
+    {
+      "type": "h2",
+      "text": "Honest limits, and who can use it"
+    },
+    {
+      "type": "p",
+      "text": "Anthropic is upfront that this is early. It says Duet \"still might misread a thread or miscalibrate what's urgent,\" and it isn't as strong yet at personal errands like booking tickets. We appreciate the candour. An assistant that pings you about nothing, or quietly misses the one email that mattered, is worse than no assistant at all."
+    },
+    {
+      "type": "p",
+      "text": "Access is the other catch. You join a waitlist, and you need to be a Pro or Max subscriber in the US. So if you run a bakery in Toronto or a consultancy in Dubai, you're watching from the sidelines for now."
+    },
+    {
+      "type": "h2",
+      "text": "What to do while you wait"
+    },
+    {
+      "type": "p",
+      "text": "Our view: the morning brief and the \"only message me when it matters\" idea are the genuinely useful parts for most small businesses. Building web apps is impressive, but most owners don't need that on a Tuesday. What they need is fewer tabs and fewer missed messages. Whether you end up using Duet or something else, the groundwork is the same."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "List the apps you check every morning, such as email, calendar, bookings, WhatsApp Business and accounting, and note what you're actually looking for in each.",
+        "Write down what \"urgent\" means in your business, like a patient cancelling within 24 hours or a buyer asking for a viewing. Any agent will need this spelled out.",
+        "Decide your approval lines now. Payments and deletions are obvious, but refunds or emails to key clients might deserve a human check too.",
+        "Tidy up access. If your passwords live in a spreadsheet, move them into a password manager before any agent goes near your accounts.",
+        "Pick one repetitive admin task, like scheduling, to test first rather than handing over everything at once."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "If you're outside the US or need something shaped around your own tools, it's also possible to build a focused assistant today. That's the sort of thing we do with [custom AI agents](https://www.f21studio.com/services/custom-ai-agents), usually starting with one narrow job done well."
+    },
+    {
+      "type": "p",
+      "text": "A two-person real-estate team doesn't really need an AI that builds dashboards. They need one that notices the buyer who replied at 11pm and makes sure someone answers before the competition does. If Duet nails that quieter job, it'll earn its place. We'll be watching how the preview goes."
+    }
+  ],
+  "takeaways": [
+    "Anthropic has launched Claude Duet, an AI agent for professionals and small business owners that sends a morning brief and flags only what needs your attention.",
+    "It asks for your approval before big actions like payments or deletions, and Anthropic admits it can still misjudge what's urgent.",
+    "For now it's a waitlisted research preview for US Pro and Max subscribers, so the smart move is to prepare your apps, rules and passwords now."
+  ],
+  "faq": [
+    {
+      "q": "Can I use Claude Duet if my business isn't in the US?",
+      "a": "Not yet. Right now it's a waitlisted research preview for Pro and Max subscribers in the US, so businesses elsewhere will have to wait."
+    },
+    {
+      "q": "Will Claude Duet make payments or delete files without asking me?",
+      "a": "According to Anthropic, Duet messages you for approval before any big step, such as sending a payment or deleting something. It also has a safety system designed to refuse sharing highly sensitive data like credit card numbers."
+    },
+    {
+      "q": "Is Claude Duet reliable enough to run my daily admin?",
+      "a": "Anthropic calls it an early version and admits it might misread a thread or misjudge what's urgent. It's worth testing on low-stakes tasks first rather than relying on it fully."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Anthropic takes on Muse with Claude Duet, its new AI agent",
+      "publisher": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1015843/anthropic-claude-duet-ai-agent"
+    },
+    {
+      "title": "Claude Duet app is Anthropic's bet on agents",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/22/claude-duet-app-is-anthropics-bet-on-agents/"
+    },
+    {
+      "title": "1Password lets AI agents use your passwords without seeing them",
+      "publisher": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1016399/1password-ai-agent-password-sign-in"
+    }
+  ],
+  "image": "/blog/2026-10-22-anthropic-claude-duet-small-business-agent.jpg"
+}
