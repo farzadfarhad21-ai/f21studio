@@ -7,6 +7,7 @@ import Services from "./components/Services";
 import Work from "./components/Work";
 import About from "./components/About";
 import HomeFAQ from "./components/HomeFAQ";
+import LatestPosts from "./components/LatestPosts";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
@@ -21,6 +22,7 @@ export default function Home() {
       <CinematicScroll />
       <Process />
       <About />
+      <LatestPosts />
       <HomeFAQ />
       <Contact />
       <Footer />

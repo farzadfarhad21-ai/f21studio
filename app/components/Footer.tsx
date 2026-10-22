@@ -15,6 +15,7 @@ export default function Footer() {
           <p className="mt-4 text-sm text-[#737373] max-w-[38ch]">
             AI agency in Dubai building websites, content automation, SEO and AI agents for small businesses worldwide.
           </p>
+          <Link href="/blog" className="mt-4 block text-sm font-black text-[#c084fc]">Daily AI notes →</Link>
           <a href={site.whatsapp} target="_blank" rel="noopener noreferrer" className="mt-4 inline-block text-sm font-black text-[#25d366]">
             WhatsApp us →
           </a>
