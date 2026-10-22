@@ -14,6 +14,7 @@ export type Post = {
   image?: string;
   imageAlt: string;
   imagePrompt?: string;
+  video?: { id: string; title: string; channel: string };
   readingMinutes: number;
   blocks: Block[];
   takeaways: string[];

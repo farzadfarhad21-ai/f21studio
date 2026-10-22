@@ -7,7 +7,8 @@ import Footer from "../../components/Footer";
 import JsonLd from "../../components/JsonLd";
 import PageCTA from "../../components/PageCTA";
 import RichText from "../../components/RichText";
-import { getAllPosts, getPost, formatDate } from "@/lib/blog";
+import YouTubeEmbed from "../../components/YouTubeEmbed";
+import { getAllPosts, getPost, formatDate, type Block } from "@/lib/blog";
 import { site } from "@/lib/site";
 
 type Params = { params: { slug: string } };
@@ -105,17 +106,12 @@ export default function PostPage({ params }: Params) {
         )}
 
         <div className="mt-10 space-y-6 text-[17px] leading-[1.8] text-[#d4d4d4]">
-          {p.blocks.map((b, i) => {
-            if (b.type === "h2") return <h2 key={i} className="pt-6 text-2xl font-black text-[#fafafa] tracking-[-0.02em]">{b.text}</h2>;
-            if (b.type === "quote")
-              return <blockquote key={i} className="border-l-2 border-[#a855f7] pl-5 italic text-[#e5e5e5]"><RichText text={b.text} /></blockquote>;
-            if (b.type === "ul")
-              return (
-                <ul key={i} className="list-disc pl-6 space-y-2 marker:text-[#a855f7]">
-                  {b.items.map((it, j) => <li key={j}><RichText text={it} /></li>)}
-                </ul>
-              );
-            return <p key={i} style={{ maxWidth: "none" }}><RichText text={b.text} /></p>;
+          {p.blocks.flatMap((b, i) => {
+            // The video sits right before the first section heading.
+            const video = p.video && i > 0 && b.type === "h2" && p.blocks.findIndex((x) => x.type === "h2") === i
+              ? [<YouTubeEmbed key="video" {...p.video} />]
+              : [];
+            return [...video, block(b, i)];
           })}
         </div>
 
@@ -168,4 +164,17 @@ export default function PostPage({ params }: Params) {
       <Footer />
     </main>
   );
+}
+
+function block(b: Block, i: number) {
+  if (b.type === "h2") return <h2 key={i} className="pt-6 text-2xl font-black text-[#fafafa] tracking-[-0.02em]">{b.text}</h2>;
+  if (b.type === "quote")
+    return <blockquote key={i} className="border-l-2 border-[#a855f7] pl-5 italic text-[#e5e5e5]"><RichText text={b.text} /></blockquote>;
+  if (b.type === "ul")
+    return (
+      <ul key={i} className="list-disc pl-6 space-y-2 marker:text-[#a855f7]">
+        {b.items.map((it, j) => <li key={j}><RichText text={it} /></li>)}
+      </ul>
+    );
+  return <p key={i} style={{ maxWidth: "none" }}><RichText text={b.text} /></p>;
 }

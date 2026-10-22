@@ -9,6 +9,10 @@ on:
         description: "Only regenerate the picture for this post slug"
         required: false
         default: ""
+      video_for:
+        description: "Only add a YouTube video to this post slug"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -32,11 +36,12 @@ jobs:
       - run: npm ci
 
       - name: Write today's post
-        run: node scripts/daily-post.mjs ${IMAGE_FOR:+--image-for=$IMAGE_FOR}
+        run: node scripts/daily-post.mjs ${IMAGE_FOR:+--image-for=$IMAGE_FOR} ${VIDEO_FOR:+--video-for=$VIDEO_FOR}
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           SEGMIND_API_KEY: ${{ secrets.SEGMIND_API_KEY }}
           IMAGE_FOR: ${{ inputs.image_for }}
+          VIDEO_FOR: ${{ inputs.video_for }}
 
       - name: Check the site still builds
         run: npx next build
@@ -44,11 +49,12 @@ jobs:
       - name: Publish
         env:
           IMAGE_FOR: ${{ inputs.image_for }}
+          VIDEO_FOR: ${{ inputs.video_for }}
         run: |
           git config user.name "F21 Studio Bot"
           git config user.email "bot@f21studio.com"
           git add -A content/blog public/blog
           if git diff --cached --quiet; then echo "nothing new"; exit 0; fi
-          if [ -n "$IMAGE_FOR" ]; then msg="blog: new picture for $IMAGE_FOR"; else msg="blog: daily AI note $(date -u +%F)"; fi
+          if [ -n "$IMAGE_FOR$VIDEO_FOR" ]; then msg="blog: update $IMAGE_FOR$VIDEO_FOR"; else msg="blog: daily AI note $(date -u +%F)"; fi
           git commit -m "$msg"
           git push
