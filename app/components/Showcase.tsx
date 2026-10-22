@@ -23,14 +23,15 @@ type Project = {
 const projects: Project[] = [
   {
     name: "PulseAI",
-    tag: "AI Web App",
+    tag: "AI Fitness Platform",
     gradient: "from-[#0d1a06] via-[#0a120a] to-[#0a0a0a]",
     accent: "bg-lime-500/20 text-lime-300",
     brandColor: "#a3e635",
     brandSubColor: "#3d5c10",
-    brandLabel: "AI Workout Coach",
-    description: "AI-powered workout plan generator — personalized weekly training plans with exercise videos and muscle diagrams.",
-    tags: ["AI", "Next.js", "Claude API"],
+    brandLabel: "AI Coach · Marketplace · EN/FA",
+    description:
+      "A full bilingual fitness platform, not just a generator. Claude-powered personalized weekly training plans, a 300+ exercise library with videos and an interactive body map, and a complete coach marketplace — public coach directory, client request flow, and a 3-step program builder with 5 training methodologies. Fully bilingual English/Persian with RTL support, secured by Supabase auth.",
+    tags: ["Claude API", "Coach Marketplace", "300+ Exercise Library", "EN/FA Bilingual", "Supabase"],
     href: "https://pulseai-alpha-eight.vercel.app",
     live: true,
   },
@@ -45,6 +46,32 @@ const projects: Project[] = [
     description: "End-to-end digital practice for a Persian-speaking psychologist serving the Iranian diaspora. Persian RTL site + dedicated /parents hub targeting adult children of aging parents (logotherapy specialty), 11 SEO-optimized articles, daily AI blog automation, PageSpeed 100, Instagram pipeline with ElevenLabs voice cloning + Kling AI video, Telegram channel, Dubai landing page. Booking funnel converts at 4×, fully automated content engine runs 24/7.",
     tags: ["معنادرمانی Niche", "PageSpeed 100", "Voice Clone", "Kling AI Video", "WCAG AA+", "11 Articles"],
     href: "https://rahiltherapy.com",
+    live: true,
+  },
+  {
+    name: "Deepdive",
+    tag: "AI Research Analyst",
+    gradient: "from-[#06101a] via-[#080e14] to-[#0a0a0a]",
+    accent: "bg-sky-500/20 text-sky-300",
+    brandColor: "#57a0e5",
+    brandSubColor: "#1a3a5c",
+    brandLabel: "Private Intelligence Desk",
+    description:
+      "A private AI research analyst that watches any topic while you sleep. Dual-lane search (AI analyst queries + your own keywords), independence scoring on every source, full-text offline archive, autonomous scheduled updates that red-team their own thesis with bull/bear stress-tests, decision briefs with tripwires, and live market-data overlays with divergence alerts.",
+    tags: ["Claude API", "Autonomous Agents", "Python", "Offline Archive"],
+    live: true,
+  },
+  {
+    name: "HyperLiquid Bot",
+    tag: "Algorithmic Trading",
+    gradient: "from-[#06140d] via-[#08100c] to-[#0a0a0a]",
+    accent: "bg-emerald-500/20 text-emerald-300",
+    brandColor: "#34d399",
+    brandSubColor: "#0f5c3a",
+    brandLabel: "Crypto Scalping · Live Mainnet",
+    description:
+      "Fully automated crypto scalping bot trading live on HyperLiquid perpetuals. Every 60 seconds it scans the top-10 coins by volume, computes 5 technical indicators, filters signals against live news sentiment and whale activity, then executes with automatic stop-loss and take-profit — every trade logged, risk capped by design.",
+    tags: ["Python", "Trading Algorithms", "Risk Management", "News + Whale Filters"],
     live: true,
   },
   {
@@ -219,7 +246,7 @@ export default function Showcase() {
         </div>
 
         <p className="text-center text-[#3f3f3f] text-xs mt-8 tracking-wide font-black uppercase">
-          Rahil Therapy is a live client · PulseAI is a live product · Others are spec projects
+          Rahil Therapy is a live client · PulseAI, Deepdive &amp; HyperLiquid Bot are live products · Others are spec projects
         </p>
       </div>
     </section>

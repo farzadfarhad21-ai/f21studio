@@ -4,41 +4,20 @@ import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { services } from "@/lib/services";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const services = [
-  {
-    icon: "🌐",
-    title: "Luxury Cinematic Websites",
-    desc: "High-end, performance-first websites with cinematic design, smooth animations, and flawless UX.",
-    price: "$1,500–$5,000",
-  },
-  {
-    icon: "✨",
-    title: "AI Visual Content",
-    desc: "Stunning AI-generated imagery, graphics, and brand visuals that stop the scroll.",
-    price: "$300–$1,500",
-  },
-  {
-    icon: "🎬",
-    title: "AI Video Ads",
-    desc: "Conversion-optimised video ads powered by AI — fast, scalable, and on-brand.",
-    price: "$500–$2,500",
-  },
-  {
-    icon: "🎨",
-    title: "Branding & Logo",
-    desc: "Complete brand identity systems: logo, colour palette, typography, and usage guidelines.",
-    price: "$400–$2,000",
-  },
-  {
-    icon: "🤖",
-    title: "Business AI Automation",
-    desc: "Automate repetitive workflows, customer service, and lead generation with intelligent AI.",
-    price: "$500–$5,000",
-  },
-];
+const icons: Record<string, string> = {
+  "ai-growth-system": "🚀",
+  "cinematic-websites": "🌐",
+  "ai-content-automation": "🤖",
+  "seo-growth-setup": "📈",
+  "custom-ai-agents": "🧠",
+  "ai-video-ads": "🎬",
+  "ai-visual-content": "✨",
+};
 
 export default function Services() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -97,23 +76,36 @@ export default function Services() {
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {services.map((s) => (
-            <div
-              key={s.title}
-              className="service-card group bg-[#141414] border border-[#1f1f1f] rounded-2xl p-8 flex flex-col gap-4 hover:border-[#a855f7]/50 hover:-translate-y-1 hover:shadow-[0_8px_40px_rgba(168,85,247,0.12)] transition-all duration-300 cursor-default"
+            <Link
+              href={`/services/${s.slug}`}
+              key={s.slug}
+              className={`service-card group rounded-2xl p-8 flex flex-col gap-4 hover:-translate-y-1 transition-all duration-300 ${
+                s.featured
+                  ? "bg-[#1a0d2e] border border-[#a855f7]/40 hover:border-[#a855f7] hover:shadow-[0_8px_60px_rgba(168,85,247,0.25)] sm:col-span-2 lg:col-span-3"
+                  : "bg-[#141414] border border-[#1f1f1f] hover:border-[#a855f7]/50 hover:shadow-[0_8px_40px_rgba(168,85,247,0.12)]"
+              }`}
             >
-              <span className="text-4xl">{s.icon}</span>
-              <h3 className="text-[#fafafa] font-black text-lg leading-snug uppercase tracking-[-0.01em]">
+              {s.featured && (
+                <span className="self-start text-[10px] font-black tracking-[0.3em] uppercase text-[#a855f7] bg-[#a855f7]/10 px-3 py-1 rounded-full">
+                  ★ Flagship Service
+                </span>
+              )}
+              <span className="text-4xl">{icons[s.slug]}</span>
+              <h3 className={`font-black text-lg leading-snug uppercase tracking-[-0.01em] ${s.featured ? "text-white text-xl" : "text-[#fafafa]"}`}>
                 {s.title}
               </h3>
               <p className="text-[#737373] text-sm leading-relaxed flex-1">
-                {s.desc}
+                {s.answer}
               </p>
-              <div className="pt-4 border-t border-[#1f1f1f]">
+              <div className="pt-4 border-t border-[#1f1f1f] flex items-center justify-between">
                 <span className="text-[#a855f7] font-black text-sm tracking-wide">
                   {s.price}
                 </span>
+                <span className="text-[#525252] group-hover:text-[#fafafa] text-xs font-black uppercase tracking-[0.15em] transition-colors">
+                  Details →
+                </span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

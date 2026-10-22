@@ -1,11 +1,12 @@
 import CursorGlow from "./components/CursorGlow";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
+import MissionControl from "./components/MissionControl";
 import CinematicScroll from "./components/CinematicScroll";
 import Process from "./components/Process";
 import Services from "./components/Services";
-import Showcase from "./components/Showcase";
+import Work from "./components/Work";
 import About from "./components/About";
+import HomeFAQ from "./components/HomeFAQ";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
@@ -14,12 +15,13 @@ export default function Home() {
     <main className="bg-[#0a0a0a] min-h-screen">
       <CursorGlow />
       <Navbar />
-      <CinematicScroll />
-      <Hero />
-      <Process />
+      <MissionControl />
+      <Work />
       <Services />
-      <Showcase />
+      <CinematicScroll />
+      <Process />
       <About />
+      <HomeFAQ />
       <Contact />
       <Footer />
     </main>

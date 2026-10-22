@@ -30,8 +30,12 @@ export default function Contact() {
     { scope: containerRef }
   );
 
-  function handleSubmit(e: React.FormEvent) {
+  // No backend yet: hand the message to WhatsApp so no lead is lost.
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const f = new FormData(e.currentTarget);
+    const text = `Hi F21 Studio, I'm ${f.get("name")} (${f.get("email")}).\n\n${f.get("message")}`;
+    window.open(`https://wa.me/971508082955?text=${encodeURIComponent(text)}`, "_blank", "noopener");
     setSent(true);
   }
 
@@ -89,10 +93,10 @@ export default function Contact() {
         {sent ? (
           <div className="bg-[#141414] border border-[#a855f7]/30 rounded-2xl p-12 text-center">
             <p className="text-[#a855f7] font-black text-lg uppercase tracking-wide">
-              Message sent!
+              Opening WhatsApp…
             </p>
             <p className="text-[#737373] mt-2 text-sm">
-              We&apos;ll be in touch within 24 hours.
+              Press send in WhatsApp and we&apos;ll reply within 24 hours.
             </p>
           </div>
         ) : (
@@ -106,6 +110,7 @@ export default function Contact() {
               </label>
               <input
                 type="text"
+                name="name"
                 required
                 placeholder="Your name"
                 className="w-full bg-[#0a0a0a] border border-[#1f1f1f] focus:border-[#a855f7]/60 rounded-lg px-4 py-3 text-[#fafafa] text-sm outline-none transition-colors duration-200 placeholder:text-[#3f3f3f]"
@@ -117,6 +122,7 @@ export default function Contact() {
               </label>
               <input
                 type="email"
+                name="email"
                 required
                 placeholder="your@email.com"
                 className="w-full bg-[#0a0a0a] border border-[#1f1f1f] focus:border-[#a855f7]/60 rounded-lg px-4 py-3 text-[#fafafa] text-sm outline-none transition-colors duration-200 placeholder:text-[#3f3f3f]"
@@ -127,6 +133,7 @@ export default function Contact() {
                 Message
               </label>
               <textarea
+                name="message"
                 required
                 rows={5}
                 placeholder="Tell us about your project..."
@@ -137,7 +144,7 @@ export default function Contact() {
               type="submit"
               className="w-full py-4 bg-[#a855f7] hover:bg-[#c084fc] active:scale-95 text-white font-black text-sm uppercase tracking-[0.07em] transition-all duration-200"
             >
-              Send Message →
+              Send via WhatsApp →
             </button>
           </form>
         )}

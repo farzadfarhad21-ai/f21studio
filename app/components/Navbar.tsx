@@ -1,12 +1,13 @@
 "use client";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const links = [
-  { label: "Services", href: "#services" },
-  { label: "Work", href: "#work" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Services", href: "/#services" },
+  { label: "Work", href: "/#work" },
+  { label: "About", href: "/#about" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -29,10 +30,10 @@ export default function Navbar() {
           : "bg-transparent border-b border-white/5"
       }`}
     >
-      <span className="font-black text-lg tracking-[0.15em] uppercase">
+      <Link href="/" aria-label="F21 Studio home" className="font-black text-lg tracking-[0.15em] uppercase">
         <span className="text-[#a855f7]">F21</span>
         <span className="text-[#fafafa]"> STUDIO</span>
-      </span>
+      </Link>
       <ul className="hidden md:flex items-center gap-8">
         {links.map(({ label, href }) => (
           <li key={label}>
@@ -45,6 +46,12 @@ export default function Navbar() {
           </li>
         ))}
       </ul>
+      <a
+        href="/#contact"
+        className="px-4 py-2 bg-[#a855f7] hover:bg-[#c084fc] text-white text-[11px] font-black uppercase tracking-[0.1em] transition-colors"
+      >
+        Get a quote
+      </a>
     </motion.nav>
   );
 }
