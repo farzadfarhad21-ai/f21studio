@@ -262,10 +262,9 @@ if (videoFor) {
   const file = path.join(POSTS, `${videoFor}.json`);
   const existing = JSON.parse(fs.readFileSync(file, "utf8"));
   const video = await findVideo(existing.title, existing.sources[0]?.url);
-  if (video) {
-    existing.video = video;
-    fs.writeFileSync(file, JSON.stringify(existing, null, 2) + "\n");
-  }
+  if (video) existing.video = video;
+  else delete existing.video;
+  fs.writeFileSync(file, JSON.stringify(existing, null, 2) + "\n");
   process.exit(0);
 }
 
