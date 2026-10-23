@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     q: "Can you build Persian (Farsi) or bilingual websites?",
-    a: "Yes. We build right-to-left Persian sites and English/Persian bilingual sites, including Rahil Therapy and PulseAI.",
+    a: "Yes. We build right-to-left Persian sites and English/Persian bilingual sites, including Rahil Therapy and Training Matrix.",
   },
   {
     q: "How fast can you launch?",

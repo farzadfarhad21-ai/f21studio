@@ -69,7 +69,7 @@ export const services: Service[] = [
       },
       {
         q: "Can you build Persian or bilingual websites?",
-        a: "Yes. We build full right-to-left Persian sites and English/Persian bilingual sites, like Rahil Therapy and PulseAI.",
+        a: "Yes. We build full right-to-left Persian sites and English/Persian bilingual sites, like Rahil Therapy and Training Matrix.",
       },
     ],
   },

@@ -80,14 +80,14 @@ function Demo({ p, active }: { p: Project; active: boolean }) {
           ))}
         </div>
       );
-    case "pulseai":
+    case "training-matrix":
       return (
         <div className="flex items-end gap-2 h-40">
           {["M", "T", "W", "T", "F", "S", "S"].map((d, i) => {
             const h = [70, 40, 85, 0, 60, 90, 0][(i + n) % 7];
             return (
               <div key={i} className="flex-1 flex flex-col items-center gap-1 h-full justify-end">
-                <div className="w-full rounded-sm bg-[#a3e635] transition-all duration-700" style={{ height: `${h}%`, opacity: h ? 0.85 : 0.1 }} />
+                <div className="w-full rounded-sm bg-[#e8ff47] transition-all duration-700" style={{ height: `${h}%`, opacity: h ? 0.85 : 0.1 }} />
                 <span className="text-[9px] text-[#525252] font-black">{d}</span>
               </div>
             );

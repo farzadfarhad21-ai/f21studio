@@ -53,6 +53,42 @@ export const projects: Project[] = [
     services: ["ai-growth-system", "ai-content-automation", "seo-growth-setup"],
   },
   {
+    slug: "training-matrix",
+    name: "Training Matrix",
+    category: "Website + AI Client App · Sold",
+    tagline:
+      "We built a full AI fitness platform, then sold it to a Dubai personal trainer as his branded website and private client app, in English and Persian.",
+    color: "#e8ff47",
+    status: "Live client",
+    href: "https://trainingmatrixdubai.com",
+    log: "AI plan drafted for Ramin's review · training matrix",
+    size: "tall",
+    metrics: [
+      { label: "Delivered", value: "Site + client app" },
+      { label: "Languages", value: "EN / FA" },
+      { label: "Website pages", value: "22" },
+      { label: "Exercise videos", value: "200+" },
+    ],
+    challenge:
+      "Ramin is an Active IQ Level 3 personal trainer coaching across Dubai in English and Persian. He needed a way to win new clients online and keep existing ones on track between sessions, without paying for a big agency or juggling five different apps.",
+    solution: [
+      "A bilingual public website at trainingmatrixdubai.com, fully right-to-left in Persian: coach profile, programs and prices, training guides and Dubai area pages, all built to rank on Google in both languages.",
+      "A one-minute \"find your fit\" assessment that opens WhatsApp with the visitor's answers already filled in, so every lead arrives with context and Ramin can reply in seconds.",
+      "A free first session offer front and centre, with packages from AED 2,000 shown clearly, and analytics that only run with the visitor's consent.",
+      "Our own AI fitness platform, PulseAI, rebranded and handed over as Ramin's private client app at app.trainingmatrixdubai.com: his logo and colours, Ramin as the only coach, invite-only access for his active clients.",
+      "Claude drafts each client's weekly plan from their real training history; Ramin reviews it, edits it or assigns his own program. Clients get 200+ exercise videos with an interactive body map.",
+      "One-tap \"I did it\" workout logging with an effort rating and a weekly AI recap, so Ramin sees how every client is actually training, not just whether they showed up.",
+    ],
+    results: [
+      "A product we built in-house became a sold, fully branded platform for a real Dubai business.",
+      "Ramin runs his website, bookings and client coaching from one connected system, in two languages.",
+      "Leads arrive on WhatsApp with their goals and experience already written out.",
+      "Clients stay accountable between sessions, and Ramin's coaching scales without more hours in the day.",
+    ],
+    stack: ["Next.js", "Supabase", "Claude API", "Vercel", "WhatsApp", "EN / FA (RTL)"],
+    services: ["cinematic-websites", "custom-ai-agents", "seo-growth-setup", "ai-growth-system"],
+  },
+  {
     slug: "khodro-dubai",
     name: "Khodro Dubai",
     category: "AI Growth System · Automotive",
@@ -111,37 +147,6 @@ export const projects: Project[] = [
     ],
     stack: ["Python", "SQLite", "Browser extension", "Claude API"],
     services: ["custom-ai-agents"],
-  },
-  {
-    slug: "pulseai",
-    name: "PulseAI",
-    category: "AI Fitness Platform",
-    tagline:
-      "A bilingual English/Persian fitness platform with AI training plans, a 200+ video exercise library and a coach marketplace.",
-    color: "#a3e635",
-    status: "Live product",
-    href: "https://pulseai-alpha-eight.vercel.app",
-    log: "Generated 4-day hypertrophy plan · pulseai",
-    size: "tall",
-    metrics: [
-      { label: "Exercise videos", value: "200+" },
-      { label: "Languages", value: "EN / FA" },
-      { label: "Program builder", value: "3 steps" },
-    ],
-    challenge:
-      "Most workout apps give generic plans, ignore Persian speakers, and leave real coaches out of the picture.",
-    solution: [
-      "Claude-powered weekly plans built from each user's profile, goals and equipment.",
-      "An exercise library with videos, an interactive body map and English/Persian filters.",
-      "A coach marketplace: public coach profiles, client requests and a 3-step program builder.",
-      "Full right-to-left Persian support and secure accounts with Supabase.",
-    ],
-    results: [
-      "A complete product — from sign-up to coach-assigned program — live on the web.",
-      "Bilingual from day one, opening a market most competitors ignore.",
-    ],
-    stack: ["Next.js", "Supabase", "Claude API", "Tailwind", "Framer Motion"],
-    services: ["cinematic-websites", "custom-ai-agents"],
   },
   {
     slug: "deepdive",
@@ -223,7 +228,7 @@ export const projects: Project[] = [
     ],
     results: [
       "End-to-end video generation working live.",
-      "Used to create the exercise videos for PulseAI.",
+      "Used to create the exercise videos in the Training Matrix client app.",
     ],
     stack: ["n8n", "Claude API", "Kling", "Telegram", "Google Drive"],
     services: ["ai-video-ads", "ai-visual-content", "ai-content-automation"],
@@ -237,7 +242,7 @@ export const projects: Project[] = [
     color: "#c084fc",
     status: "Internal system",
     log: "Agents shipped 3 commits · ruflow",
-    size: "sm",
+    size: "wide",
     metrics: [
       { label: "Typical build", value: "Days" },
       { label: "Memory", value: "Per project" },

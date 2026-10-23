@@ -143,7 +143,7 @@ export default function MissionControl() {
           <motion.ul custom={4} variants={fadeUp} initial="hidden" animate="show"
             className="flex flex-wrap gap-x-6 gap-y-2 text-[11px] font-black uppercase tracking-[0.15em] text-[#525252]">
             <li><span className="text-[#fafafa]">SEO 62 → 92</span> · Rahil Therapy</li>
-            <li><span className="text-[#fafafa]">Daily</span> auto-publishing</li>
+            <li><span className="text-[#fafafa]">Built &amp; sold</span> · Training Matrix</li>
             <li><span className="text-[#fafafa]">EN / FA</span> bilingual builds</li>
           </motion.ul>
         </div>
