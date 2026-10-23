@@ -1,0 +1,124 @@
+{
+  "slug": "2026-10-23-canva-craft-image-model-small-business",
+  "title": "Canva's new image model is built for menus, posters and posts",
+  "description": "Canva Craft, the design platform's first in-house image model, plans layouts before drawing them. Here's what it means for small business marketing.",
+  "date": "2026-10-23T09:06:27.433Z",
+  "tags": [
+    "Canva",
+    "AI image generation",
+    "Design tools",
+    "Small business marketing"
+  ],
+  "imageAlt": "A bakery owner at her counter arranging paper cut-outs and pastry photos into a rough poster layout, with fresh bread and croissants behind her.",
+  "imagePrompt": "A warm, sunlit neighbourhood bakery in the morning. The owner, a woman in a flour-dusted apron, stands at the wooden counter sketching a rough poster layout on paper with a pencil, arranging cut-out paper shapes and a few photos of pastries around it. Trays of fresh croissants and loaves sit in the background, soft natural light, editorial photography style, shallow depth of field.",
+  "readingMinutes": 4,
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Canva has released its own image generation model, called Canva Craft. Until now the design platform relied on a mix of outside models to power its AI features. This one was built in-house by its research team, with help from researchers who joined through Leonardo.ai, which Canva bought in 2024. According to [TechCrunch's report on the launch](https://techcrunch.com/2026/10/22/canva-releases-its-first-image-generation-model/), it's available to every Canva user from the Dream Lab tab."
+    },
+    {
+      "type": "p",
+      "text": "Another AI image tool isn't news on its own. What caught our eye is how Canva trained it. Instead of learning from photographs, Craft learned from human-designed templates in Canva's library: posters, social posts, presentations, infographics, menus and text-heavy layouts. In other words, the exact things most small businesses actually make every week."
+    },
+    {
+      "type": "h2",
+      "text": "Why planning before drawing matters"
+    },
+    {
+      "type": "p",
+      "text": "Picture a bakery in Toronto that needs a weekly specials poster. Ask most image generators for that and you'll get something pretty with a headline that reads like a spelling test gone wrong. Prices melt, letters merge, and you end up rebuilding it by hand anyway."
+    },
+    {
+      "type": "p",
+      "text": "Craft works in two stages. First it reads your prompt and draws up a plan: where each element sits, how big things are relative to each other, what should grab attention first, and what text needs to appear. Only then does it generate the image, at up to 2K resolution and in any of 30 aspect ratios for different platforms. Canva says this approach brings \"greater precision, consistency and control,\" as [The Verge reported](https://www.theverge.com/ai-artificial-intelligence/1017151/canva-craft-in-house-ai-model)."
+    },
+    {
+      "type": "p",
+      "text": "The practical promise is readable text, accurate details on objects, and the ability to change one part of an image without the rest shifting around. That last point is a big deal. Anyone who has asked an AI tool to fix one word and watched it redraw the whole scene knows the pain."
+    },
+    {
+      "type": "h2",
+      "text": "The layered design feature is the quiet winner"
+    },
+    {
+      "type": "p",
+      "text": "Here's the bit we think matters most for owners. Images made with Craft can be converted into layered designs using Canva Magic, the company's image-to-design tool. So the output isn't a flat picture you're stuck with. You can pull it apart, move the headline, swap a price, or replace a photo."
+    },
+    {
+      "type": "p",
+      "text": "Think of a dental clinic in Dubai Marina running a monthly teeth-whitening offer. Generate the promo once, turn it into an editable design, and next month you just change the dates and the offer. That's a template you'll actually reuse, not a one-off image you have to regenerate and hope it comes out the same."
+    },
+    {
+      "type": "p",
+      "text": "A fair word of caution. The claims about text accuracy and precise edits come from Canva, and we'd treat them as promises until they hold up on real client work. If you publish in more than one language, test carefully before trusting it with anything customer-facing. And proofread every single word. A wrong phone number on a flyer costs more than the minutes you saved."
+    },
+    {
+      "type": "h2",
+      "text": "Something to try this week"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Pick one piece you make over and over, like a weekly menu board, an open-house flyer or a holiday opening-hours post.",
+        "Write your prompt like a brief to a designer: what goes where, what should be biggest, and the exact text you want, word for word.",
+        "Generate it in the sizes you really use, say an Instagram post, a story and a printable A4, rather than resizing later.",
+        "Test a small edit on one part only, such as changing the price, and check whether the rest of the design stays put.",
+        "Convert the best result into a layered design and save it as your template for next time.",
+        "Proofread names, prices, dates and contact details before anything goes live."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Where this is heading"
+    },
+    {
+      "type": "p",
+      "text": "Canva isn't keeping Craft inside its own app. The model will also be offered through the Canva API, and the company plans to support image generation inside third-party chatbots like ChatGPT and Gemini through its MCP connection. That points to a near future where you ask your chat assistant for this week's poster and get back something you can edit in Canva."
+    },
+    {
+      "type": "p",
+      "text": "Canva says two cheaper, faster versions of the model are also coming soon. Running its own model gives the company more control over cost, quality and speed, which tends to mean better features reaching ordinary users rather than just big accounts. For a two-person real-estate team or a small online shop, that's the kind of change that adds up."
+    },
+    {
+      "type": "p",
+      "text": "If you'd rather have this wired into a regular content routine than fiddle with prompts every Monday, that's the sort of thing we set up through our [AI Content Automation](https://www.f21studio.com/services/ai-content-automation) work. But honestly, start by trying it yourself on one template. You'll learn quickly what it's good at."
+    },
+    {
+      "type": "p",
+      "text": "Our take: this is one of the more useful AI launches for small businesses this year, simply because it's aimed at the boring, everyday designs that eat your time. Give it your least favourite weekly task and see if it earns a place in your routine."
+    }
+  ],
+  "takeaways": [
+    "Canva has launched Canva Craft, its first in-house image model, and it's open to all users through the Dream Lab tab.",
+    "Unlike most image tools, it was trained on human-made designs like menus, posters and social posts, and it plans the layout before generating, which Canva says gives cleaner text and more precise edits.",
+    "Generated images can be turned into editable, layered designs, so a single good result can become a reusable template for your weekly marketing."
+  ],
+  "faq": [
+    {
+      "q": "Is Canva Craft available on my Canva account?",
+      "a": "Canva says the model is available to all users through the Dream Lab tab. The launch reports don't spell out usage limits per plan, so check what your account allows."
+    },
+    {
+      "q": "Can Canva's AI create images with readable text for menus and posters?",
+      "a": "That's the main promise. Canva says its plan-first approach is built for legible text and accurate details, and it was trained on real designs like menus and posters. Still proofread everything before you publish."
+    },
+    {
+      "q": "Can I use Canva Craft inside ChatGPT or Gemini?",
+      "a": "Not yet, but Canva says it plans to support image generation in chatbots like ChatGPT and Gemini through its MCP. The model will also be available to developers through the Canva API."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Canva releases its first image generation model",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/22/canva-releases-its-first-image-generation-model/"
+    },
+    {
+      "title": "Canva’s first AI image model plans designs before generating them",
+      "publisher": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1017151/canva-craft-in-house-ai-model"
+    }
+  ],
+  "image": "/blog/2026-10-23-canva-craft-image-model-small-business-mvkqydst.jpg"
+}
