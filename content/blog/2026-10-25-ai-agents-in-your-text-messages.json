@@ -1,0 +1,110 @@
+{
+  "slug": "2026-10-25-ai-agents-in-your-text-messages",
+  "title": "AI assistants that live in your texts, and why owners should care",
+  "description": "A wave of AI agents now works over SMS, iMessage and WhatsApp. Here's what they do, which features matter for small businesses, and one safe way to try them.",
+  "date": "2026-10-25T08:57:16.394Z",
+  "tags": [
+    "AI agents",
+    "Messaging",
+    "Productivity",
+    "Small business"
+  ],
+  "imageAlt": "A café owner restocking pastries behind the counter while checking a phone in early morning light",
+  "imagePrompt": "Early morning inside a small neighbourhood café, the owner standing behind the counter restocking a tray of pastries while glancing at a phone resting beside the coffee machine, warm window light, a barista wiping cups in the background, relaxed and unhurried mood, natural editorial photography style",
+  "readingMinutes": 4,
+  "blocks": [
+    {
+      "type": "p",
+      "text": "TechCrunch has put together a long list of AI agents that you never download or log into. You just text them, the same way you'd message your office manager. [TechCrunch's roundup](https://techcrunch.com/2026/10/24/all-the-ai-agents-that-can-live-in-your-text-messages/) covers more than twenty of them, from general assistants to ones built for families, travel and work. You ask for a reminder, a booking, a calendar change or some research, and the agent remembers the context, connects to apps you already use and gets the job done."
+    },
+    {
+      "type": "p",
+      "text": "The money behind this is serious. Instinct, the best-known name on the list, raised $1 billion in September at a $10 billion valuation. Poke became the first AI agent Apple approved for its Messages for Business platform, and its parent company was later acquired by Cognition. This has moved well beyond a hobby for a few startups."
+    },
+    {
+      "type": "h2",
+      "text": "Why text, and why now"
+    },
+    {
+      "type": "p",
+      "text": "Picture the owner of a dental clinic in Dubai Marina. She already runs half her day through WhatsApp: staff, suppliers, the odd patient. Asking her to learn yet another app is a hard sell. Asking her to text one more contact is not."
+    },
+    {
+      "type": "p",
+      "text": "That's the whole pitch. What separates these agents from an ordinary chatbot is that they act. Martin can send messages and make phone calls for you, then sends a daily summary of what needs attention. Comma checks its own work and brings finished tasks back for your approval when a decision is needed. Instinct now gives each user's assistant its own email address, so it can sign up for services and contact businesses without filling your personal inbox. Several, like Ask Proxy, message you first when they spot something you might forget."
+    },
+    {
+      "type": "h2",
+      "text": "The few worth a look for business owners"
+    },
+    {
+      "type": "p",
+      "text": "Most of the list is aimed at personal and family life, and that's fine. Plenty of owners would happily take back an hour spent chasing school forms. But a handful are clearly useful at work."
+    },
+    {
+      "type": "p",
+      "text": "Stanley is built for content. You send a voice note and it turns it into scripts and captions, and it can connect to your Instagram to suggest posts based on what you've actually been doing, then schedule them. A bakery in Toronto that never finds time to post could get real mileage from that. Szn handles calls, emails and follow-ups from a single thread, and says on its website it has served more than 7,500 businesses in 16 countries. Tomo can join group chats rather than staying private, which suits a two-person real-estate team juggling the same clients. Ask Proxy has a work version priced from $23 per employee per month for teams under 49 people."
+    },
+    {
+      "type": "h2",
+      "text": "The part people skip: trust"
+    },
+    {
+      "type": "p",
+      "text": "An assistant that can email, call and buy things in your name has a lot of access. TechCrunch notes that Instinct's level of autonomy has raised privacy and security concerns, and that's a fair worry for any of these tools. So two details on the list stood out to us. Maverick asks for your permission before it takes action. Ollie, a family assistant, has achieved SOC 2 compliance, a widely used security standard. Those are exactly the questions to ask before connecting anything with client information in it."
+    },
+    {
+      "type": "p",
+      "text": "There's another side to this that owners rarely think about. If your customers start using these agents, the agent is the one contacting you. Instinct already contacts businesses by email and is rolling out phone calls. If an assistant tries to book a table at your café or ask your clinic about availability, can it actually get an answer? Our view is that clear online booking and quick replies are about to matter even more."
+    },
+    {
+      "type": "h2",
+      "text": "How to try this without regretting it"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Start small and personal. Use one agent for a week for reminders, calendar juggling and quick research before letting it near anything work-related.",
+        "Pick one that asks before acting. Approving each action is slower, but it's how you learn what the agent gets right.",
+        "Keep business inboxes and client or patient data out until you've checked how the company handles security. Clinics and consultancies especially.",
+        "Watch the pricing. Many are free or in beta, with paid plans such as Folk Pro at $8.33 a month, Martin from $21 and Maverick Pro at €27.",
+        "Test your own business from the outside. Can a stranger book, ask a question and get a reply by email or WhatsApp without picking up the phone?"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "If you'd rather your customers could text your business and get a sensible answer back, that's the same idea pointed the other way, and it's what we build with [custom AI agents](https://www.f21studio.com/services/custom-ai-agents) for clients."
+    },
+    {
+      "type": "p",
+      "text": "We like where this is heading. The best technology tends to disappear into habits you already have, and few habits are stronger than texting. Try one this week, keep it on a short leash, and see what it takes off your plate."
+    }
+  ],
+  "takeaways": [
+    "More than twenty AI agents now work entirely over text, WhatsApp, iMessage or Telegram, and the best ones take actions rather than just chatting.",
+    "Before giving any agent access to business email or client data, look for an assistant that asks permission before acting and has a recognised security standard such as SOC 2.",
+    "Customers' AI agents are starting to email and call businesses, so make sure your booking and enquiry process works for them too."
+  ],
+  "faq": [
+    {
+      "q": "What is an AI agent you can text?",
+      "a": "It's an AI assistant you reach through SMS, iMessage, WhatsApp or Telegram instead of a separate app. It remembers context, connects to tools like your calendar and email, and can carry out tasks such as setting reminders, making reservations or sending emails."
+    },
+    {
+      "q": "Are text-based AI assistants safe to use with business data?",
+      "a": "It depends on the provider. Look for assistants that ask permission before acting and that meet recognised security standards such as SOC 2, and keep sensitive client data out until you're satisfied."
+    },
+    {
+      "q": "How much do AI texting assistants cost?",
+      "a": "Many are free or in beta right now. Paid plans in TechCrunch's list range from about $8 to around $30 a month for individuals, and Ask Proxy's work version starts at $23 per employee per month for small teams."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Here are the top AI agents that can live in your text messages",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/24/all-the-ai-agents-that-can-live-in-your-text-messages/"
+    }
+  ],
+  "image": "/blog/2026-10-25-ai-agents-in-your-text-messages-mvnlih9a.jpg"
+}
