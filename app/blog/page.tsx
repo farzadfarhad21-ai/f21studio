@@ -12,6 +12,12 @@ export const metadata: Metadata = {
   description:
     "One useful AI story a day, explained for small business owners: what happened, why it matters, and what you can do with it this week.",
   alternates: { canonical: "/blog" },
+  openGraph: {
+    title: "AI News for Small Business — Daily Notes",
+    description:
+      "One useful AI story a day, explained for small business owners: what happened, why it matters, and what you can do with it this week.",
+    url: "/blog",
+  },
 };
 
 export default function Blog() {
