@@ -1,0 +1,132 @@
+{
+  "slug": "2026-10-26-openai-decisions-api-small-business",
+  "title": "OpenAI's new Decisions API and the small choices your business makes",
+  "description": "OpenAI has launched a Decisions API promising fast, focused, low-cost decisions. Here's what that could mean for the small, repetitive choices in a business.",
+  "date": "2026-10-26T09:42:47.462Z",
+  "tags": [
+    "OpenAI",
+    "AI agents",
+    "Automation",
+    "Small business"
+  ],
+  "imageAlt": "A bakery owner sorts paper order slips into piles at a wooden counter while a colleague takes croissants out of the oven in morning light.",
+  "imagePrompt": "Early morning inside a small neighbourhood bakery, warm golden light through the front window, the owner in an apron standing at a wooden counter quickly sorting handwritten order slips into three neat piles while a colleague slides a tray of fresh croissants out of the oven in the background, flour dust in the air, candid editorial photography style.",
+  "readingMinutes": 3,
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Last week OpenAI put out a new product with a refreshingly plain pitch. It's called the Decisions API, and the one-line description in [OpenAI's announcement](https://openai.com/index/decisions-api) promises \"fast, focused, low-cost decisions for any application.\" That's about all the detail we have from OpenAI's side right now, so we'll keep this grounded."
+    },
+    {
+      "type": "p",
+      "text": "The wider context comes from [TechCrunch](https://techcrunch.com/2026/10/22/openai-makes-its-jev-competitor-widely-available-as-decision-model-competition-heats-up/), which reported on 22 October that OpenAI is making its decision model widely available. TechCrunch positions it against a rival called Jev and says competition between decision models is heating up. Whether OpenAI's version can match the original is an open question, and nobody can answer it fairly until people have used both."
+    },
+    {
+      "type": "h2",
+      "text": "What a decision model probably means for you"
+    },
+    {
+      "type": "p",
+      "text": "Picture the front desk of a dental clinic in Dubai Marina. Dozens of WhatsApp messages a day, and every one needs a tiny call. Is this a booking, a reschedule, a price question, or a toothache that needs a call back within the hour? None of these are hard. They're just constant."
+    },
+    {
+      "type": "p",
+      "text": "That's the kind of work the name points to. We're reading between the lines here, because OpenAI hasn't shared much beyond the headline, but fast, focused and low-cost suggests a model built to make a quick, narrow choice rather than write an essay or hold a long chat. Think sorting, routing, flagging, approving. Small judgements, made many times."
+    },
+    {
+      "type": "p",
+      "text": "Why give that its own product? Most AI tools small businesses meet are generalists. They draft blog posts, answer customers and summarise contracts, and that flexibility costs time and money on every request. When all you need is urgent or not urgent, paying for a full conversation is like hiring a chef to butter toast."
+    },
+    {
+      "type": "h2",
+      "text": "Why speed and cost matter more than they sound"
+    },
+    {
+      "type": "p",
+      "text": "Take a two-person real-estate team handling a steady stream of portal enquiries. If deciding which agent gets each lead is slow, the buyer feels it. If it's expensive, the team quietly stops using it. OpenAI is framing this product around making apps feel more responsive, and for anything customer-facing, an instant reply versus a slight pause is the difference between helpful and clunky."
+    },
+    {
+      "type": "p",
+      "text": "Cost works the same way. A decision that runs once a day doesn't need to be cheap. A decision that runs on every incoming message, every form and every new review does. Low cost is what makes it sensible to put AI on the boring, high-volume stuff, which is usually where the real time savings hide."
+    },
+    {
+      "type": "h2",
+      "text": "Where we'd be careful"
+    },
+    {
+      "type": "p",
+      "text": "Honest limits first. We haven't seen OpenAI's full documentation, so we can't tell you how accurate it is, what it costs or which kinds of decisions it handles best. Anyone quoting specifics this early should be showing their sources."
+    },
+    {
+      "type": "p",
+      "text": "And a decision model is still a model. It will sometimes get it wrong. Let it handle low-stakes choices on its own, and send anything weighty, like a refund, a medical concern or a large deal, to a person. Often the smartest use of an AI decision is deciding who should look at something, not deciding the outcome."
+    },
+    {
+      "type": "p",
+      "text": "The competition is good news, though. If several companies are now chasing fast, cheap decision-making, quality and prices should drift in your favour over the coming months."
+    },
+    {
+      "type": "h2",
+      "text": "One thing to try this week"
+    },
+    {
+      "type": "p",
+      "text": "You don't need to touch an API to get ready. The useful work is spotting which decisions in your business are repetitive enough to hand off."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Spend one day noting every small yes-or-no or either-or call you and your staff make, from spotting spam to choosing which branch handles an order.",
+        "Circle the ones that happen many times a day and follow clear rules most of the time.",
+        "For each, write down what happens when the call is wrong. If the answer is mild annoyance, it's a strong candidate for automation.",
+        "List the exceptions, the cases where you'd always want a person involved.",
+        "Start with one decision only, such as tagging incoming enquiries, and check the results by hand for a couple of weeks."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "That list is basically a brief. It's the first thing we'd ask for if you came to us about [custom AI agents](https://www.f21studio.com/services/custom-ai-agents), because a good agent is mostly a stack of well-chosen small decisions."
+    },
+    {
+      "type": "p",
+      "text": "A bakery owner in Toronto doesn't need AI to run her shop. She needs the early order emails sorted before the first tray of croissants comes out. If OpenAI's new tool is as quick and cheap as promised, that's exactly the kind of morning it could make easier. We'll be testing it, and we'll tell you what we find."
+    }
+  ],
+  "takeaways": [
+    "OpenAI has launched a Decisions API pitched as fast, focused and low-cost, and TechCrunch reports it is now widely available.",
+    "Details are thin so far, but the idea suits the small, repetitive calls every business makes, like sorting enquiries or routing leads.",
+    "The best way to prepare is to list your repetitive decisions now and keep humans in charge of anything high-stakes."
+  ],
+  "faq": [
+    {
+      "q": "What is OpenAI's Decisions API?",
+      "a": "OpenAI describes it as a way to add fast, focused, low-cost decisions to any application. Full details aren't public in what we've seen, but it appears aimed at quick, narrow choices like sorting or routing rather than long conversations."
+    },
+    {
+      "q": "Can a small business use a decision model without a developer?",
+      "a": "Using an API directly needs some technical setup. You can prepare on your own by listing your repetitive decisions, then work with a developer or agency to connect it to the tools you already use."
+    },
+    {
+      "q": "Is it safe to let AI make decisions for my business?",
+      "a": "For low-stakes tasks like tagging enquiries, it's reasonable with regular spot checks. Keep a person in charge of refunds, medical questions and anything with legal or financial weight."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Build more responsive apps with the Decisions API",
+      "publisher": "OpenAI",
+      "url": "https://openai.com/index/decisions-api"
+    },
+    {
+      "title": "OpenAI makes its Jev competitor widely available as decision model competition heats up",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/22/openai-makes-its-jev-competitor-widely-available-as-decision-model-competition-heats-up/"
+    }
+  ],
+  "video": {
+    "id": "GtkAj3tlS_U",
+    "title": "No Text, Just Answers: OpenAI’s Decisions API Is Here",
+    "channel": "Softmaxedd"
+  },
+  "image": "/blog/2026-10-26-openai-decisions-api-small-business-mvp2ld1z.jpg"
+}
