@@ -6,7 +6,7 @@ import JsonLd from "./components/JsonLd";
 import { site } from "@/lib/site";
 import { services } from "@/lib/services";
 
-const gaId = process.env.NEXT_PUBLIC_GA_ID; // set in Vercel once the GA4 property exists
+const gaId = process.env.NEXT_PUBLIC_GA_ID || "G-DQHNJGLC8P"; // GA4 property "F21 Studio"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
