@@ -9,8 +9,8 @@
     "Design tools",
     "Small business marketing"
   ],
-  "imageAlt": "A bakery owner at her counter arranging paper cut-outs and pastry photos into a rough poster layout, with fresh bread and croissants behind her.",
-  "imagePrompt": "A warm, sunlit neighbourhood bakery in the morning. The owner, a woman in a flour-dusted apron, stands at the wooden counter sketching a rough poster layout on paper with a pencil, arranging cut-out paper shapes and a few photos of pastries around it. Trays of fresh croissants and loaves sit in the background, soft natural light, editorial photography style, shallow depth of field.",
+  "imageAlt": "A restaurant owner holding up a tablet with a colourful food design, next to colour swatches and printed food photos.",
+  "imagePrompt": "A restaurant owner at a wooden table holding up a tablet in the sharp foreground; the tablet shows a bright food illustration of plated dishes arranged in a neat grid with colour blocks; beside it real colour swatch cards and printed food photographs fanned out; dining room softly blurred behind.",
   "readingMinutes": 4,
   "blocks": [
     {
@@ -120,5 +120,5 @@
       "url": "https://www.theverge.com/ai-artificial-intelligence/1017151/canva-craft-in-house-ai-model"
     }
   ],
-  "image": "/blog/2026-10-23-canva-craft-image-model-small-business-mvkqydst.jpg"
+  "image": "/blog/2026-10-23-canva-craft-image-model-small-business-mvpgw6ty.jpg"
 }

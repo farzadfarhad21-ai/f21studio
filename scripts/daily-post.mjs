@@ -100,6 +100,14 @@ function recentTitles() {
     .sort((a, b) => b.date.localeCompare(a.date)).slice(0, 14).map((p) => p.title);
 }
 
+function recentImagePrompts() {
+  if (!fs.existsSync(POSTS)) return [];
+  return fs.readdirSync(POSTS).filter((f) => f.endsWith(".json"))
+    .map((f) => JSON.parse(fs.readFileSync(path.join(POSTS, f), "utf8")))
+    .sort((a, b) => b.date.localeCompare(a.date)).slice(0, 7)
+    .map((p) => (p.imagePrompt || p.imageAlt || "").slice(0, 110)).filter(Boolean);
+}
+
 async function articleText(url) {
   try {
     const html = await get(url, 20000);
@@ -332,7 +340,7 @@ const post = await ask({
   system: VOICE,
   effort: "high",
   schema: POST_SCHEMA,
-  user: `Today is ${today.toDateString()}. Write today's post from this material.\n\n<source_material>\n${sourceBlock}\n</source_material>\n\nF21 Studio service pages you may link once if relevant:\n${SERVICES.map(([n, u]) => `- ${n}: ${u}`).join("\n")}\n\nReturn:
+  user: `Today is ${today.toDateString()}. Write today's post from this material.\n\n<source_material>\n${sourceBlock}\n</source_material>\n\nRecent pictures (use a different setting):\n${recentImagePrompts().map((t) => `- ${t}`).join("\n") || "- none yet"}\n\nF21 Studio service pages you may link once if relevant:\n${SERVICES.map(([n, u]) => `- ${n}: ${u}`).join("\n")}\n\nReturn:
 - title: specific and human, 45-60 characters (Google cuts longer titles), no clickbait, no colon-subtitle formula.
 - slug: lowercase-hyphenated, 3-7 words, no dates.
 - description: 140-160 characters for search results.
@@ -340,7 +348,7 @@ const post = await ask({
 - takeaways: exactly 3 one-sentence bullets for busy readers.
 - blocks: 650-950 words total. Open with 1-2 paragraphs that get straight to the news. Then 2-4 "h2" sections (headings in sentence case). Include one "ul" list of practical ideas or steps. Paragraph blocks use "p". For "ul" put bullets in items and leave text empty; for other types leave items empty. End with a short, human closing paragraph, not a summary.
 - faq: 2-3 questions a small business owner would actually search, answered in 1-3 sentences.
-- imagePrompt: a scene for an editorial illustration photo that captures the story's idea through people or a real setting (no screens with text, no logos, no robots).
+- imagePrompt: one realistic photo a reader connects to THIS story at a glance, under 60 words. Put the story's key object or action in the sharp foreground as the main subject (for a password story: a phone showing a big green tick and a padlock icon; for a design tool: a tablet showing a colourful food design made of pictures and colour blocks). Simple icons, shapes and coloured cards on screens are fine. The image model writes garbled fake words on anything with lettering, so avoid printed menus, posters, signs, books and documents; no readable words, no logos, no robots. 1-2 people at most. Set it in a different kind of small business from the recent pictures listed below; rotate across salons, gyms, clinics, florists, shops, real-estate offices, workshops, studios, restaurants and offices, and avoid cafés and bakeries unless the story is about food.
 - imageAlt: a plain description of that image.`,
 });
 

@@ -10,7 +10,7 @@
     "Small business",
     "Productivity"
   ],
-  "imageAlt": "A café owner stands calmly behind the counter with a coffee and phone in the early morning while a staff member arranges pastries.",
+  "imageAlt": "A florist reaching to approve a morning summary on a tablet propped among buckets of fresh flowers.",
   "readingMinutes": 3,
   "blocks": [
     {
@@ -128,5 +128,6 @@
       "url": "https://www.theverge.com/ai-artificial-intelligence/1016399/1password-ai-agent-password-sign-in"
     }
   ],
-  "image": "/blog/2026-10-22-anthropic-claude-duet-small-business-agent-mvjr7dyd.jpg"
+  "image": "/blog/2026-10-22-anthropic-claude-duet-small-business-agent-mvpgu8iq.jpg",
+  "imagePrompt": "A florist at her workbench among buckets of fresh flowers in the morning, a tablet propped in the sharp foreground showing a tidy morning summary as three coloured cards with simple icons and a glowing approve button, her hand reaching to tap it; flower shop softly blurred behind."
 }

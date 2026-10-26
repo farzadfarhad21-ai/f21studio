@@ -9,8 +9,8 @@
     "Automation",
     "Small business"
   ],
-  "imageAlt": "A bakery owner sorts paper order slips into piles at a wooden counter while a colleague takes croissants out of the oven in morning light.",
-  "imagePrompt": "Early morning inside a small neighbourhood bakery, warm golden light through the front window, the owner in an apron standing at a wooden counter quickly sorting handwritten order slips into three neat piles while a colleague slides a tray of fresh croissants out of the oven in the background, flour dust in the air, candid editorial photography style.",
+  "imageAlt": "A laptop on a real-estate agent's desk sorting incoming requests into green, amber and red columns.",
+  "imagePrompt": "A real-estate agent's desk with a laptop in the sharp foreground; the screen is a clean dashboard with no words, just small blank cards being sorted into three columns topped by a green tick, an amber clock and a red cross icon; the agent's hand rests on the trackpad; office with property photos softly blurred behind.",
   "readingMinutes": 3,
   "blocks": [
     {
@@ -128,5 +128,5 @@
     "title": "No Text, Just Answers: OpenAI’s Decisions API Is Here",
     "channel": "Softmaxedd"
   },
-  "image": "/blog/2026-10-26-openai-decisions-api-small-business-mvp2ld1z.jpg"
+  "image": "/blog/2026-10-26-openai-decisions-api-small-business-mvpgvpe8.jpg"
 }
