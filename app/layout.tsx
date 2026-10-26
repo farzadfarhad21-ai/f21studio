@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import JsonLd from "./components/JsonLd";
+import Analytics from "./components/Analytics";
 import { site } from "@/lib/site";
 import { services } from "@/lib/services";
 
@@ -74,14 +74,7 @@ export default function RootLayout({
       <body className={`${inter.variable} font-sans antialiased`}>
         <JsonLd data={orgSchema} />
         {children}
-        {gaId && (
-          <>
-            <Script src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} strategy="lazyOnload" />
-            <Script id="ga" strategy="lazyOnload">
-              {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${gaId}');`}
-            </Script>
-          </>
-        )}
+        {gaId && <Analytics id={gaId} />}
       </body>
     </html>
   );
