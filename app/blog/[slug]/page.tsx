@@ -19,7 +19,8 @@ export function generateMetadata({ params }: Params): Metadata {
   const p = getPost(params.slug);
   if (!p) return {};
   return {
-    title: p.title,
+    // Long headlines skip the " | F21 Studio" suffix so Google doesn't cut them off.
+    title: p.title.length > 47 ? { absolute: p.title } : p.title,
     description: p.description,
     alternates: { canonical: `/blog/${p.slug}` },
     openGraph: {

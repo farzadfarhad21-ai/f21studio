@@ -333,7 +333,7 @@ const post = await ask({
   effort: "high",
   schema: POST_SCHEMA,
   user: `Today is ${today.toDateString()}. Write today's post from this material.\n\n<source_material>\n${sourceBlock}\n</source_material>\n\nF21 Studio service pages you may link once if relevant:\n${SERVICES.map(([n, u]) => `- ${n}: ${u}`).join("\n")}\n\nReturn:
-- title: specific and human, 50-70 characters, no clickbait, no colon-subtitle formula.
+- title: specific and human, 45-60 characters (Google cuts longer titles), no clickbait, no colon-subtitle formula.
 - slug: lowercase-hyphenated, 3-7 words, no dates.
 - description: 140-160 characters for search results.
 - tags: 3-5 short tags.

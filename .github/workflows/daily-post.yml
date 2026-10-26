@@ -58,3 +58,12 @@ jobs:
           if [ -n "$IMAGE_FOR$VIDEO_FOR" ]; then msg="blog: update $IMAGE_FOR$VIDEO_FOR"; else msg="blog: daily AI note $(date -u +%F)"; fi
           git commit -m "$msg"
           git push
+          echo "published=1" >> "$GITHUB_OUTPUT"
+        id: publish
+
+      - name: Ping IndexNow (Bing, Copilot)
+        if: steps.publish.outputs.published == '1'
+        continue-on-error: true
+        run: |
+          sleep 150 # let Vercel finish deploying the new post
+          node scripts/indexnow.mjs
