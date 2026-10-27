@@ -1,0 +1,134 @@
+{
+  "slug": "2026-10-27-openai-terra-computer-use-agents",
+  "title": "OpenAI's new Terra model wants to use your computer",
+  "description": "OpenAI's GPT-6.1 Terra promises fast computer use for everyone. What that means for small businesses, and why one retailer is already blocking AI shoppers.",
+  "date": "2026-10-27T09:36:25.739Z",
+  "tags": [
+    "AI agents",
+    "OpenAI",
+    "Computer use",
+    "Small business",
+    "E-commerce"
+  ],
+  "imageAlt": "A boutique owner behind her shop counter with a laptop in the foreground showing coloured product cards and a cursor clicking a green button.",
+  "imagePrompt": "A small independent clothing boutique, the owner standing behind the counter, a laptop in sharp foreground showing a simple web page of coloured product cards with a large arrow cursor clicking a bright green button. Racks of clothes softly blurred behind, warm afternoon light, realistic photo, no readable text, no logos.",
+  "readingMinutes": 3,
+  "blocks": [
+    {
+      "type": "p",
+      "text": "OpenAI has announced a new model called GPT-6.1 Terra, and the headline is short. The company describes it as \"bringing fast and capable computer use to everyone.\" We couldn't access the full announcement, so we'll stick to what's been said and resist guessing at features. You can read the original on the [OpenAI announcement page](https://openai.com/index/introducing-gpt-6-1-terra)."
+    },
+    {
+      "type": "p",
+      "text": "Even that one line is worth unpacking. \"Computer use\" is the industry's name for AI that doesn't just chat with you. It operates a screen the way a person would, opening pages, clicking buttons, filling in forms. OpenAI's framing suggests it wants this to be quick and widely available, not a lab demo."
+    },
+    {
+      "type": "h2",
+      "text": "What computer use actually means for a small business"
+    },
+    {
+      "type": "p",
+      "text": "Picture a dental clinic in Dubai Marina. Appointment requests land in an email inbox, and someone copies each one into the booking system by hand. There's no neat integration between the two, so the receptionist becomes the glue. A computer-use agent could, in principle, do that copying itself, reading the email and typing the details into the right boxes."
+    },
+    {
+      "type": "p",
+      "text": "Or take a two-person real-estate team in Toronto that updates the same listing on several property portals every time a price changes. Tedious, error-prone, and nobody's favourite job. This is exactly the kind of work where an agent that can drive a browser earns its keep."
+    },
+    {
+      "type": "p",
+      "text": "Our honest view: the promise is real, but the proof comes from testing. \"Fast and capable\" is the claim. Until you've watched it handle your actual screens, your actual logins and your slightly odd booking software, treat it as a promise worth checking rather than a done deal."
+    },
+    {
+      "type": "h2",
+      "text": "Websites are already pushing back"
+    },
+    {
+      "type": "p",
+      "text": "Here's the twist. As agents get better at shopping and booking, some businesses don't want them around. The RealReal, the secondhand luxury fashion consignment site, says it's updating its bot defences, which makes it harder for AI agents to shop there. According to [The Verge](https://www.theverge.com/news/1018713/meta-muse-agentic-shopping-ai-the-realreal), the change came days after the publication reported that an agent could be used to take advantage of the retailer's item reserve system."
+    },
+    {
+      "type": "p",
+      "text": "That matters in two directions. If you send an agent out to do tasks on other people's websites, expect some doors to close. And if you run an online shop with limited stock, a booking calendar or a reservation system, think about what happens when a bot that never sleeps starts using it faster than any human can."
+    },
+    {
+      "type": "p",
+      "text": "A boutique with one-off vintage pieces, a clinic with a handful of same-day slots, a workshop running limited-place classes. These are the businesses where fairness to real customers suddenly becomes a design question, not just a nice idea."
+    },
+    {
+      "type": "h2",
+      "text": "People are already leaning on AI for real work"
+    },
+    {
+      "type": "p",
+      "text": "Separately, OpenAI has published data from what it calls Signals, looking at how people use ChatGPT for work across 165 work activities in nearly 100 countries, and how that usage shifts over time. You can explore it in their [expanding world of work](https://openai.com/index/chatgpt-expanding-world-of-work) write-up."
+    },
+    {
+      "type": "p",
+      "text": "We read the two announcements together. Chat-based help is already part of daily work for a lot of people. Agents that take action on a screen look like the next step. Writing the email is one thing. Sending it, logging it and updating the spreadsheet afterwards is where the real hours go."
+    },
+    {
+      "type": "h2",
+      "text": "What you could try this week"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Keep a simple list for five working days of every task where you copy information from one screen to another. That list is your agent shortlist.",
+        "Pick the most boring, lowest-risk task on it, something where a mistake is easy to spot and fix, like tidying a contact list.",
+        "Never hand an agent your payments, patient records or client contracts on day one. Start with tasks that don't touch money or private data.",
+        "Look at your own booking or checkout flow and ask what would happen if one visitor made fifty reservations in a minute.",
+        "If you sell limited stock, ask your web developer whether your site has basic limits on repeated orders or holds."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "If you'd rather have something built around your specific tools than wait to see what off-the-shelf agents can handle, that's the kind of work we do with [custom AI agents](https://www.f21studio.com/services/custom-ai-agents) for small teams."
+    },
+    {
+      "type": "p",
+      "text": "We'll be testing Terra on the dull, real-world jobs our clients actually complain about, and we'll report back on what holds up. For now, the smartest move is the cheapest one. Notice where your week disappears into copy and paste, because that's where these tools will show up first."
+    }
+  ],
+  "takeaways": [
+    "OpenAI has announced GPT-6.1 Terra, pitched as bringing fast and capable computer use to everyone, though full details are still thin.",
+    "Agents that click and type for you are useful for boring admin, but websites like The RealReal are already tightening defences against them.",
+    "Start by listing the repetitive screen tasks in your week, and check how your own website would cope if an AI agent showed up as a customer."
+  ],
+  "faq": [
+    {
+      "q": "What is GPT-6.1 Terra?",
+      "a": "It's a new OpenAI model announced as bringing fast and capable computer use to everyone. In plain terms, computer use means AI that can operate a screen by clicking, typing and navigating, rather than only chatting."
+    },
+    {
+      "q": "Can an AI agent handle admin tasks for my small business?",
+      "a": "Potentially, especially repetitive jobs like copying details between an inbox and a booking system. Start with low-risk tasks and check the results yourself before trusting it with anything involving money or private data."
+    },
+    {
+      "q": "Should I worry about AI agents using my online shop or booking system?",
+      "a": "It's worth thinking about if you have limited stock or slots. The RealReal recently strengthened its bot defences after reports an agent could exploit its reserve system, so ask your developer about limits on repeated orders or holds."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Introducing GPT-6.1 Terra",
+      "publisher": "OpenAI",
+      "url": "https://openai.com/index/introducing-gpt-6-1-terra"
+    },
+    {
+      "title": "The RealReal won’t let AI agents hog designer clothing",
+      "publisher": "The Verge",
+      "url": "https://www.theverge.com/news/1018713/meta-muse-agentic-shopping-ai-the-realreal"
+    },
+    {
+      "title": "ChatGPT’s expanding world of work",
+      "publisher": "OpenAI",
+      "url": "https://openai.com/index/chatgpt-expanding-world-of-work"
+    }
+  ],
+  "video": {
+    "id": "tTuk4pGnT0A",
+    "title": "GPT-6.1 Terra is now in orbit",
+    "channel": "OpenAI"
+  },
+  "image": "/blog/2026-10-27-openai-terra-computer-use-agents-mvqhsrbn.jpg"
+}
