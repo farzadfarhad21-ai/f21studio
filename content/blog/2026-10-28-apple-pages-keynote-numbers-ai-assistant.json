@@ -1,0 +1,120 @@
+{
+  "slug": "2026-10-28-apple-pages-keynote-numbers-ai-assistant",
+  "title": "Pages, Keynote and Numbers now have an AI assistant",
+  "description": "Apple is adding an AI assistant to Pages, Keynote and Numbers, plus support for outside AI agents. Here's what it means for small business owners on a Mac.",
+  "date": "2026-10-28T10:21:41.806Z",
+  "tags": [
+    "Apple",
+    "AI assistants",
+    "AI agents",
+    "Productivity",
+    "Small business"
+  ],
+  "imageAlt": "A physiotherapist at a clinic desk with a laptop in the foreground showing a colourful slide with bar charts and a chat panel.",
+  "imagePrompt": "A physiotherapist sitting at a desk in a small, bright physio clinic, a laptop in sharp foreground showing a colourful slide with bar chart shapes, coloured blocks and a small chat bubble panel on the side. Treatment bed and exercise bands softly blurred behind. Natural daylight, realistic photo, no text, no logos.",
+  "readingMinutes": 3,
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Apple is putting an AI assistant inside Pages, Keynote and Numbers, the office apps plenty of Mac, iPhone and iPad owners already use for proposals, slides and spreadsheets. According to [The Verge](https://www.theverge.com/tech/1019373/apple-pages-keynote-numbers-ai-chatbot-update), the assistant runs on a mix of Apple's own models and OpenAI's, and it reads the document you're working in so its help fits what's already on the page."
+    },
+    {
+      "type": "p",
+      "text": "It's rolling out as a beta to devices that support Apple Intelligence, running iOS 27, iPadOS 27 or macOS 27 or later. So if your office runs on older hardware, check compatibility before you get excited."
+    },
+    {
+      "type": "h2",
+      "text": "What it actually does in each app"
+    },
+    {
+      "type": "p",
+      "text": "In Keynote, it can design slides, add animation and refine a deck you've already started. In Pages, it drafts text, restructures documents and tweaks the wording. Numbers gets the most practical set of tricks: it can run calculations, organise data, suggest which chart type suits it and build custom tables."
+    },
+    {
+      "type": "p",
+      "text": "Picture a two-person real-estate team in Dubai pulling together a listing presentation the night before a viewing. Instead of nudging text boxes around for an hour, they drop in photos and notes and ask Keynote to shape it into something presentable. Or a dental clinic in Dubai Marina with a year of appointment numbers sitting in a spreadsheet that has never become a chart, simply because nobody had the time."
+    },
+    {
+      "type": "p",
+      "text": "The idea of an AI writing helper isn't new. Lots of you already paste text into a chatbot in another tab and copy the answer back. The difference here is that the assistant lives inside the document and can see the whole thing, which should mean fewer generic suggestions and less copying back and forth."
+    },
+    {
+      "type": "h2",
+      "text": "The quieter news is the bigger one"
+    },
+    {
+      "type": "p",
+      "text": "Tucked into the announcement: Keynote, Pages and Numbers now support the Model Context Protocol on macOS 27 or later. That's a technical name for a simple idea. It's a standard way for third-party AI agents to connect to an app and work inside it."
+    },
+    {
+      "type": "p",
+      "text": "In plain terms, Apple's own assistant isn't the only AI that gets in. An agent you set up could plug into these apps too. Think of one that takes your weekly booking export and updates a Numbers sheet every Monday, or one that turns a client brief into a first-draft proposal in Pages. That's the sort of thing we build in our [custom AI agents](https://www.f21studio.com/services/custom-ai-agents) work, and mainstream apps opening their doors like this makes those setups much more realistic for small teams."
+    },
+    {
+      "type": "p",
+      "text": "Our honest view: the built-in assistant will save you minutes. Agents connected to your apps are where the hours come back, because they handle the repeat job without you kicking it off each time. Mozilla is heading the same way, adding AI form filling and webpage monitoring to Firefox's Smart Window, where it can pull details from your open tabs into an online form. AI is moving out of the separate chat window and into the tools you already use."
+    },
+    {
+      "type": "h2",
+      "text": "A few extras for the creative crowd"
+    },
+    {
+      "type": "p",
+      "text": "If you make your own marketing content, Apple's creative apps are getting AI features too. Pixelmator Pro adds Generate Fill, where you describe a change to part of an image, and Apple says it matches the \"lighting, perspective, and texture\" of the surroundings. Logic Pro gets an AI assistant and a redesign, and Final Cut Pro adds templates, titles and transitions through MotionVFX, plus a built-in library of stock videos, photos and backgrounds. Those Creator Studio updates arrive free for existing subscribers in November."
+    },
+    {
+      "type": "h2",
+      "text": "How to try it without wasting an afternoon"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Check your devices first. You'll need Apple Intelligence support and iOS 27, iPadOS 27 or macOS 27 or later.",
+        "Start with a document you already have, not a blank page. The assistant works from context, so give it some.",
+        "In Numbers, pick one messy sheet (sales, bookings, stock) and ask for a chart suggestion. See if it shows you something you hadn't spotted.",
+        "In Keynote, hand it a rough deck and ask for a cleaner layout, then check every figure and claim yourself.",
+        "Keep sensitive files, like patient or client records, out of your first experiments until you're comfortable with how your data is handled."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "It's a beta, so expect rough edges. Treat what it produces as a decent first draft, not a finished job."
+    },
+    {
+      "type": "p",
+      "text": "If you spend Sunday evenings wrestling a spreadsheet into a chart for Monday's meeting, give this ten minutes once it lands on your device. And if you notice you're asking it to do the exact same thing every week, that's your cue. That job probably wants an agent, not a prompt."
+    }
+  ],
+  "takeaways": [
+    "Apple is adding an AI assistant to Pages, Keynote and Numbers that can draft text, design slides and turn data into charts, built on Apple and OpenAI models.",
+    "The three apps now support the Model Context Protocol on macOS 27 or later, so outside AI agents can plug into them.",
+    "It's a beta for Apple Intelligence devices on iOS 27, iPadOS 27 or macOS 27 or later, so check your hardware before planning around it."
+  ],
+  "faq": [
+    {
+      "q": "Which devices get the new AI assistant in Pages, Keynote and Numbers?",
+      "a": "It's rolling out in beta to devices compatible with Apple Intelligence. You'll need iOS 27, iPadOS 27 or macOS 27 or later."
+    },
+    {
+      "q": "Can I connect my own AI tools to Apple's Pages, Keynote and Numbers?",
+      "a": "Yes, on macOS 27 or later the apps support the Model Context Protocol, which lets third-party AI agents plug in. That opens the door to custom agents that update spreadsheets or draft documents for you."
+    },
+    {
+      "q": "What AI does Apple's new office assistant use?",
+      "a": "The Verge reports it's built on AI models from both Apple and OpenAI. It reads the context of your document to draft, design and organise content."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Apple is adding an AI chatbot to Pages, Keynote, and Numbers",
+      "publisher": "The Verge",
+      "url": "https://www.theverge.com/tech/1019373/apple-pages-keynote-numbers-ai-chatbot-update"
+    },
+    {
+      "title": "Firefox’s Smart Window adds AI form filling and webpage monitoring",
+      "publisher": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1019551/firefox-smart-window-ai-fill-forms"
+    }
+  ],
+  "image": "/blog/2026-10-28-apple-pages-keynote-numbers-ai-assistant-mvryuj4b.jpg"
+}
