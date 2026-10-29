@@ -1,0 +1,127 @@
+{
+  "slug": "2026-10-29-google-ai-mode-ads-go-global",
+  "title": "Google is putting ads inside AI Mode answers worldwide",
+  "description": "Google is taking ads in AI Mode beyond the US. Here's what that means for small businesses that rely on search, and what to tidy up before the change lands.",
+  "date": "2026-10-29T10:43:09.266Z",
+  "tags": [
+    "Google",
+    "AI search",
+    "Advertising",
+    "SEO"
+  ],
+  "imageAlt": "A carpenter in a small workshop holding a phone showing a chat-style search screen with a highlighted product card of a wooden chair.",
+  "imagePrompt": "A carpenter in a small furniture workshop with wood shavings on the bench, holding a smartphone in the sharp foreground; the screen shows a chat-style layout with speech bubbles and a highlighted product card with a star icon and a photo of a wooden chair. Warm natural light, blurred tools behind, no readable text.",
+  "readingMinutes": 3,
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Google is taking ads inside AI Mode, its chat-style search, to international markets for the first time. The news landed on Wednesday during Alphabet's third-quarter earnings call, as [TechCrunch reported](https://techcrunch.com/2026/10/28/google-expands-ai-search-ads-globally-as-core-ad-growth-slows/). Chief business officer Philipp Schindler called it \"taking our monetization footprint global for the first time.\""
+    },
+    {
+      "type": "p",
+      "text": "The timing isn't random. Alphabet's revenue rose 25% to $127.6 billion, but Search revenue grew just 12%, down from 17% the quarter before and 19% the quarter before that. Shares fell 8% after the results. Google needs its AI answers to start paying their way, and ads inside those answers are the plan."
+    },
+    {
+      "type": "h2",
+      "text": "What's actually changing"
+    },
+    {
+      "type": "p",
+      "text": "Until now, ads in AI Mode were mostly a US experiment. Google says they're now heading to more users, more queries and more countries. In the US it's also adding multi-turn ads, which, going by the name, follow a conversation as someone asks several questions in a row rather than reacting to a single search."
+    },
+    {
+      "type": "p",
+      "text": "This builds on formats Google showed off in May. Those include conversational discovery ads that respond to people's questions, and sponsored recommendations folded straight into AI-generated answers. So the ad isn't sitting above the results any more. It can be part of the answer."
+    },
+    {
+      "type": "p",
+      "text": "Google says it's working. According to Schindler, sponsored product listings in AI Mode already get click-through rates comparable to organic listings, and Google's own research suggests people find the ads relevant. That's Google marking its own homework, but it's still a signal worth noting."
+    },
+    {
+      "type": "p",
+      "text": "What the report doesn't tell us is which countries are first or when. If you're in Dubai, Toronto or Lisbon, don't expect anything to switch on tomorrow. The direction, though, is very clear."
+    },
+    {
+      "type": "h2",
+      "text": "Why this matters for a small business"
+    },
+    {
+      "type": "p",
+      "text": "Picture a dental clinic in Dubai Marina. A patient doesn't type \"dentist Dubai\" into AI Mode. They ask something like: cracked molar, near JBR, who can see me this week, and do they accept my insurance? Sundar Pichai said AI Mode queries are three times longer on average than traditional searches, and one in five globally involve voice, images or documents."
+    },
+    {
+      "type": "p",
+      "text": "Longer questions get narrower answers. Instead of ten blue links to scroll through, there might be two or three businesses recommended, some organically and some paid. If you're not one of them, you're simply not in the conversation."
+    },
+    {
+      "type": "p",
+      "text": "Our view is fairly simple. If you already spend on Google Ads, the new placements will be worth testing when they reach your market. For everyone else, the bigger opportunity is free: make your business easy for AI to understand, so it can recommend you without you paying a dirham."
+    },
+    {
+      "type": "p",
+      "text": "There's a second piece of news pointing the same way. Google is also opening Gemini and Search to more apps through a new developer platform that lets businesses bring their services into its AI experiences, [according to TechCrunch](https://techcrunch.com/2026/10/28/as-ai-agents-reshape-the-web-google-opens-gemini-and-search-to-more-apps/). It's early days, but customers may increasingly find and use businesses without ever visiting a website first."
+    },
+    {
+      "type": "h2",
+      "text": "What you can do this month"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Write down the five most specific questions customers ask you on WhatsApp or the phone, then answer each one plainly on your website.",
+        "Check your Google Business Profile: hours, services, areas you cover and real photos of your work. Google says it now handles over 50 billion visual searches a month.",
+        "Put prices or price ranges, locations and booking details in normal text, not hidden inside images or PDFs where they're harder to read.",
+        "If you run Google Ads, keep an eye out for AI Mode options in your market and test them with a small budget before committing.",
+        "Ask an AI assistant the same questions your customers ask and see whether your business comes up. If it doesn't, that's your to-do list."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "None of this is complicated, but it does take a few focused hours. If you'd rather hand it off, that's the job of our [SEO & AI Search Setup](https://www.f21studio.com/services/seo-growth-setup)."
+    },
+    {
+      "type": "h2",
+      "text": "The honest caveat"
+    },
+    {
+      "type": "p",
+      "text": "The strong click-through numbers are Google's claim, based on Google's data. Mixing ads into answers could also make some people trust those answers a little less. We'll learn a lot more once these ads are showing up for millions of people outside the US."
+    },
+    {
+      "type": "p",
+      "text": "Still, search isn't fading. Pichai said queries grew at their fastest rate in five years, driven by people asking longer, more personal questions. A two-person real-estate team or a small clinic that answers those questions clearly is in a better spot than it might think."
+    }
+  ],
+  "takeaways": [
+    "Google is expanding ads inside AI Mode beyond the US for the first time, though it hasn't said which countries or when.",
+    "People ask AI Mode questions about three times longer than normal searches, and one in five involve voice, images or documents.",
+    "Before paying for placements, make sure your website and Google profile answer specific customer questions clearly enough for AI to recommend you."
+  ],
+  "faq": [
+    {
+      "q": "Will Google AI Mode ads be available in the UAE?",
+      "a": "Google says ads in AI Mode are expanding to international markets, but the report doesn't list which countries or give dates. Watch your Google Ads account and Google's own announcements for your market."
+    },
+    {
+      "q": "Do I have to pay to appear in Google's AI answers?",
+      "a": "No. Ads are one route, but AI answers also include organic recommendations, and Google says sponsored listings perform comparably to organic ones. Clear, specific information on your website and Google profile still matters most."
+    },
+    {
+      "q": "How are AI Mode searches different from normal Google searches?",
+      "a": "Google says AI Mode questions are about three times longer on average, and one in five globally use voice, images or documents. People describe their situation rather than typing a couple of keywords."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Google expands AI Search ads globally as core ad growth slows",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/28/google-expands-ai-search-ads-globally-as-core-ad-growth-slows/"
+    },
+    {
+      "title": "As AI agents reshape the web, Google opens Gemini and Search to more apps",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/28/as-ai-agents-reshape-the-web-google-opens-gemini-and-search-to-more-apps/"
+    }
+  ],
+  "image": "/blog/2026-10-29-google-ai-mode-ads-go-global-mvtf21sm.jpg"
+}
