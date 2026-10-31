@@ -1,0 +1,137 @@
+{
+  "slug": "2026-10-31-ai-training-opt-out-robots-txt",
+  "title": "Big AI firms agree on one robots.txt opt-out signal",
+  "description": "OpenAI, Google, Microsoft and Anthropic will honour one shared robots.txt signal for AI training. Here's what it means for your small business website.",
+  "date": "2026-10-31T10:11:50.525Z",
+  "tags": [
+    "AI search",
+    "SEO",
+    "robots.txt",
+    "AI training",
+    "Website tips"
+  ],
+  "imageAlt": "A laptop in an optician's shop showing toggle switches and a shield icon, with the shop owner behind the counter in the background.",
+  "imagePrompt": "An independent optician's shop, the owner standing behind the counter slightly blurred with eyeglass frames on shelves behind her. In sharp foreground, a laptop screen shows simple toggle switches, one green and one grey, beside a shield icon and a small globe icon. Warm natural light, realistic photo, no text.",
+  "readingMinutes": 4,
+  "blocks": [
+    {
+      "type": "p",
+      "text": "OpenAI, Google, Microsoft and Anthropic have all said they'll respect a new shared signal that lets website owners opt out of having their content used to train AI. Instead of telling each company separately, you'll be able to say it once, in one place, and have it apply to all of them."
+    },
+    {
+      "type": "p",
+      "text": "That place is robots.txt, the small text file that has long told web crawlers what they can and can't visit on a site. According to [The Verge](https://www.theverge.com/tech/1023763/openai-google-microsoft-ai-scraping-standard-opt-out), the idea is a shared \"policy token\", proposed through the Internet Engineering Task Force by Kevin Kelley, who leads standards work at Anthropic."
+    },
+    {
+      "type": "h2",
+      "text": "What's actually changing"
+    },
+    {
+      "type": "p",
+      "text": "Right now, if you don't want your site feeding AI models, you have to signal that to each company one by one. It's fiddly. Most small business owners have never opened the file, let alone kept a list of AI bots up to date."
+    },
+    {
+      "type": "p",
+      "text": "The new token simplifies that. When participating crawlers spot it, they'll stay away. Anthropic has already adopted it. Google and Microsoft say they'll support it next year, and OpenAI, which published its own [explainer](https://openai.com/index/helping-websites-express-ai-training-preferences), says it'll arrive in the coming months."
+    },
+    {
+      "type": "p",
+      "text": "Meta is the interesting one. Its communications head, Andy Stone, voiced support for a common signal but didn't say whether Meta will actually honour it. So this isn't universal yet. It's a commitment from four companies, not a rule the whole internet has to follow."
+    },
+    {
+      "type": "h2",
+      "text": "Training and showing up are not the same thing"
+    },
+    {
+      "type": "p",
+      "text": "Here's the part we think matters most for small businesses. Microsoft says it will let sites opt out of AI training and, separately, out of AI grounding. Grounding is when an AI tool points to a trusted source to back up its answer, which is how an assistant ends up repeating your opening hours or your services correctly."
+    },
+    {
+      "type": "p",
+      "text": "Microsoft also says your site will still appear in Bing search whatever you choose. Google already offers similar controls, letting sites decide on AI training and AI search features without hurting their normal search visibility."
+    },
+    {
+      "type": "p",
+      "text": "Picture a dental clinic in Dubai Marina. It probably doesn't mind much whether its blog post about whitening ends up in a training dataset. It cares a great deal about whether someone asking an AI assistant for a good dentist nearby gets its name back. Those are two different switches, and you'll increasingly be able to flip them separately."
+    },
+    {
+      "type": "h2",
+      "text": "Should you opt out?"
+    },
+    {
+      "type": "p",
+      "text": "For most small businesses, our honest answer is probably not, or at least not blindly. If you sell a service locally, being visible to AI tools is a growing way to be found. Blocking everything could quietly hide you from customers who now ask a chatbot instead of scrolling through search results."
+    },
+    {
+      "type": "p",
+      "text": "It's different if your content is the product. A consultancy that sells in-depth reports, a recipe developer or an online course creator may reasonably want their work kept out of training. There are other tools in play too. The Really Simple Licensing standard lets publishers charge crawlers that visit, and Cloudflare now blocks AI crawlers by default."
+    },
+    {
+      "type": "p",
+      "text": "That last point catches people out. If your site runs through Cloudflare, you might already be turning AI bots away without realising it."
+    },
+    {
+      "type": "p",
+      "text": "The wider picture is that the open web is renegotiating its terms. [TechCrunch reports](https://techcrunch.com/2026/10/29/as-search-traffic-dries-up-reddit-announces-its-shifting-to-a-logged-in-experience/) that Reddit is shifting towards a logged-in experience as search traffic dries up. You don't need to go anywhere near that far, but you should make a deliberate choice rather than an accidental one."
+    },
+    {
+      "type": "h2",
+      "text": "What to do this weekend"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Type your domain followed by /robots.txt into a browser. It takes ten seconds and shows what you're currently telling crawlers.",
+        "If you use Cloudflare, look at its AI crawler settings so you know whether bots are being blocked by default.",
+        "Write down in one sentence what you want: be found by AI tools, keep your content out of training, or a mix of both.",
+        "Think page by page. Service pages, location details and contact info usually benefit from AI visibility, while paid or original long-form content may not.",
+        "Note the timing. Anthropic supports the signal now, OpenAI in the coming months, Google and Microsoft next year, so there's no need to panic-edit anything today."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "If this feels like one more technical chore, it's the sort of thing we check as part of our [SEO and AI search setup](https://www.f21studio.com/services/seo-growth-setup), making sure the right doors are open and the right ones are shut."
+    },
+    {
+      "type": "p",
+      "text": "Honestly, this is good news even if you never touch it. One clear switch beats a guessing game with a dozen different bots. Have a quick look at that little file this weekend, and you'll understand how your site talks to AI better than most of your competitors do."
+    }
+  ],
+  "takeaways": [
+    "OpenAI, Google, Microsoft and Anthropic will respect one shared signal in robots.txt that tells their crawlers to keep your content out of AI training.",
+    "Opting out of AI training is not the same as disappearing from search, and Microsoft and Google offer separate controls for each.",
+    "Most local businesses benefit from being visible to AI tools, so check your current settings before blocking anything."
+  ],
+  "faq": [
+    {
+      "q": "Will opting out of AI training remove my website from Google or Bing?",
+      "a": "No. Microsoft says sites will still appear in Bing search regardless of their AI preferences, and Google already lets sites control AI training without affecting normal search visibility."
+    },
+    {
+      "q": "When can I start using the shared AI opt-out signal?",
+      "a": "Anthropic already honours it, OpenAI says it will follow in the coming months, and Google and Microsoft plan to support it next year."
+    },
+    {
+      "q": "Should a small local business block AI crawlers?",
+      "a": "Usually not entirely, because AI assistants are becoming a way customers find local services. If your content is something you sell, such as reports or courses, opting out of training can make more sense."
+    }
+  ],
+  "sources": [
+    {
+      "title": "The biggest names in AI are backing a new way to opt out of scraping",
+      "publisher": "The Verge",
+      "url": "https://www.theverge.com/tech/1023763/openai-google-microsoft-ai-scraping-standard-opt-out"
+    },
+    {
+      "title": "Making it easier for websites to express AI training preferences",
+      "publisher": "OpenAI",
+      "url": "https://openai.com/index/helping-websites-express-ai-training-preferences"
+    },
+    {
+      "title": "As search traffic dries up, Reddit announces it's shifting to a logged-in experience",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/29/as-search-traffic-dries-up-reddit-announces-its-shifting-to-a-logged-in-experience/"
+    }
+  ],
+  "image": "/blog/2026-10-31-ai-training-opt-out-robots-txt-mvw8tak0.jpg"
+}
