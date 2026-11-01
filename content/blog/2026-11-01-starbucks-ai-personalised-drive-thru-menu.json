@@ -1,0 +1,119 @@
+{
+  "slug": "2026-11-01-starbucks-ai-personalised-drive-thru-menu",
+  "title": "Starbucks wants its drive-thru to know your usual",
+  "description": "Starbucks plans AI menus that recognise regulars at the drive-thru. Here's what it means for small businesses, and the cheaper version you can try this week.",
+  "date": "2026-11-01T11:02:15.329Z",
+  "tags": [
+    "AI personalisation",
+    "Retail and hospitality",
+    "AI agents",
+    "Customer loyalty"
+  ],
+  "imageAlt": "A tablet on a coffee shop counter showing colourful drink icons with one highlighted, a barista blurred in the background.",
+  "imagePrompt": "A barista standing at the counter of a small independent coffee shop, slightly blurred, while a tablet in the sharp foreground shows a grid of colourful drink cup icons with one cup highlighted by a glowing star and a small heart, warm morning light, realistic photo, no text.",
+  "readingMinutes": 3,
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Starbucks wants its drive-thru to recognise you before you've said a word. On an earnings call this week, CEO Brian Niccol said the chain will explore ways to identify customers who opt in as they pull up, show them a personalised digital menu and make paying quicker. [The Verge has the full story](https://www.theverge.com/ai-artificial-intelligence/1023440/starbucks-ai-personalized-menu-drive-thru), and it's clear that nobody knows yet when this will reach an actual window."
+    },
+    {
+      "type": "p",
+      "text": "It's part of a wider push. From 2027, Starbucks plans to test AI running quietly in the background at the drive-thru to help baristas enter orders faster and with fewer mistakes. It's also adding AI to search in its app, already takes orders through ChatGPT, and gives staff an assistant called Green Dot Assist for questions about recipes and service standards."
+    },
+    {
+      "type": "h2",
+      "text": "Everyone in fast food is chasing the same idea"
+    },
+    {
+      "type": "p",
+      "text": "Starbucks isn't alone. Taco Bell is experimenting with menu boards that change their layout and content for each car. McDonald's is piloting a feature at a handful of drive-thrus where its ArchIQ chatbot spots repeat customers and offers them their usual."
+    },
+    {
+      "type": "p",
+      "text": "The common thread is simple. Big chains want to do what a good neighbourhood café owner does without thinking, which is remember you. The difference is scale. With thousands of locations and millions of customers, they need software to fake the memory."
+    },
+    {
+      "type": "p",
+      "text": "Niccol was refreshingly modest about it, saying \"we'll test, learn, and scale what works.\" That's the right framing. These are experiments, not finished products."
+    },
+    {
+      "type": "h2",
+      "text": "The hype check"
+    },
+    {
+      "type": "p",
+      "text": "The flashiest part of the plan is agentic ordering, where an AI assistant places the order for you. Starbucks says it may allow that at some point. But look at DoorDash, which [has received only several hundred orders from AI agents](https://techcrunch.com/2026/10/30/doordash-said-its-only-received-several-hundred-orders-from-ai-agents/). Real demand for bots ordering lunch is, so far, tiny."
+    },
+    {
+      "type": "p",
+      "text": "The recognition idea comes with a catch too. Starbucks frames it around participating customers, meaning people who sign up. That detail matters. Plenty of people would find it creepy if a screen knew them without asking, and a small business doesn't have a giant brand to cushion the blow if a regular feels watched."
+    },
+    {
+      "type": "p",
+      "text": "Honestly, the least glamorous bits are the most useful. A staff assistant that answers recipe questions and background help that gets orders right first time save money every single day. No one writes headlines about fewer remade lattes, but that's where the value is."
+    },
+    {
+      "type": "h2",
+      "text": "What a small business can borrow from this"
+    },
+    {
+      "type": "p",
+      "text": "Picture a two-chair barbershop in Toronto. The owner knows that Ali comes in every three weeks and always wants the same fade. The problem is that knowledge lives in one person's head. When the owner's on holiday, the regulars get treated like strangers."
+    },
+    {
+      "type": "p",
+      "text": "That's the real lesson here. You don't need cameras or licence-plate scanners. You need your customer history stored somewhere useful, and a simple way to act on it."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Use what you already have. Your booking system, loyalty app or till probably stores past visits, so check whether staff can see a customer's last order at a glance.",
+        "Make the repeat booking one tap. A dental clinic in Dubai Marina could send a WhatsApp reminder offering the same hygienist and time slot as last time.",
+        "Build a staff helper. Put your recipes, prices, policies and FAQs into an internal AI assistant so new hires ask it first, not you. That's your own Green Dot Assist.",
+        "Ask before you personalise. Let customers opt in and tell them what you remember and why, so it feels thoughtful rather than spooky.",
+        "Start with one thing. Pick your most common repeat order or booking, make it faster, and watch the results for a month before adding more."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "The staff helper is usually where we'd start. It's affordable, it stays private to your team, and it pays off fast. If you'd like one built around your own business, that's exactly what we do with [custom AI agents](https://www.f21studio.com/services/custom-ai-agents)."
+    },
+    {
+      "type": "p",
+      "text": "The coffee giants are spending serious money to recreate the feeling of walking into a place where someone knows your name. If you run a small business, you probably have that already. The job now is making sure it doesn't vanish the day you take off."
+    }
+  ],
+  "takeaways": [
+    "Starbucks will explore drive-thru menus that recognise opted-in customers and personalise what they see, but its CEO says it's still early.",
+    "The flashy agentic-ordering idea is mostly hype for now, and the staff assistant is the more useful part of the plan.",
+    "Small businesses can copy the core idea cheaply by using customer history they already have and building a simple internal AI helper."
+  ],
+  "faq": [
+    {
+      "q": "Can a small business personalise offers like Starbucks without expensive technology?",
+      "a": "Yes. Most booking systems, loyalty apps and tills already store past orders, so you can show staff a customer's usual or send a one-tap rebooking message without any cameras or custom hardware."
+    },
+    {
+      "q": "Do customers actually want AI agents ordering for them?",
+      "a": "Not many yet. DoorDash has said it has received only several hundred orders from AI agents, so it's worth watching rather than building your business around today."
+    },
+    {
+      "q": "What's the easiest AI tool for a small shop or café to start with?",
+      "a": "An internal assistant that answers staff questions about recipes, prices and policies is a good first step. It's private, quick to set up and cuts down on mistakes and interruptions."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Starbucks wants to use AI to show you a ‘personalized digital menu’ at the drive-thru",
+      "publisher": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1023440/starbucks-ai-personalized-menu-drive-thru"
+    },
+    {
+      "title": "DoorDash said it's only received 'several hundred' orders from AI agents",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/30/doordash-said-its-only-received-several-hundred-orders-from-ai-agents/"
+    }
+  ],
+  "image": "/blog/2026-11-01-starbucks-ai-personalised-drive-thru-menu-mvxq2c7a.jpg"
+}
