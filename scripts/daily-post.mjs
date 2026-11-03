@@ -245,23 +245,28 @@ async function makeImage(prompt, slug) {
     return undefined;
   }
   const full = `${prompt}. Editorial photograph, natural light, shallow depth of field, cinematic, subtle purple accent tones, realistic, high detail. No text, no logos, no watermarks.`;
-  try {
-    const res = await fetch("https://api.segmind.com/v1/flux-schnell", {
-      method: "POST",
-      signal: AbortSignal.timeout(90000),
-      headers: { "x-api-key": process.env.SEGMIND_API_KEY, "content-type": "application/json" },
-      body: JSON.stringify({ prompt: full, steps: 4, seed: Math.floor(Math.random() * 1e6), sampler: "euler", scheduler: "simple", width: 1216, height: 768, base64: false }),
-    });
-    if (!res.ok) throw new Error(`segmind ${res.status}: ${(await res.text()).slice(0, 200)}`);
-    // New file name each time so CDNs never serve an old picture.
-    const name = `${slug}-${Date.now().toString(36)}.jpg`;
-    fs.mkdirSync(IMAGES, { recursive: true });
-    fs.writeFileSync(path.join(IMAGES, name), Buffer.from(await res.arrayBuffer()));
-    return `/blog/${name}`;
-  } catch (e) {
-    log(`image generation failed (${e.message}); using the branded cover`);
-    return undefined;
+  // Segmind sometimes rejects a request once and accepts it moments later, so try a few times.
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      const res = await fetch("https://api.segmind.com/v1/flux-schnell", {
+        method: "POST",
+        signal: AbortSignal.timeout(90000),
+        headers: { "x-api-key": process.env.SEGMIND_API_KEY, "content-type": "application/json" },
+        body: JSON.stringify({ prompt: full, steps: 4, seed: Math.floor(Math.random() * 1e6), sampler: "euler", scheduler: "simple", width: 1216, height: 768, base64: false }),
+      });
+      if (!res.ok) throw new Error(`segmind ${res.status}: ${(await res.text()).slice(0, 200)}`);
+      // New file name each time so CDNs never serve an old picture.
+      const name = `${slug}-${Date.now().toString(36)}.jpg`;
+      fs.mkdirSync(IMAGES, { recursive: true });
+      fs.writeFileSync(path.join(IMAGES, name), Buffer.from(await res.arrayBuffer()));
+      return `/blog/${name}`;
+    } catch (e) {
+      log(`image attempt ${attempt} failed (${e.message})`);
+      if (attempt < 3) await new Promise((r) => setTimeout(r, attempt * 10000));
+    }
   }
+  log("image generation failed 3 times; using the branded cover");
+  return undefined;
 }
 
 // --video-for=<slug>: find a video for an existing post and exit.
