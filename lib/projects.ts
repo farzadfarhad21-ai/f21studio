@@ -16,6 +16,8 @@ export type Project = {
   results: string[];
   stack: string[];
   services: string[];
+  /** Real screenshots shown on the case study page. */
+  gallery?: { src: string; width: number; height: number; alt: string; caption: string }[];
 };
 
 export const projects: Project[] = [
@@ -93,60 +95,101 @@ export const projects: Project[] = [
     name: "Khodro Dubai",
     category: "AI Growth System · Automotive",
     tagline:
-      "A made-to-order Dubai → Iran car import brand with an AI content engine that turns every car into reels, posts and articles.",
+      "A made-to-order Dubai → Iran car import brand: a 216-page Persian site, real car listings and an AI content engine, built around one promise — a refundable deposit.",
     color: "#f59e0b",
     status: "Live product",
     href: "https://khodrodubai.com",
     log: "Rendering short reel · Land Cruiser TXL · khodrodubai",
     size: "wide",
     metrics: [
-      { label: "Per car", value: "Reel + post + page" },
-      { label: "Delivery promise", value: "~1 month" },
-      { label: "Channels", value: "IG · YT · TG" },
+      { label: "Pages generated", value: "216" },
+      { label: "Brands · models", value: "13 · 96" },
+      { label: "AI articles", value: "73" },
+      { label: "Per car", value: "Page + reel + post" },
     ],
     challenge:
-      "Importing cars across borders is a trust business. Buyers need proof, transparency and fast answers — and every listing needs content across several channels.",
+      "Importing a car from Dubai to Iran is a trust business. Buyers fear scams, need proof the car is real, and want to know exactly what happens to their money. Every car also needs its own page, photos and social content, which no small team can produce by hand.",
     solution: [
-      "Designed a bilingual brand site that explains the deposit-secured, inspection-first process step by step.",
-      "Built a Telegram intake bot where the team drops a car's details and photos.",
-      "An AI pipeline generates the listing page, a daily blog post and a beat-synced short video reel for every car, rendered in code.",
-      "Planned multi-channel distribution to Instagram Reels, YouTube Shorts and Telegram.",
+      "Designed a right-to-left Persian brand site around a refundable deposit and a 6-step process, so a buyer sees exactly what happens before paying anything.",
+      "A site generator builds every page from one data file: 13 brand pages, 96 model pages, a page per real car with its photos, price in toman, mileage and plate type, plus the sitemap.",
+      "A Telegram intake bot: the team drops a car's details and photos, and the listing page, a short video reel rendered in code (Remotion) and a social post come out the other side.",
+      "A daily AI writer published 73 Persian buying guides (free-zone plates, avoiding scams, electric cars) to answer the questions buyers actually search.",
+      "Cars found by our Sourcing Desk agent cross straight into the site, so sourcing and selling share one pipeline.",
     ],
     results: [
-      "One input becomes a full content package for every car.",
-      "Clear, trust-building copy for a high-ticket purchase.",
-      "Site, blog and video all generated from the same data — nothing to keep in sync by hand.",
+      "One input becomes a full content package for every car: page, reel and post.",
+      "216 search-ready pages generated from a single data file — nothing to keep in sync by hand.",
+      "Trust-first copy for a high-ticket purchase: refundable deposit, inspection report and real walkaround video for every car.",
     ],
-    stack: ["Next.js", "Remotion", "Claude API", "Telegram Bot", "Vercel", "GitHub Actions"],
+    stack: ["Node.js site generator", "Remotion", "Claude API", "Telegram Bot", "Vercel", "GitHub Actions"],
     services: ["ai-growth-system", "ai-video-ads", "ai-content-automation"],
+    gallery: [
+      {
+        src: "/work/khodro-dubai/car-page.jpg", width: 1600, height: 1000,
+        alt: "Khodro Dubai car page for an Infiniti QX80 with real photos, price in toman, mileage and plate type",
+        caption: "Every real car gets its own page, generated automatically: real photos, price in toman, year, mileage and which plate it can take, with a one-tap WhatsApp enquiry.",
+      },
+      {
+        src: "/work/khodro-dubai/process.jpg", width: 1600, height: 1000,
+        alt: "Khodro Dubai process page explaining the refundable deposit and 6-step import process",
+        caption: "The trust page: a 6-step process, a refundable deposit and a one-month delivery promise, explained before the buyer pays anything.",
+      },
+      {
+        src: "/work/khodro-dubai/brands.jpg", width: 1600, height: 1000,
+        alt: "Khodro Dubai catalogue with 13 importable brands and filters for plate type, brand and year",
+        caption: "The catalogue: 13 brands that can legally be imported, 96 model pages, and filters by plate type, brand, condition and year.",
+      },
+      {
+        src: "/work/khodro-dubai/mobile.jpg", width: 416, height: 900,
+        alt: "Khodro Dubai homepage on a phone",
+        caption: "Built mobile-first in Persian, right to left — most buyers arrive from Instagram and Telegram on their phones.",
+      },
+    ],
   },
   {
     slug: "khodro-sourcing-desk",
     name: "Sourcing Desk",
     category: "AI Agent · Automotive",
     tagline:
-      "Ask for a car, get every matching listing in the UAE in one table — with a ready-to-send WhatsApp for the seller.",
+      "Ask for a car in plain words and the desk finds every matching listing across 8 UAE marketplaces, sorts them into one table, and handles the WhatsApp conversations with sellers.",
     color: "#f97316",
     status: "Internal system",
-    log: "Scanning UAE listings · 41 matches found",
+    log: "Scanning UAE listings · 140 matches found",
     size: "sm",
     metrics: [
-      { label: "Search", value: "Whole UAE market" },
-      { label: "Output", value: "One clean table" },
+      { label: "Cars tracked", value: "3,237" },
+      { label: "Marketplaces", value: "8" },
+      { label: "Client requests", value: "57" },
+      { label: "Dealer messages", value: "3,596" },
     ],
     challenge:
-      "Finding the right car meant hours across marketplaces, dealers and auctions, then comparing messy listings by hand.",
+      "Finding one specific car for a client meant hours across Dubizzle, DubiCars, YallaMotor and more, then comparing messy listings by hand, calling dealers one by one and remembering who said what.",
     solution: [
-      "Built a scout agent that searches UAE sources for a requested make, model and year.",
-      "Normalises every result into one filterable table and flags which ones can clear on the client's plate type.",
-      "Drafts the WhatsApp message to the seller, and sends finished cars straight to the Khodro Dubai site.",
+      "A scout agent: type a request the way a client says it (\"Land Cruiser VXR 2026, white\") and it sweeps 8 sources — DubiCars, Dubizzle, YallaMotor, OpenSooq, CarSwitch, AutoAE, Automall and Facebook Marketplace.",
+      "Every result is cleaned, de-duplicated and put into one sortable table with price, landed cost, mileage, spec and whether the car can clear on the client's plate type in Iran.",
+      "A trim and market guide built from the listings themselves: how many of each trim are for sale, the median price and which features each one really has.",
+      "A WhatsApp assistant drafts a natural message to each seller, reads the replies, fills in missing details and keeps a permanent seller book. A human approves before anything is sent.",
+      "Re-sweeps track price drops, relisted cars and cars that have sold, and finished picks go straight onto the Khodro Dubai site.",
     ],
     results: [
-      "Hours of manual searching turned into one request.",
-      "Every option side by side, so the client decides faster.",
+      "57 client requests worked, 3,237 cars tracked and 573 dealers in the seller book.",
+      "Hours of searching per car became one request and one table.",
+      "Every option side by side with its true landed cost, so the client decides in minutes.",
     ],
-    stack: ["Python", "SQLite", "Browser extension", "Claude API"],
+    stack: ["Python", "SQLite", "Chrome extension", "Claude API", "WhatsApp", "Telegram Bot"],
     services: ["custom-ai-agents"],
+    gallery: [
+      {
+        src: "/work/khodro-sourcing-desk/listings.jpg", width: 1600, height: 1000,
+        alt: "Sourcing Desk table of 140 Toyota Land Cruiser 2026 listings with price, landed cost, spec, plate verdict and WhatsApp button",
+        caption: "One request, \"Land Cruiser 2026\": 140 cars from 6 marketplaces in one table, with the median price, the best deal, landed cost, plate verdict and a WhatsApp button for each seller. Seller numbers are hidden here.",
+      },
+      {
+        src: "/work/khodro-sourcing-desk/trim-guide.jpg", width: 1600, height: 1000,
+        alt: "Sourcing Desk trim and market guide showing ads, median price and features per trim",
+        caption: "The trim and market guide: the desk reads every ad and shows how many of each trim are for sale, the median price and which features each one really has. You can also ask it questions in plain words.",
+      },
+    ],
   },
   {
     slug: "deepdive",

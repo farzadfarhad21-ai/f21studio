@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Navbar from "../../components/Navbar";
@@ -84,6 +85,25 @@ export default function CaseStudy({ params }: Params) {
             </div>
           ))}
         </div>
+
+        {p.gallery && (
+          <section className="mt-20">
+            <h2 className="text-sm font-black uppercase tracking-[0.25em] text-[#525252] mb-6">Inside the build</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              {p.gallery.map((g, n) => {
+                const tall = g.height > g.width;
+                return (
+                  <figure key={g.src} className={n === 0 ? "md:col-span-2" : tall ? "md:row-span-2" : ""}>
+                    <div className={`overflow-hidden rounded-xl border border-white/10 bg-[#111] ${tall ? "max-w-[300px] mx-auto" : ""}`}>
+                      <Image src={g.src} width={g.width} height={g.height} alt={g.alt} sizes={n === 0 ? "(min-width: 1024px) 960px, 100vw" : tall ? "300px" : "(min-width: 768px) 480px, 100vw"} className="w-full h-auto" />
+                    </div>
+                    <figcaption className="mt-3 text-sm text-[#a3a3a3] leading-relaxed">{g.caption}</figcaption>
+                  </figure>
+                );
+              })}
+            </div>
+          </section>
+        )}
 
         <section className="mt-20 grid md:grid-cols-[200px_1fr] gap-6">
           <h2 className="text-sm font-black uppercase tracking-[0.25em] text-[#525252]">The challenge</h2>
