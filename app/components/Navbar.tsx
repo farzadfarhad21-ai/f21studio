@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const links = [
   { label: "Services", href: "/#services" },
@@ -31,9 +32,8 @@ export default function Navbar() {
           : "bg-transparent border-b border-white/5"
       }`}
     >
-      <Link href="/" aria-label="F21 Studio home" className="font-black text-lg tracking-[0.15em] uppercase">
-        <span className="text-[#a855f7]">F21</span>
-        <span className="text-[#fafafa]"> STUDIO</span>
+      <Link href="/" aria-label="F21 Studio home" className="inline-block">
+        <Image src="/brand/f21-studio-logo.svg" alt="F21 Studio" width={1150} height={240} priority className="h-6 md:h-7 w-auto" unoptimized />
       </Link>
       <ul className="hidden md:flex items-center gap-8">
         {links.map(({ label, href }) => (

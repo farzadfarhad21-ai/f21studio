@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { services } from "@/lib/services";
 import { projects } from "@/lib/projects";
 import { site } from "@/lib/site";
@@ -8,9 +9,8 @@ export default function Footer() {
     <footer className="border-t border-white/5 py-16 px-6 md:px-12 bg-[#0a0a0a]">
       <div className="max-w-7xl mx-auto grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
-          <Link href="/" className="font-black text-lg tracking-[0.15em] uppercase">
-            <span className="text-[#a855f7]">F21</span>
-            <span className="text-[#fafafa]"> STUDIO</span>
+          <Link href="/" className="inline-block">
+            <Image src="/brand/f21-studio-logo.svg" alt="F21 Studio" width={1150} height={240} className="h-7 w-auto" unoptimized />
           </Link>
           <p className="mt-4 text-sm text-[#737373] max-w-[38ch]">
             AI agency in Dubai building websites, content automation, SEO and AI agents for small businesses worldwide.
