@@ -1,0 +1,115 @@
+{
+  "slug": "2026-11-04-chatgpt-fifth-of-google-search-volume",
+  "title": "ChatGPT now handles a fifth of Google's search volume",
+  "description": "OpenAI says ChatGPT now runs a fifth as many searches as Google. Here's what that means for small businesses and how to get found in AI answers.",
+  "date": "2026-11-04T11:51:48.258Z",
+  "tags": [
+    "ChatGPT",
+    "AI search",
+    "SEO",
+    "Google",
+    "Local marketing"
+  ],
+  "imageAlt": "A smartphone on a bench in a small fitness studio showing a chat-style search answer with image cards, with a trainer blurred in the background.",
+  "imagePrompt": "Realistic photo inside a small boutique fitness studio, a trainer slightly blurred in the background beside kettlebells and a rowing machine. In sharp foreground on a wooden bench, a smartphone screen shows a chat interface with speech bubbles, a magnifying-glass icon and three colourful image cards. Warm natural light, no readable text.",
+  "readingMinutes": 3,
+  "blocks": [
+    {
+      "type": "p",
+      "text": "OpenAI says the number of searches people run through ChatGPT now equals about a fifth of the searches run through Google. Adam Fry, who leads consumer product for ChatGPT, shared the figure at a press event on Monday, as [reported by The Verge](https://www.theverge.com/ai-artificial-intelligence/1025482/openai-says-chatgpt-is-catching-up-to-google-in-search)."
+    },
+    {
+      "type": "p",
+      "text": "A fifth isn't overtaking anyone. But the comparison is striking. During Google's 2023 antitrust trial, Microsoft's Satya Nadella said Bing had around 3 percent of the search market after more than a decade of trying. ChatGPT got much further by not really looking like a search engine at all."
+    },
+    {
+      "type": "h2",
+      "text": "What counts as a search here"
+    },
+    {
+      "type": "p",
+      "text": "The small print matters. OpenAI only counts a search when someone's question triggers a web search. Asking ChatGPT to define a word or walk you through a simple how-to doesn't count. So these are people looking for live information, the sort of thing that leads to a booking or a purchase."
+    },
+    {
+      "type": "p",
+      "text": "Two caveats. Fry didn't say where the Google comparison number came from, so treat 20 percent as OpenAI's own claim rather than an independent measurement. And ChatGPT likely relies heavily on Microsoft Bing for its results, alongside OpenAI's own search index. If you've never checked how your business looks on Bing, that's worth knowing."
+    },
+    {
+      "type": "h2",
+      "text": "Search is becoming a conversation with pictures"
+    },
+    {
+      "type": "p",
+      "text": "Picture a pet owner in Toronto asking for a groomer open on Sundays near their flat. A few years ago they'd scroll a list of links. Now they increasingly get a short answer, a couple of names, maybe some images, and they never visit a website at all."
+    },
+    {
+      "type": "p",
+      "text": "Google is heading the same way. It keeps sending fewer clicks to outside websites while pushing AI Overviews and newer features like personalised results with charts and visuals. OpenAI calls its version \"Intelligent UI\", meaning interactive, visual answers inside the chat. Fry summed it up as \"You're talking to a canvas.\""
+    },
+    {
+      "type": "p",
+      "text": "For a small business, that shifts the goal. Ranking at the top of a list of links still helps, but the bigger prize is being the business the answer mentions, with your details described correctly. That depends on clear, consistent facts that a machine can read and repeat without getting muddled."
+    },
+    {
+      "type": "h2",
+      "text": "Ads are moving in too"
+    },
+    {
+      "type": "p",
+      "text": "OpenAI wants to make money from this the way Google does. With an IPO potentially planned for early next year, it said last month that ChatGPT would start showing images of sponsored products and services, rather than just a name, logo and link. Fry told reporters ads hadn't hurt usage and that most people don't seem to mind them."
+    },
+    {
+      "type": "p",
+      "text": "We'd take that with a pinch of salt, since it's OpenAI describing its own product. The practical point is clear enough, though. Paid spots inside AI answers are arriving, and the free, organic mentions will get more competitive over time. It's cheaper to build your presence now than to buy it later."
+    },
+    {
+      "type": "h2",
+      "text": "What you can try this week"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Ask ChatGPT the exact questions your customers ask, like \"dental clinic in Dubai Marina open Saturday\", and note whether you appear and whether the details are right.",
+        "Check your Bing listing as well as your Google Business Profile. If ChatGPT leans on Bing, an outdated entry there could be feeding wrong answers.",
+        "Put the basics on your website in plain text: services, areas you cover, opening hours and how to book. Don't bury them in images or PDFs.",
+        "Add a short FAQ page answering the questions you hear every day, written the way customers actually phrase them.",
+        "Repeat the ChatGPT check once a month so you notice changes before your customers do."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "This is the same groundwork we cover in our [SEO & AI search setup](https://www.f21studio.com/services/seo-growth-setup) for clients, but honestly, most of that list is a quiet Saturday morning's work for any owner with a laptop."
+    },
+    {
+      "type": "p",
+      "text": "Google isn't going anywhere, and a fifth is still only a fifth. But the two-person estate agency that shows up correctly in both places will quietly pick up enquiries the others miss. Start with one honest search for your own business and see what comes back."
+    }
+  ],
+  "takeaways": [
+    "OpenAI says searches run through ChatGPT now equal about 20 percent of Google's search volume, though it didn't say where the Google figure came from.",
+    "Both Google and ChatGPT are turning search into visual, conversational answers, which means fewer clicks to websites and more weight on being mentioned correctly.",
+    "Ask ChatGPT the questions your customers ask, check what it says about you, and tidy up your website and listings, including Bing."
+  ],
+  "faq": [
+    {
+      "q": "Does my small business need to show up in ChatGPT as well as Google?",
+      "a": "It's worth checking. OpenAI says ChatGPT now handles about a fifth as many searches as Google, so some of your customers are likely asking it for recommendations, and you want the answer to include you with accurate details."
+    },
+    {
+      "q": "Where does ChatGPT get its search results from?",
+      "a": "According to The Verge, OpenAI likely uses Microsoft Bing for a significant share of its searches, alongside its own search index. Keeping your Bing listing and website up to date is a sensible first step."
+    },
+    {
+      "q": "Are there ads in ChatGPT now?",
+      "a": "Yes. OpenAI already shows ads, and last month it said it would start including images of sponsored products and services rather than just a name, logo and link."
+    }
+  ],
+  "sources": [
+    {
+      "title": "OpenAI says ChatGPT is catching up to Google in search",
+      "publisher": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1025482/openai-says-chatgpt-is-catching-up-to-google-in-search"
+    }
+  ],
+  "image": "/blog/2026-11-04-chatgpt-fifth-of-google-search-volume-mw225a7c.jpg"
+}
