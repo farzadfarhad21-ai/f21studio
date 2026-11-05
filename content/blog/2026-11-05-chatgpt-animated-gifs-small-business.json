@@ -1,0 +1,133 @@
+{
+  "slug": "2026-11-05-chatgpt-animated-gifs-small-business",
+  "title": "ChatGPT now makes GIFs, and small shops should notice",
+  "description": "ChatGPT can now turn a prompt or a photo into an animated GIF you can tweak frame by frame. Here's what small businesses can actually do with it this week.",
+  "date": "2026-11-05T11:51:55.116Z",
+  "tags": [
+    "ChatGPT",
+    "OpenAI",
+    "Social media",
+    "Content creation",
+    "Small business"
+  ],
+  "imageAlt": "A smartphone on a pet grooming shop counter showing a row of animated cartoon dog frames with a play button, while a groomer dries a small dog in the background.",
+  "imagePrompt": "Realistic photo inside a small pet grooming shop. In sharp foreground on the counter, a smartphone screen shows a row of colourful animation frames of a fluffy cartoon dog, with a play icon and a speed slider. A groomer slightly blurred in the background drying a small dog. Warm natural light, no text.",
+  "readingMinutes": 3,
+  "blocks": [
+    {
+      "type": "p",
+      "text": "ChatGPT can now make animated GIFs. You type a request or upload a photo, and it gives you back a short looping animation that you can speed up, slow down, edit frame by frame and share. According to [The Verge](https://www.theverge.com/ai-artificial-intelligence/1026474/openai-chatgpt-animated-gifs-images-2-6), the feature arrives with OpenAI's new Images 2.6 model, which is rolling out to all ChatGPT and Codex users on web, desktop and mobile."
+    },
+    {
+      "type": "p",
+      "text": "Before this, getting a GIF out of ChatGPT wasn't a one-step job. OpenAI's own demo is charmingly low-stakes. Someone asks for a gif of a cat dancing, gets one, and can then change the playback speed and step through it frame by frame. OpenAI also says Images 2.6 makes ordinary image generation faster."
+    },
+    {
+      "type": "h2",
+      "text": "Why a GIF button is worth your attention"
+    },
+    {
+      "type": "p",
+      "text": "It's easy to dismiss this as a toy. Dancing cats aren't a marketing plan. But think about where small businesses actually talk to customers: WhatsApp broadcasts, Instagram stories, email newsletters, booking confirmations. Movement catches the eye in all of those, and a GIF plays without anyone pressing a button."
+    },
+    {
+      "type": "p",
+      "text": "Until now, a small team wanting a bit of motion had three choices. Pay a designer, wrestle with an editing app, or skip it. A dental clinic in Dubai Marina was never going to commission a looping animation to announce new evening hours. Now the receptionist could make one between appointments."
+    },
+    {
+      "type": "p",
+      "text": "People are clearly using these tools already. OpenAI says users now generate more than 4 billion images a week across ChatGPT and its API, up from 3 billion a week in September. That's image generation becoming an everyday habit, not a party trick."
+    },
+    {
+      "type": "h2",
+      "text": "The photo upload is the interesting part"
+    },
+    {
+      "type": "p",
+      "text": "Prompting from scratch is fun, but starting from your own photo is where this gets practical. Your actual shop, your actual product, your actual team. A gift shop in Toronto could take a photo of a new candle and ask for a gentle flicker. A two-person real-estate team could add a little movement to a listing photo for a quick \"just listed\" story."
+    },
+    {
+      "type": "p",
+      "text": "We'd treat the first results as drafts. AI image tools can bend small details, logos and lettering in strange ways, and in a GIF one bad frame is enough to make your product look off. The good news is that frame-by-frame editing is built in, so you can spot and fix the odd moment instead of starting over."
+    },
+    {
+      "type": "p",
+      "text": "A few ideas worth testing:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Turn your best product photo into a short loop for an Instagram story or WhatsApp status.",
+        "Animate a before-and-after for a salon, clinic or renovation job, then slow the speed so people can actually see the change.",
+        "Make a small thank-you GIF to send customers after they book or buy.",
+        "Add a subtle moving header to your next email newsletter instead of another static banner.",
+        "Save the prompt that gave you a look you like, so future GIFs feel like they come from the same brand."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Where to keep expectations realistic"
+    },
+    {
+      "type": "p",
+      "text": "A GIF isn't a video ad. It's short, silent and fairly simple, which is perfect for a quick nudge and wrong for telling a proper story. If you need sound, pacing and a clear call to action, that's a different job, and it's the kind of thing we build in our [AI video ads and reels](https://www.f21studio.com/services/ai-video-ads) work."
+    },
+    {
+      "type": "p",
+      "text": "Consistency is the other catch. Five staff members prompting five GIFs will get five different styles. Agree on one look, keep the prompt somewhere shared, and reuse it."
+    },
+    {
+      "type": "p",
+      "text": "For businesses that build their own tools, OpenAI is also adding two API image models, GPT-Image-2.6 Flare and Sunburst, aimed at faster and higher-quality generation. Its [announcement](https://openai.com/index/introducing-images-2-6) also mentions more precise editing and new API controls. Most owners won't touch the API directly, but the apps and services you already use may start offering better image features as a result."
+    },
+    {
+      "type": "h2",
+      "text": "One thing to try this week"
+    },
+    {
+      "type": "p",
+      "text": "Open ChatGPT, upload a recent photo you're proud of, and ask for a short, subtle loop. Adjust the speed until it feels calm rather than frantic, scrub through the frames, and remove anything that looks wrong. Then post it somewhere low-risk, like your story, and see whether it gets more replies than your usual static image."
+    },
+    {
+      "type": "p",
+      "text": "Will a GIF change your quarter? Probably not. But ten minutes for something that makes one more customer stop scrolling is a fair trade, and that's the kind of AI we like best: small, cheap, and actually used."
+    }
+  ],
+  "takeaways": [
+    "ChatGPT can now create animated GIFs from a text prompt or an uploaded photo, with controls for speed and individual frames.",
+    "It arrives with OpenAI's Images 2.6 model, which also speeds up image generation and is rolling out to all ChatGPT users on web, desktop and mobile.",
+    "The most useful move for a small business is animating your own product or space photos for stories, chats and newsletters, then checking every frame before posting."
+  ],
+  "faq": [
+    {
+      "q": "Can ChatGPT make a GIF from my own photo?",
+      "a": "Yes. You can upload a photo to ChatGPT and ask it to turn it into an animated GIF, then adjust the speed, edit individual frames and share it."
+    },
+    {
+      "q": "Who gets the new GIF feature in ChatGPT?",
+      "a": "It comes with OpenAI's Images 2.6 model, which is rolling out to all ChatGPT and Codex users on web, desktop and mobile apps. Rollouts can take time, so it may appear in your account a little later than others."
+    },
+    {
+      "q": "Is an AI-made GIF good enough for business marketing?",
+      "a": "For quick social posts, chats and newsletters it can be, as long as you check every frame for distorted products, logos or text. For proper ads with sound and a clear message, a short video is still the better choice."
+    }
+  ],
+  "sources": [
+    {
+      "title": "ChatGPT will now make you animated GIFs",
+      "publisher": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1026474/openai-chatgpt-animated-gifs-images-2-6"
+    },
+    {
+      "title": "Introducing Images 2.6",
+      "publisher": "OpenAI",
+      "url": "https://openai.com/index/introducing-images-2-6"
+    }
+  ],
+  "video": {
+    "id": "bJldMYfRvMQ",
+    "title": "Introducing ChatGPT Images 2.6",
+    "channel": "OpenAI"
+  },
+  "image": "/blog/2026-11-05-chatgpt-animated-gifs-small-business-mw3hle1d.jpg"
+}
