@@ -1,0 +1,118 @@
+{
+  "slug": "2026-11-06-gemini-omni-flash-15-second-video-ads",
+  "title": "Google's new video AI makes 15-second ads for about $1",
+  "description": "Google's Gemini Omni 1.2 Flash makes 15-second video clips, edits them by chat and costs 30% less. Here's what it means for small business video ads.",
+  "date": "2026-11-06T11:50:21.437Z",
+  "tags": [
+    "AI video",
+    "Google Gemini",
+    "Video ads",
+    "Small business marketing"
+  ],
+  "imageAlt": "A tablet on a boutique counter playing an AI-generated video of a model in a colourful dress, with the shop owner and clothing rails blurred in the background.",
+  "imagePrompt": "Realistic photo inside a small independent clothing boutique. In sharp foreground on the wooden counter, a tablet shows a video frame of a model turning in a colourful dress, with a large play button and a strip of small thumbnail frames below. The owner stands slightly blurred behind, beside rails of garments.",
+  "readingMinutes": 4,
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Picture a small boutique in Jumeirah with three new outfits and one photo of a model. Google says its new video model can turn exactly that into a 15-second try-on clip, the model turning on the spot while each garment keeps its cut, drape and back details. That's one of the headline demos in Google's announcement of [Gemini Omni 1.2 Flash](https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/), which is now rolling out and, for the first time, generally available."
+    },
+    {
+      "type": "p",
+      "text": "The short version: clips are longer, editing works by conversation, and the price is 30% lower than the previous version. At $0.07 per second of 720p video, a full 15-second clip comes to roughly $1.05. That's the number that made us sit up."
+    },
+    {
+      "type": "h2",
+      "text": "What actually changed"
+    },
+    {
+      "type": "p",
+      "text": "Length first. You can now set a clip anywhere from 3 to 15 seconds, in one-second steps, up from a 10-second ceiling before. Fifteen seconds is enough for a complete social ad or a short product explainer in one go, rather than stitching two clips together and hoping they match."
+    },
+    {
+      "type": "p",
+      "text": "Consistency is the bigger deal for businesses. You can feed it product photos, character or style images, short motion clips of up to three seconds, and audio cues. Google says faces, clothing, packaging text and brand colours now hold steady as the camera moves. Anyone who's tried earlier AI video tools knows the pain: your logo melts by second six, or your product quietly changes shape."
+    },
+    {
+      "type": "p",
+      "text": "Then there's editing. Instead of regenerating a whole clip because one thing is off, you just ask for the change. Swap the product, change the lighting or weather, switch the aspect ratio. Google also says dialogue and lip-sync are better, with different voices matched to the right characters, and sweeping camera moves come with far fewer awkward jump cuts."
+    },
+    {
+      "type": "h2",
+      "text": "Why the workflow matters as much as the price"
+    },
+    {
+      "type": "p",
+      "text": "The per-second price is nice, but the real savings come from how you're meant to use it. Draft quickly at 360p or 720p, fix details with follow-up edits, and only upscale your best clips to 1080p or 4K. The announcement doesn't list a separate upscaling price, so keep an eye on your first bill."
+    },
+    {
+      "type": "p",
+      "text": "For a small business, this changes who can make video at all. A two-person real-estate team could make one neighbourhood explainer, then ask for square, vertical and widescreen versions for different placements. A dental clinic in Dubai Marina could produce one friendly explainer about a treatment and spin off variants for families and for professionals without re-briefing anyone."
+    },
+    {
+      "type": "p",
+      "text": "You can get it through the Gemini API if you have a developer, or directly in Gemini for business, Google Vids and Flow. Every clip carries an invisible SynthID watermark marking it as AI-made. Frankly, we think that's a good thing."
+    },
+    {
+      "type": "h2",
+      "text": "Where we'd be careful"
+    },
+    {
+      "type": "p",
+      "text": "Google is upfront that fast sports action, rapid script changes and complex physics still need work. Its own side-by-side demos show the kind of small slips that happen, like a soup ladle turning into chopsticks in the older version. Details drift. Watch every clip all the way through before it goes live."
+    },
+    {
+      "type": "p",
+      "text": "The bigger point is honesty. AI video is great for moods, ideas and showing products you genuinely sell. It's risky for anything a customer treats as proof. Don't generate a clinic interior you don't have or a dish that looks nothing like what arrives at the table. The quickest way to lose trust is a gap between the ad and the front door."
+    },
+    {
+      "type": "p",
+      "text": "If you want to test it this week, here's where we'd start:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Take your three best product photos and ask for a 10-second rotating catalogue clip on a plain background.",
+        "Make one 15-second ad, then use follow-up edits to get vertical and square versions instead of generating new ones.",
+        "Try seasonal variants by changing only the background or lighting, say a sunny terrace version and a rainy-day version for your Toronto followers.",
+        "Draft everything at low resolution, show it to a colleague or two regular customers, and only upscale the one they react to.",
+        "Keep a small folder of brand references, your logo, colours and packaging shots, so every clip starts from the same material."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Setting up a repeatable pipeline for this is the kind of work we do in our [AI video ads and reels](https://www.f21studio.com/services/ai-video-ads) service, but honestly, play with it yourself first. You'll learn quickly what it's good at and where it trips."
+    },
+    {
+      "type": "p",
+      "text": "Not long ago, a polished 15-second product video meant booking a shoot and an editor. Now it's an afternoon and about a dollar a clip. It won't replace a real filmmaker for your brand story, but for weekly social content it's well worth a coffee's worth of experimenting."
+    }
+  ],
+  "takeaways": [
+    "Gemini Omni 1.2 Flash makes video clips of up to 15 seconds and costs $0.07 per second at 720p, about $1.05 for a full clip.",
+    "You can fix a clip with follow-up instructions, like swapping the background or switching to vertical, instead of starting over.",
+    "It's strong for product and social content, but always check every frame and never show customers things you don't actually offer."
+  ],
+  "faq": [
+    {
+      "q": "How much does Gemini Omni 1.2 Flash cost?",
+      "a": "Google lists it at $0.07 per second for 720p video, so a full 15-second clip costs about $1.05. That's 30% cheaper than the previous version, and the announcement doesn't give separate prices for upscaling to 1080p or 4K."
+    },
+    {
+      "q": "Do I need a developer to use Google's new AI video model?",
+      "a": "No. Developers can use it through the Gemini API, but it's also available in Google Vids, Gemini for business and Flow, which are designed for regular users."
+    },
+    {
+      "q": "Can I use AI-generated video in my business ads?",
+      "a": "Yes, the model is generally available and every clip carries an invisible SynthID watermark identifying it as AI-made. Just check each clip carefully and avoid showing products, places or results you don't actually offer."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips",
+      "publisher": "Google",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/"
+    }
+  ],
+  "image": "/blog/2026-11-06-gemini-omni-flash-15-second-video-ads-mw4wzbye.jpg"
+}
