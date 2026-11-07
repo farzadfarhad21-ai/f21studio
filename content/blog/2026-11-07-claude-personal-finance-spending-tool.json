@@ -1,0 +1,134 @@
+{
+  "slug": "2026-11-07-claude-personal-finance-spending-tool",
+  "title": "Claude now reads your bank statements so you don't have to",
+  "description": "Anthropic's new Personal Finance tool lets Claude read your bank and card transactions. What it does, what it can't, and a spending check you can try today.",
+  "date": "2026-11-07T10:53:23.576Z",
+  "tags": [
+    "Claude",
+    "Personal finance",
+    "AI assistants",
+    "Privacy",
+    "Small business"
+  ],
+  "imageAlt": "A smartphone on a florist's workbench showing a colourful spending pie chart with a red flag icon, with the florist arranging flowers in the background.",
+  "imagePrompt": "Realistic photo inside a small independent florist shop. In sharp foreground on a wooden workbench among cut stems, a smartphone screen shows a colourful pie chart with coloured category segments and a small red flag icon beside one segment. The florist stands slightly blurred in the background arranging buckets of fresh flowers. Soft natural daylight.",
+  "readingMinutes": 4,
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Anthropic announced on Thursday that Claude is getting a feature called Personal Finance. You connect your bank and credit card accounts through Plaid, then ask questions about your money in plain English. Access is read-only, so Claude can look but can't move, manage or invest a single dirham."
+    },
+    {
+      "type": "p",
+      "text": "It's rolling out in beta this week, US only, for people on the Pro, Max and Ultra plans. So if you run a clinic in Dubai Marina or a shop in Toronto, you can't switch it on yet. Still worth paying attention, because ChatGPT added similar tools back in May, and now the two biggest assistants both want to be the place you ask where your money went. [TechCrunch has the full rundown](https://techcrunch.com/2026/11/05/claude-can-now-analyze-your-spending-with-its-new-personal-finance-tool/)."
+    },
+    {
+      "type": "h2",
+      "text": "What it actually does"
+    },
+    {
+      "type": "p",
+      "text": "Say it's the end of the month and you type, \"Where did my money go this month?\" Claude totals spending across every connected account and sorts it into categories like rent and utilities, food and drink, and shopping. Then you can push further with \"Is that more than usual?\" or \"Anything else I'm missing?\""
+    },
+    {
+      "type": "p",
+      "text": "The useful bit is the flagging. It looks through your transactions for duplicate charges, fees you didn't expect and bills that rise steadily month after month. You can also ask bigger questions, like whether you're spending more than you earn, or get it to explain APR and work out how much interest you've paid over the past year."
+    },
+    {
+      "type": "p",
+      "text": "Anthropic is also keen to point out there are no ads or sponsored recommendations, and it doesn't sell its own cards, loans or savings accounts, \"so your money questions get a straight answer\", as its blog post puts it. That matters more than it sounds. A lot of free budgeting tools earn their keep by steering you towards a product."
+    },
+    {
+      "type": "h2",
+      "text": "The privacy question, answered fairly well"
+    },
+    {
+      "type": "p",
+      "text": "Plenty of people will hesitate before linking their bank to a chatbot. Fair enough. Anthropic has listed exactly what Claude can see: the bank's name, account name and type, the last four digits of the account number, balances, credit limits and up to two years of transaction history."
+    },
+    {
+      "type": "p",
+      "text": "It also says conversations inside the Personal Finance hub aren't used to train its models. Our take is that read-only access plus a clear, short list of data is the right design. It isn't risk-free, and you should still read the terms. But it's a long way from pasting full statements into a random chat window, which is what many people do now."
+    },
+    {
+      "type": "h2",
+      "text": "Why a business owner should care"
+    },
+    {
+      "type": "p",
+      "text": "Picture a two-person real-estate team, or a physio clinic in its second year. The owner's card often doubles as the business card, and subscriptions quietly pile up. A scheduling app, a design tool, two AI tools nobody remembers signing up for. That slow leak is exactly what this kind of feature is built to catch."
+    },
+    {
+      "type": "p",
+      "text": "The launch is framed around personal finances, and the article doesn't say whether business accounts will work. But the habit transfers, and you can run your own version this weekend without waiting for anything to reach your country."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Download the last three months of your business card statement as a spreadsheet or CSV from online banking.",
+        "Delete or mask full account numbers and any client names before uploading it to an AI assistant.",
+        "Ask it to group spending by category and list every recurring charge with its amount and date.",
+        "Ask specifically for duplicates, unexpected fees and any bill that went up over the period.",
+        "Check each flag against the real statement before cancelling anything, because AI can misread a line.",
+        "Book a 20-minute slot in your calendar to repeat the check next month."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "If you'd rather this happened without you remembering, it's the sort of small, repetitive job a [custom AI agent](https://www.f21studio.com/services/custom-ai-agents) handles well: pull the data, spot the oddities, send you a short note."
+    },
+    {
+      "type": "h2",
+      "text": "The bigger picture"
+    },
+    {
+      "type": "p",
+      "text": "Anthropic has been pushing Claude into specific areas this year, with Claude for Legal and Claude for Financial Services already launched. Personal Finance is the everyday-consumer version of that same move. Assistants are becoming less of a blank chat box and more of a set of focused tools."
+    },
+    {
+      "type": "p",
+      "text": "There's a neat irony in the timing, too. TechCrunch also reported [Ramp data showing AI spending stalling](https://techcrunch.com/2026/11/06/ramp-data-shows-ai-spending-stalling-just-as-anthropic-nears-its-ipo/) even as usage keeps climbing, partly thanks to price cuts and tighter cost controls. Businesses are getting smarter about what they pay for AI. Now AI wants to help them get smarter about everything else they pay for."
+    },
+    {
+      "type": "p",
+      "text": "A spending check isn't glamorous. But most owners we talk to know their rent to the last dirham and have no idea what they spend on software each month. Give it twenty minutes this weekend. Whatever you cancel can pay for the coffee."
+    }
+  ],
+  "takeaways": [
+    "Claude's new Personal Finance tool connects to bank and card accounts through Plaid with read-only access, so it can analyse spending but never move money.",
+    "It's in beta for US users on Pro, Max and Ultra plans, and it flags duplicate charges, surprise fees and bills that keep creeping up.",
+    "You don't need the new feature to benefit: a masked statement export and an AI assistant can run the same subscription and fee check on your business card today."
+  ],
+  "faq": [
+    {
+      "q": "Can I use Claude Personal Finance outside the US?",
+      "a": "Not yet. It's rolling out in beta to US users on the Pro, Max and Ultra plans, and no date for other countries has been mentioned."
+    },
+    {
+      "q": "Can Claude move money out of my bank account?",
+      "a": "No. Anthropic says access is read-only, so Personal Finance can't move, manage or invest your money."
+    },
+    {
+      "q": "Is it safe to upload my bank statements to an AI chatbot?",
+      "a": "Mask full account numbers and client details first, and check the provider's data policy. With Personal Finance, Anthropic says Claude only sees a defined list of account data and chats in the hub aren't used to train its models."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Claude can now analyze your spending with its new Personal Finance tool",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/05/claude-can-now-analyze-your-spending-with-its-new-personal-finance-tool/"
+    },
+    {
+      "title": "Ramp data shows AI spending stalling just as Anthropic nears its IPO",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/06/ramp-data-shows-ai-spending-stalling-just-as-anthropic-nears-its-ipo/"
+    }
+  ],
+  "video": {
+    "id": "UTubvRLX2j4",
+    "title": "Introducing Personal Finance in Claude",
+    "channel": "Claude"
+  },
+  "image": "/blog/2026-11-07-claude-personal-finance-spending-tool-mw6adoof.jpg"
+}
