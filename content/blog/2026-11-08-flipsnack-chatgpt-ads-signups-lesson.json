@@ -1,0 +1,123 @@
+{
+  "slug": "2026-11-08-flipsnack-chatgpt-ads-signups-lesson",
+  "title": "What Flipsnack's ChatGPT ads teach about signups",
+  "description": "Flipsnack used ChatGPT Ads to chase signups, not clicks, and paid less per registration. Here's what that means for small businesses thinking about AI ads.",
+  "date": "2026-11-08T11:02:31.198Z",
+  "tags": [
+    "ChatGPT Ads",
+    "Conversion optimisation",
+    "Online advertising",
+    "Small business marketing"
+  ],
+  "imageAlt": "A laptop on a bike workshop bench showing a rising green bar chart and a green tick, with a mechanic working on a bicycle in the background.",
+  "imagePrompt": "Realistic photo inside a small bicycle repair workshop. In sharp foreground on a wooden workbench beside tools, a laptop screen shows a simple chart with rising green bars, a large green tick and a small downward arrow beside a coin icon. A mechanic slightly blurred in the background adjusting a bike wheel. Warm natural light.",
+  "readingMinutes": 4,
+  "blocks": [
+    {
+      "type": "p",
+      "text": "OpenAI has published a short customer story about Flipsnack, a software company that has been advertising inside ChatGPT. According to [OpenAI's write-up on Flipsnack](https://openai.com/ads/customers/flipsnack), the team pointed its ChatGPT Ads campaigns at one goal: getting people to sign up and try the product. The result, as OpenAI tells it, was more registrations and a lower cost for each one."
+    },
+    {
+      "type": "p",
+      "text": "That's the whole story, really. We don't have the full case study text, so we can't tell you the exact numbers, budgets or timeline, and we'd be wary of anyone who claims to. But the shape of what happened is worth ten minutes of your attention, because it says a lot about where advertising is heading."
+    },
+    {
+      "type": "h2",
+      "text": "Why this matters even if you don't sell software"
+    },
+    {
+      "type": "p",
+      "text": "Picture a physiotherapy clinic in Al Barsha. For years, its ads have been judged on clicks. Lots of people tapped the ad, a few booked, and nobody was quite sure which ads actually filled the diary. Flipsnack's approach flips that around. Instead of paying to be seen or clicked, you tell the system the one thing you actually want people to do, and you let it optimise for that."
+    },
+    {
+      "type": "p",
+      "text": "For Flipsnack, that thing was a product signup. For the clinic, it might be a booked first assessment. For a bakery in Toronto, it could be a pre-order for the weekend. The idea travels well. What changes is the action you're counting."
+    },
+    {
+      "type": "p",
+      "text": "The other reason this matters is where the ad shows up. People increasingly ask ChatGPT for recommendations the way they used to ask a friend or type into Google. If someone is asking which tool to use, or which kind of service fits their problem, they're often closer to a decision than someone idly scrolling a feed. That's a good moment to be in front of them, as long as the ad is genuinely relevant."
+    },
+    {
+      "type": "h2",
+      "text": "What's useful here, and what's hype"
+    },
+    {
+      "type": "p",
+      "text": "The useful part is the discipline. Flipsnack chose a single, measurable goal and built its campaigns around it. That alone is something most small businesses skip. We regularly meet owners running ads where the goal is a vague mix of 'awareness', 'engagement' and 'more customers', which makes it almost impossible to know whether the money worked."
+    },
+    {
+      "type": "p",
+      "text": "The hype risk is assuming ChatGPT Ads will do the same for everyone. This is a customer story published by OpenAI about its own ad product, so naturally it highlights a success. A software company with a free signup has an easy, low-friction action to optimise for. A two-person real-estate team asking people to book a valuation has a harder sell, and the ad platform can only do so much if the landing page is slow or confusing."
+    },
+    {
+      "type": "p",
+      "text": "So treat this as a promising sign, not a guarantee. New ad channels are often cheaper in the early days, before every competitor piles in. That's a reason to test, carefully, not a reason to move your whole budget."
+    },
+    {
+      "type": "h2",
+      "text": "How to borrow the idea this month"
+    },
+    {
+      "type": "p",
+      "text": "You don't need to be running ChatGPT Ads to use the thinking behind Flipsnack's results. Here's a simple way to start, whichever platform you use."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Pick one action. A booking, a signup, a WhatsApp enquiry, a quote request. Just one per campaign.",
+        "Make sure you can track it. If your website can't tell you when someone completes that action, fix that before spending another dirham or dollar on ads.",
+        "Work out what it's worth. If a new dental patient is typically worth a few thousand over a year, you'll know how much you can sensibly pay per booking.",
+        "Simplify the page people land on. One clear offer, one button, as few form fields as you can get away with.",
+        "Run a small test on a new channel. Set a modest budget, give it a few weeks, and compare the cost per action with what you pay elsewhere.",
+        "Judge on cost per action, not clicks. Cheap clicks that never book are expensive."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "If that sounds like a lot to wire together, it's exactly the kind of joined-up setup we build in our [Full AI Growth System](https://www.f21studio.com/services/ai-growth-system), where the website, tracking and campaigns all point at the same goal. But plenty of owners can get the basics in place themselves with a free analytics account and an honest look at their booking page."
+    },
+    {
+      "type": "h2",
+      "text": "The bigger shift behind the story"
+    },
+    {
+      "type": "p",
+      "text": "Ads inside AI assistants are still new, and there's a lot we don't know yet about how they'll perform for local businesses compared with software brands. What is clear is that the platforms are moving towards paying for outcomes. The businesses that benefit will be the ones who already know which outcome they want and can measure it."
+    },
+    {
+      "type": "p",
+      "text": "That's not a tech skill. It's a business habit. And it's one you can build this week, before you ever decide whether ChatGPT Ads are right for you."
+    },
+    {
+      "type": "p",
+      "text": "Next time you open your ad dashboard, ignore the clicks for a minute and look for the one number that actually pays your rent. If you can't find it, that's your project for the week."
+    }
+  ],
+  "takeaways": [
+    "Flipsnack ran ChatGPT Ads aimed squarely at getting people to try its product, and it says registrations went up while the cost of each signup came down.",
+    "The lesson isn't just 'advertise in ChatGPT'. It's to pick one action that matters and make every part of the campaign serve it.",
+    "Before spending on any new ad channel, make sure you can track that one action and know roughly what it's worth to you."
+  ],
+  "faq": [
+    {
+      "q": "Can small businesses advertise on ChatGPT?",
+      "a": "OpenAI runs ChatGPT Ads and has published customer stories like Flipsnack's, so advertising inside ChatGPT is now an option. Whether it suits a local business depends on your goal and budget, so a small, measured test is the sensible first step."
+    },
+    {
+      "q": "What is conversion optimisation in advertising?",
+      "a": "It means telling the ad platform which action you care about, such as a signup or booking, so it focuses on people likely to take that action rather than just people likely to click."
+    },
+    {
+      "q": "How do I know if my ads are actually working?",
+      "a": "Track one specific action on your website, like a booking or enquiry, and divide your ad spend by how many of those you got. That cost per action is far more useful than clicks or impressions."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Flipsnack grows product signups with conversion optimization",
+      "publisher": "OpenAI",
+      "url": "https://openai.com/ads/customers/flipsnack"
+    }
+  ],
+  "image": "/blog/2026-11-08-flipsnack-chatgpt-ads-signups-lesson-mw7q52u6.jpg"
+}
