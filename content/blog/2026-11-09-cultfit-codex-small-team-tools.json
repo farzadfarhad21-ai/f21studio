@@ -1,0 +1,114 @@
+{
+  "slug": "2026-11-09-cultfit-codex-small-team-tools",
+  "title": "What Cult.fit's Codex story means for small teams",
+  "description": "Cult.fit says teams across its business use OpenAI's Codex to build their own tools. Here's what that means for small businesses, and a sensible way to start.",
+  "date": "2026-11-09T12:31:59.779Z",
+  "tags": [
+    "Codex",
+    "AI coding",
+    "Operations",
+    "Small business"
+  ],
+  "imageAlt": "A laptop on a physiotherapy clinic reception desk showing a simple dashboard with coloured cards and a bar chart, with a staff member blurred in the background.",
+  "imagePrompt": "Realistic photo inside a small physiotherapy clinic reception. In sharp foreground on the desk, a laptop screen shows a simple dashboard of coloured cards, a bar chart and green tick icons. A clinic manager in a polo shirt sits slightly blurred behind it, treatment bed and exercise bands softly out of focus in the background. Natural daylight.",
+  "readingMinutes": 3,
+  "blocks": [
+    {
+      "type": "p",
+      "text": "OpenAI has published a short customer story about Cult.fit, which is using Codex, OpenAI's AI coding agent, across the company. According to [OpenAI's write-up](https://openai.com/index/cultfit-builds-with-codex), teams in different functions are using it to build tools, move faster and change how everyday work gets done."
+    },
+    {
+      "type": "p",
+      "text": "We only have the headline version of this story, so we'll keep our claims modest. We don't know which tools were built, how many people are involved or what the results look like in numbers. But the shape of it is worth talking about, because it points to something small businesses can try right now."
+    },
+    {
+      "type": "h2",
+      "text": "The interesting bit is who's building"
+    },
+    {
+      "type": "p",
+      "text": "For years, if you wanted a custom tool at work, you joined a queue. Someone in operations would describe the problem, a developer would eventually build something, and by then the problem had often changed. The phrase that stands out in the summary is \"teams across functions\". That suggests the building isn't only happening in the engineering department."
+    },
+    {
+      "type": "p",
+      "text": "That's the shift we keep seeing with clients too. The person who actually feels the pain, the clinic manager juggling appointment reminders or the shop owner reconciling stock by hand, can now describe what they want in plain language and get a working first draft. It won't be perfect. It doesn't need to be. It just needs to be better than the spreadsheet they're fighting with today."
+    },
+    {
+      "type": "h2",
+      "text": "What this looks like at small-business size"
+    },
+    {
+      "type": "p",
+      "text": "Picture a two-person real-estate team in Dubai. Every Monday, one of them copies new enquiries from email into a sheet, tags them by area and budget, and sends a summary to the other. It takes an hour and nobody enjoys it. A coding agent can help them build a small script or simple internal page that does most of that sorting automatically."
+    },
+    {
+      "type": "p",
+      "text": "Or a physiotherapy clinic in Toronto that wants a quick daily view of no-shows and late cancellations. Nothing fancy, just a page that pulls from their booking export and highlights patterns. That's exactly the kind of modest, operational tool that used to be too small to justify hiring a developer, and too fiddly to do by hand forever."
+    },
+    {
+      "type": "p",
+      "text": "Here's our honest take. The hype version says everyone becomes a software engineer overnight. The real version is quieter and more useful: the cost of building small internal tools has dropped, so more of those little annoyances become worth fixing."
+    },
+    {
+      "type": "h2",
+      "text": "A sensible way to try it this month"
+    },
+    {
+      "type": "p",
+      "text": "You don't need a company-wide rollout. You need one problem, one afternoon and a bit of patience. This is roughly the approach we'd suggest:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Pick one repetitive task that eats at least an hour a week, like sorting enquiries, cleaning up a booking export or building a weekly sales summary.",
+        "Write down, in plain English, what goes in, what should come out and what a good result looks like. This step matters more than the tool.",
+        "Ask an AI coding tool to build a small first version, and test it on old data before you trust it with anything live.",
+        "Keep anything touching customer data, payments or medical records behind a human check, and be careful about what you paste into any AI tool.",
+        "Once it works, write a two-line note on how to run it, so it doesn't live only in one person's head."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Where the limits are"
+    },
+    {
+      "type": "p",
+      "text": "AI-built tools can be brittle. A script that works today can quietly break when your booking system changes its export format. And someone still has to own it, check it and fix it. A tool nobody maintains becomes tomorrow's mystery spreadsheet."
+    },
+    {
+      "type": "p",
+      "text": "There's also a difference between an internal helper and something customers touch. A rough tool for your own team is low risk. A chatbot answering patients or tenants needs proper testing, guardrails and a clear handover to a human. If you're heading in that direction, that's where something like our [custom AI agents work](https://www.f21studio.com/services/custom-ai-agents) comes in, but plenty of owners can get the first few wins on their own."
+    },
+    {
+      "type": "p",
+      "text": "So, does the Cult.fit story matter to you? Not because of the brand name. It matters because it's another sign that building small, practical tools is becoming a normal part of running a business, not a special project. Pick the most boring task on your list this week and see how far a first draft gets you. You might be surprised what an afternoon can fix."
+    }
+  ],
+  "takeaways": [
+    "OpenAI says Cult.fit is using Codex so teams across different functions can build their own tools and work faster.",
+    "The useful lesson for small businesses is that people closest to a problem can now sketch a fix themselves, not just wait for a developer.",
+    "Start with one small, annoying internal task, keep humans checking the output, and only automate what you'd be happy to explain to a client."
+  ],
+  "faq": [
+    {
+      "q": "What is OpenAI Codex?",
+      "a": "Codex is OpenAI's AI coding agent. You describe what you want in plain language and it helps write and adjust the code, which makes it practical for building small internal tools."
+    },
+    {
+      "q": "Can a small business without developers use AI coding tools?",
+      "a": "Yes, for simple internal tasks like sorting data or creating summaries. Start small, test on old data, and keep a human checking anything involving customers, payments or sensitive information."
+    },
+    {
+      "q": "Is it safe to build business tools with AI?",
+      "a": "It can be, if you keep the tools low risk at first, avoid pasting sensitive data into tools you haven't vetted, and make sure someone owns and maintains whatever gets built."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Cult.fit builds operational muscle with Codex",
+      "publisher": "OpenAI",
+      "url": "https://openai.com/index/cultfit-builds-with-codex"
+    }
+  ],
+  "image": "/blog/2026-11-09-cultfit-codex-small-team-tools-mw98ryk2.jpg"
+}
