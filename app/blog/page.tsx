@@ -4,8 +4,10 @@ import BlogCover from "../components/BlogCover";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import JsonLd from "../components/JsonLd";
+import ServiceLinks from "../components/ServiceLinks";
 import { getAllPosts, formatDate } from "@/lib/blog";
 import { site } from "@/lib/site";
+import { services } from "@/lib/services";
 
 export const metadata: Metadata = {
   title: "AI News for Small Business — Daily Notes",
@@ -88,6 +90,8 @@ export default function Blog() {
             ))}
           </div>
         )}
+
+        <ServiceLinks title="What we build for small businesses" items={services} />
       </section>
       <Footer />
     </main>

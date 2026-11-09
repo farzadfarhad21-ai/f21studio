@@ -189,3 +189,35 @@ export const services: Service[] = [
 ];
 
 export const getService = (slug: string) => services.find((s) => s.slug === slug);
+
+// Words that tie a blog post to a service, so each post can link to the most relevant service pages.
+const serviceKeywords: Record<string, string[]> = {
+  "ai-growth-system": ["growth", "customer", "lead", "small business", "marketing", "signup", "sales"],
+  "cinematic-websites": ["website", "web design", "landing page", "site", "brand", "browser"],
+  "ai-content-automation": ["content", "blog", "article", "post", "social", "newsletter", "writing", "email"],
+  "seo-growth-setup": ["seo", "search", "google", "ai mode", "ranking", "robots", "crawl", "overview", "perplexity"],
+  "custom-ai-agents": ["agent", "bot", "assistant", "automat", "workflow", "api", "chatbot", "computer use", "login", "text message"],
+  "ai-video-ads": ["video", "reel", "ads", "advert", "youtube", "tiktok", "campaign"],
+  "ai-visual-content": ["image", "picture", "photo", "design", "canva", "gif", "visual", "illustration"],
+};
+
+export function relatedServices(post: { title: string; description: string; tags: string[] }, count = 2): Service[] {
+  const title = post.title.toLowerCase();
+  const tags = post.tags.join(" ").toLowerCase();
+  const desc = post.description.toLowerCase();
+  const scored = services
+    .map((s) => ({
+      s,
+      score: (serviceKeywords[s.slug] ?? []).reduce((n, k) => {
+        const word = new RegExp(`\\b${k}`); // match at word start, so "ads" doesn't hit "downloads"
+        return n + (word.test(title) ? 3 : 0) + (word.test(tags) ? 2 : 0) + (word.test(desc) ? 1 : 0);
+      }, 0),
+    }))
+    .filter((x) => x.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .map((x) => x.s);
+  const fallback = services.find((s) => s.featured);
+  const picked = scored.slice(0, count);
+  if (picked.length < count && fallback && !picked.includes(fallback)) picked.push(fallback);
+  return picked;
+}

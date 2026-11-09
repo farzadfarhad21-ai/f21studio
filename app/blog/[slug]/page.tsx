@@ -8,8 +8,10 @@ import JsonLd from "../../components/JsonLd";
 import PageCTA from "../../components/PageCTA";
 import RichText from "../../components/RichText";
 import YouTubeEmbed from "../../components/YouTubeEmbed";
+import ServiceLinks from "../../components/ServiceLinks";
 import { getAllPosts, getPost, formatDate, type Block } from "@/lib/blog";
 import { site } from "@/lib/site";
+import { relatedServices } from "@/lib/services";
 
 type Params = { params: { slug: string } };
 
@@ -115,6 +117,8 @@ export default function PostPage({ params }: Params) {
             return [...video, block(b, i)];
           })}
         </div>
+
+        <ServiceLinks title="Put this to work in your business" items={relatedServices(p)} />
 
         {p.faq.length > 0 && (
           <section className="mt-14">

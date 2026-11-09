@@ -5,6 +5,7 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import JsonLd from "../../components/JsonLd";
 import PageCTA from "../../components/PageCTA";
+import ServiceLinks from "../../components/ServiceLinks";
 import { services, getService } from "@/lib/services";
 import { projects } from "@/lib/projects";
 import { site } from "@/lib/site";
@@ -140,6 +141,8 @@ export default function ServicePage({ params }: Params) {
         </section>
 
         <PageCTA title={`Get a quote for ${s.title.toLowerCase()}`} />
+
+        <ServiceLinks title="Other services" items={services.filter((x) => x.slug !== s.slug)} />
       </article>
       <Footer />
     </main>
