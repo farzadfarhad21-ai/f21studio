@@ -218,5 +218,5 @@ export function relatedServices(post: { title: string; description: string; tags
     .map((x) => x.s);
   // Top up with the flagship services so every post shows `count` cards.
   const fallbacks = ["ai-growth-system", "custom-ai-agents"].map((slug) => services.find((s) => s.slug === slug)!);
-  return [...new Set([...scored, ...fallbacks])].slice(0, count);
+  return [...scored, ...fallbacks].filter((s, i, all) => all.indexOf(s) === i).slice(0, count);
 }
