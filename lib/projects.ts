@@ -52,7 +52,7 @@ export const projects: Project[] = [
       "A new search-optimised article every day with zero manual work.",
     ],
     stack: ["Claude API", "Vercel Cron", "Static HTML", "Telegram Bot", "Schema.org", "Google Business Profile"],
-    services: ["ai-growth-system", "ai-content-automation", "seo-growth-setup"],
+    services: ["ai-growth-system", "ai-content-automation", "seo-growth-setup", "ai-audit-implementation"],
   },
   {
     slug: "training-matrix",
@@ -122,7 +122,7 @@ export const projects: Project[] = [
       "Trust-first copy for a high-ticket purchase: refundable deposit, inspection report and real walkaround video for every car.",
     ],
     stack: ["Node.js site generator", "Remotion", "Claude API", "Telegram Bot", "Vercel", "GitHub Actions"],
-    services: ["ai-growth-system", "ai-video-ads", "ai-content-automation"],
+    services: ["ai-growth-system", "ai-video-ads", "ai-content-automation", "ai-audit-implementation"],
     gallery: [
       {
         src: "/work/khodro-dubai/car-page.jpg", width: 1600, height: 1000,
@@ -177,7 +177,7 @@ export const projects: Project[] = [
       "Every option side by side with its true landed cost, so the client decides in minutes.",
     ],
     stack: ["Python", "SQLite", "Chrome extension", "Claude API", "WhatsApp", "Telegram Bot"],
-    services: ["custom-ai-agents"],
+    services: ["custom-ai-agents", "ai-audit-implementation"],
     gallery: [
       {
         src: "/work/khodro-sourcing-desk/listings.jpg", width: 1600, height: 1000,

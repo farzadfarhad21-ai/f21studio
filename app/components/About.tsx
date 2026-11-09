@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -57,18 +58,30 @@ export default function About() {
         </div>
 
         <div className="about-col space-y-5">
+          <div>
+            <p className="text-xl font-black text-[#fafafa]">Farzad</p>
+            <p className="mt-1 text-[11px] font-black uppercase tracking-[0.25em] text-[#c084fc]">
+              Founder · AI Implementation Consultant
+            </p>
+          </div>
           <p className="text-[#a3a3a3] leading-relaxed">
-            F21 Studio is a boutique creative agency built at the intersection
-            of luxury design and AI innovation. We partner with small businesses
-            and ambitious entrepreneurs to craft digital experiences that command
-            attention — and automation systems that free up time to focus on
-            growth.
+            F21 Studio is run by Farzad, an AI implementation consultant based
+            in Dubai. He works the way a fractional AI officer does: he gets
+            inside a business, finds the jobs AI can take over, then builds and
+            runs those systems himself.
           </p>
           <p className="text-[#a3a3a3] leading-relaxed">
-            Every project is handled with the precision of a seasoned creative
-            team, powered by cutting-edge AI tools that deliver world-class
-            results at a fraction of the traditional cost.
+            Everything on this site is proof, not a pitch: a therapy practice
+            that publishes and ranks on its own, a car-import brand with a
+            216-page automated site, and a sourcing desk that tracks more than
+            3,000 cars across 8 marketplaces.
           </p>
+          <Link
+            href="/services/ai-audit-implementation"
+            className="inline-block text-sm font-black uppercase tracking-[0.12em] text-[#c084fc] hover:text-[#fafafa] transition-colors"
+          >
+            Start with an AI audit →
+          </Link>
         </div>
       </div>
     </section>

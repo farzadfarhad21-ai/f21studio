@@ -17,6 +17,7 @@ const icons: Record<string, string> = {
   "custom-ai-agents": "🧠",
   "ai-video-ads": "🎬",
   "ai-visual-content": "✨",
+  "ai-audit-implementation": "🔍",
 };
 
 export default function Services() {
@@ -87,7 +88,7 @@ export default function Services() {
             >
               {s.featured && (
                 <span className="self-start text-[10px] font-black tracking-[0.3em] uppercase text-[#a855f7] bg-[#a855f7]/10 px-3 py-1 rounded-full">
-                  ★ Flagship Service
+                  {s.badge ?? "★ Flagship Service"}
                 </span>
               )}
               <span className="text-4xl">{icons[s.slug]}</span>

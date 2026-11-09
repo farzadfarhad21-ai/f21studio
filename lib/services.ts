@@ -6,6 +6,8 @@ export type Service = {
   price: string;
   timeline: string;
   featured?: boolean;
+  /** Label on featured cards; defaults to "★ Flagship Service". */
+  badge?: string;
   includes: string[];
   idealFor: string[];
   faqs: { q: string; a: string }[];
@@ -186,6 +188,46 @@ export const services: Service[] = [
       },
     ],
   },
+  {
+    slug: "ai-audit-implementation",
+    title: "AI Audit & Implementation",
+    badge: "★ Start here",
+    answer:
+      "An AI audit and implementation is when an AI consultant studies how your business runs, finds the jobs AI can take over, then builds and installs those systems for you. F21 Studio does both parts, so you get working tools, not a report.",
+    price: "$1,500–$10,000",
+    timeline: "1–6 weeks",
+    featured: true,
+    includes: [
+      "A one-week audit: interviews with you and your team about how work gets done today",
+      "A map of every repeated task, with the hours and cost it takes",
+      "A ranked list of what AI should take over first, with expected savings",
+      "We build the top systems: agents, automations, content and reporting",
+      "Training for your team and a month of support after launch",
+    ],
+    idealFor: ["Owners who know AI matters but don't know where to start", "Teams buried in manual admin", "Sourcing, sales and service businesses", "Companies that want a part-time head of AI"],
+    faqs: [
+      {
+        q: "What is an AI audit?",
+        a: "An AI audit is a short review of how your business works, done by an AI consultant. It lists the tasks that eat your team's time and shows which ones AI can do faster or cheaper, ranked by how much they save.",
+      },
+      {
+        q: "What does an AI implementation consultant do?",
+        a: "An AI implementation consultant goes into a business, finds where AI can help, then builds and installs the tools: for example an agent that searches suppliers, a bot that answers customers, or a system that writes and publishes content every day.",
+      },
+      {
+        q: "Do I have to build everything you recommend?",
+        a: "No. The audit is useful on its own. Most clients start with the one or two systems that save the most time, then add more once they see results.",
+      },
+      {
+        q: "Can you be our part-time head of AI?",
+        a: "Yes. After the first build, F21 Studio can stay on as a fractional AI officer for a monthly fee: we keep the systems running, watch new AI tools and add what's worth it.",
+      },
+      {
+        q: "Is this only for big companies?",
+        a: "No. It's built for small and medium businesses. Our own example is the Khodro Dubai sourcing desk: one AI system that searches 8 car marketplaces and handles thousands of dealer messages for a small team.",
+      },
+    ],
+  },
 ];
 
 export const getService = (slug: string) => services.find((s) => s.slug === slug);
@@ -198,6 +240,7 @@ const serviceKeywords: Record<string, string[]> = {
   "seo-growth-setup": ["seo", "search", "google", "ai mode", "ranking", "robots", "crawl", "overview", "perplexity"],
   "custom-ai-agents": ["agent", "bot", "assistant", "automat", "workflow", "api", "chatbot", "computer use", "login", "text message"],
   "ai-video-ads": ["video", "reel", "ads", "advert", "youtube", "tiktok", "campaign"],
+  "ai-audit-implementation": ["audit", "consult", "implement", "strategy", "adopt", "roadmap", "your team", "company", "companies"],
   "ai-visual-content": ["image", "picture", "photo", "design", "canva", "gif", "visual", "illustration"],
 };
 
