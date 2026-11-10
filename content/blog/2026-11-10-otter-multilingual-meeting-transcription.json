@@ -1,0 +1,119 @@
+{
+  "slug": "2026-11-10-otter-multilingual-meeting-transcription",
+  "title": "Otter will soon follow meetings that switch languages",
+  "description": "Otter.ai is adding 27 languages and a feature that keeps transcribing when speakers switch mid-call. Here's what it means for multilingual small teams.",
+  "date": "2026-11-10T12:06:46.593Z",
+  "tags": [
+    "AI transcription",
+    "Otter.ai",
+    "Meetings",
+    "Multilingual teams",
+    "Productivity"
+  ],
+  "imageAlt": "A laptop on a meeting table in a small architecture studio showing a sound waveform and three coloured speech bubbles, with two people talking beside a building model in the background.",
+  "imagePrompt": "Realistic photo inside a small architecture studio. In sharp foreground on a meeting table, a laptop screen shows a colourful sound waveform with three speech bubbles in different colours. Two people slightly blurred in the background talking beside a white scale model of a building. Soft daylight, no readable text.",
+  "readingMinutes": 3,
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Otter.ai, the AI note-taker that a lot of people already have sitting quietly in their video calls, has announced its biggest language expansion so far. It's adding 27 languages, which takes it to 31 in total once the rollout finishes, according to [TechCrunch](https://techcrunch.com/2026/11/09/otter-ai-can-now-follow-conversations-across-30-languages/)."
+    },
+    {
+      "type": "p",
+      "text": "The more interesting part is a feature that's still on the way. Otter says it will detect when people switch languages mid-meeting and keep transcribing without anyone touching a setting. The example given is a call drifting from English to Korean to Portuguese, with Otter keeping up the whole way."
+    },
+    {
+      "type": "h2",
+      "text": "Why this one matters if you work in Dubai"
+    },
+    {
+      "type": "p",
+      "text": "Picture a property consultation in Business Bay. The agent opens in English, the client's husband asks something in Hindi, and the conversation lands in Arabic when it's time to talk numbers. Most transcription tools assume one language per meeting, so a call like that comes back as half-sense."
+    },
+    {
+      "type": "p",
+      "text": "That's normal life here, and increasingly in Toronto, London and plenty of US cities too. A tool that follows the switch, rather than forcing you to pick a language upfront, fits how small teams actually talk to their clients."
+    },
+    {
+      "type": "p",
+      "text": "Now the honest part. Arabic, Hindi and Persian are all on Otter's coming-soon list, not the live one. And the language-switching feature has been announced, not shipped. If your meetings are mostly in Arabic, this is something to watch rather than something to sign up for this afternoon."
+    },
+    {
+      "type": "h2",
+      "text": "What's live now and what's still coming"
+    },
+    {
+      "type": "p",
+      "text": "Thirteen of the new languages are available today: Mandarin Chinese, Korean, German, Italian, Cantonese, Portuguese, Russian, Indonesian, Malay, Dutch, Turkish, Vietnamese and Polish. If you run a clinic with Russian-speaking patients, or a trading business that deals with Turkish or Indonesian suppliers, you can test it now."
+    },
+    {
+      "type": "p",
+      "text": "The other fourteen are Swedish, Danish, Finnish, Arabic, Hindi, Thai, Hebrew, Norwegian, Greek, Macedonian, Persian, Czech, Hungarian and Romanian. No date was given for those."
+    },
+    {
+      "type": "p",
+      "text": "One detail we liked. Otter built the new languages on its own speech models, trained on publicly available datasets, and had native-speaking volunteers review transcripts for accuracy. That's a sensible approach, but volunteer checks aren't the same as proof it works on your accent, your industry jargon or a noisy reception desk. Test it before you trust it with anything important."
+    },
+    {
+      "type": "h2",
+      "text": "Bigger than transcription"
+    },
+    {
+      "type": "p",
+      "text": "Otter is clearly aiming past note-taking. Backed by $320 million from General Catalyst, it recently added Work Mode, which gathers past customer calls, open action items, teammates' notes from similar calls and recent Google Drive files to help you prepare for a meeting. There's also Live Assist, which offers suggestions during a call based on what's been said so far."
+    },
+    {
+      "type": "p",
+      "text": "For a two-person consultancy, the prep feature is the one we'd look at first. Walking into a client call already reminded of what you promised last time is genuinely useful. Real-time coaching is more of a personal taste thing. Some people will love it, others will find it distracting while they're trying to listen."
+    },
+    {
+      "type": "h2",
+      "text": "How to try it without making a mess"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Pick one recurring meeting where two languages already come up, like a weekly supplier call, and run Otter on it for two weeks.",
+        "Ask a bilingual colleague to spot-check a few transcripts against what was actually said, especially names, numbers and prices.",
+        "Tell people they're being recorded. Patients and clients expect to be asked, and it's simply good manners.",
+        "Decide where the notes go. Push action items into your task list or CRM so the transcript actually gets used.",
+        "If your main language is on the coming-soon list, set a reminder to check back rather than forcing an English-only workaround."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "That fourth point is where most of the value hides. A transcript nobody reads is just storage. The payoff comes when it turns into a follow-up email, an updated client record or a quick summary for the colleague who missed the call. That's the kind of plumbing we build with [custom AI agents](https://www.f21studio.com/services/custom-ai-agents), and it works whichever note-taker you prefer."
+    },
+    {
+      "type": "p",
+      "text": "We'll be keeping a close eye on the Arabic rollout, because a meeting tool that can cope with a proper Dubai conversation, three languages and all, would be a small but very real everyday win. Until then, try it on the calls it already handles well and let it earn its place."
+    }
+  ],
+  "takeaways": [
+    "Otter.ai is adding 27 languages, bringing it to 31, and 13 of them work today.",
+    "A feature that follows speakers as they switch languages mid-call is announced but not live yet.",
+    "Arabic, Hindi and Persian are still on the coming-soon list, so Gulf teams should test carefully and watch the rollout."
+  ],
+  "faq": [
+    {
+      "q": "Does Otter.ai support Arabic transcription?",
+      "a": "Not yet. Arabic is one of the 14 languages Otter has listed as coming soon, alongside Hindi and Persian, with no release date given."
+    },
+    {
+      "q": "Can Otter transcribe a meeting where people switch between languages?",
+      "a": "Otter has announced a feature that automatically detects language changes and keeps transcribing, but it's described as upcoming rather than available now."
+    },
+    {
+      "q": "Is AI meeting transcription accurate enough for client calls?",
+      "a": "It's useful for notes and action items, but always spot-check names, numbers and prices. Otter says native-speaking volunteers reviewed its new languages, though your accents and jargon may differ."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Otter AI can now follow conversations across 30+ languages",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/09/otter-ai-can-now-follow-conversations-across-30-languages/"
+    }
+  ],
+  "image": "/blog/2026-11-10-otter-multilingual-meeting-transcription-mwanbjzi.jpg"
+}
