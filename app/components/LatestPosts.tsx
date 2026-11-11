@@ -11,7 +11,7 @@ export default function LatestPosts() {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
           <div>
-            <p className="text-[11px] font-black tracking-[0.45em] uppercase text-[#a855f7] mb-3">AI notes · daily</p>
+            <p className="text-[11px] font-black tracking-[0.45em] uppercase text-[#a855f7] mb-3">Guides &amp; AI notes</p>
             <h2 className="text-4xl md:text-5xl font-black text-[#fafafa] uppercase tracking-[-0.03em]">Fresh from the blog</h2>
           </div>
           <Link href="/blog" className="text-sm font-black uppercase tracking-[0.15em] text-[#a3a3a3] hover:text-[#fafafa]">All notes →</Link>

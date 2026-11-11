@@ -1,5 +1,10 @@
 #!/usr/bin/env node
-// Daily AI-news post for f21studio.com/blog.
+// Blog writer for f21studio.com/blog. Two kinds of post:
+// - guide (Mon, Wed, Fri): a practical guide on a buyer-intent topic from content/topics.json,
+//   tied to one F21 service and, where it fits, a real F21 project. These are what bring clients.
+// - news (Sat): the AI-news column below. Other days: nothing (fewer, better posts).
+// --mode=guide|news forces a kind; --force posts even if today already has a post.
+// News flow:
 // 1. Pull fresh AI stories from trusted RSS feeds.
 // 2. Claude picks the most useful, positive story for small business owners.
 // 3. Read the source article, Claude writes an original post in our voice.
@@ -36,7 +41,17 @@ const SERVICES = [
   ["Custom AI Agents & Bots", `${SITE}/services/custom-ai-agents`],
   ["AI Video Ads & Reels", `${SITE}/services/ai-video-ads`],
   ["Luxury Cinematic Websites", `${SITE}/services/cinematic-websites`],
+  ["AI Visual Content", `${SITE}/services/ai-visual-content`],
+  ["AI Audit & Implementation", `${SITE}/services/ai-audit-implementation`],
 ];
+
+// Real F21 work the guides may cite. Keep in step with lib/projects.ts; only these facts may be used.
+const PROJECTS = {
+  "rahil-therapy": `Rahil Therapy (${SITE}/work/rahil-therapy): a Dubai-based Persian-speaking psychotherapist. We rebuilt the site as a fast right-to-left Persian site with clear service pages, and built a daily AI pipeline that writes, illustrates, publishes and shares one article to Telegram every morning. PageSpeed SEO score went from about 62 to 92, page weight from 33MB to 4.7MB, Largest Contentful Paint from 5.2s+ to 2.6s. Google Business Profile set up as a service-area business.`,
+  "training-matrix": `Training Matrix (${SITE}/work/training-matrix): a coaching business. We built the website plus an AI client app (Next.js, Supabase, Claude) in English and Persian with WhatsApp contact. The product was sold.`,
+  "khodro-dubai": `Khodro Dubai (${SITE}/work/khodro-dubai): a Dubai to Iran car import brand. A 216-page Persian site generated from one data file (13 brand pages, 96 model pages, a page per real car), a Telegram intake bot that turns one car's details into a listing page, a short video reel and a social post, and a daily AI writer that published 73 buying guides. Built around a refundable deposit and a 6-step process to earn trust.`,
+  "khodro-sourcing-desk": `Sourcing Desk (${SITE}/work/khodro-sourcing-desk): an AI agent that takes a car request in plain words, searches 8 UAE marketplaces, puts every match in one table with landed cost, and drafts WhatsApp messages to sellers that a human approves before sending. 57 client requests worked, 3,237 cars tracked, 573 dealers in the seller book.`,
+};
 
 const log = (...a) => console.log(`[daily-post]`, ...a);
 const client = new Anthropic();
@@ -305,6 +320,109 @@ if (fs.existsSync(POSTS) && fs.readdirSync(POSTS).some((f) => f.startsWith(today
   process.exit(0);
 }
 
+// ---------- which kind of post today ----------
+
+const forced = process.argv.find((a) => a.startsWith("--mode="))?.split("=")[1];
+const mode = forced || ({ 1: "guide", 3: "guide", 5: "guide", 6: "news" })[today.getUTCDay()];
+if (!mode) {
+  log("no post scheduled today (guides Mon/Wed/Fri, news Sat)");
+  process.exit(0);
+}
+
+async function save(record, words) {
+  if (DRY) {
+    console.log(JSON.stringify(record, null, 2));
+    process.exit(0);
+  }
+  fs.mkdirSync(POSTS, { recursive: true });
+  const image = await makeImage(record.imagePrompt, record.slug);
+  if (image) record.image = image;
+  fs.writeFileSync(path.join(POSTS, `${record.slug}.json`), JSON.stringify(record, null, 2) + "\n");
+  log(`published ${record.slug} (${record.kind}, ${words} words${record.image ? ", with image" : ""})`);
+}
+
+function tidy(post) {
+  const slug = `${todayKey}-${post.slug.toLowerCase().replace(/[^a-z0-9-]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 70)}`;
+  const blocks = post.blocks
+    .map((b) => (b.type === "ul" ? { type: "ul", items: b.items.filter(Boolean) } : { type: b.type, text: b.text.trim() }))
+    .filter((b) => (b.type === "ul" ? b.items.length : b.text));
+  const words = blocks.map((b) => (b.type === "ul" ? b.items.join(" ") : b.text)).join(" ").split(/\s+/).length;
+  if (words < 400) throw new Error(`post too short (${words} words), not publishing`);
+  return { slug, blocks, words };
+}
+
+const POST_RULES = `- title: specific and human, 45-60 characters (Google cuts longer titles), no clickbait, no colon-subtitle formula.
+- slug: lowercase-hyphenated, 3-7 words, no dates.
+- description: 140-160 characters for search results.
+- tags: 3-5 short tags.
+- takeaways: exactly 3 one-sentence bullets for busy readers.`;
+
+if (mode === "guide") {
+  const topics = JSON.parse(fs.readFileSync(path.join(ROOT, "content/topics.json"), "utf8"));
+  const used = new Set(
+    (fs.existsSync(POSTS) ? fs.readdirSync(POSTS) : []).filter((f) => f.endsWith(".json"))
+      .map((f) => JSON.parse(fs.readFileSync(path.join(POSTS, f), "utf8")).topic).filter(Boolean)
+  );
+  const topic = topics.find((t) => !used.has(t.keyword));
+  if (!topic) throw new Error("every topic in content/topics.json has been used; add more");
+  const service = SERVICES.find(([, u]) => u.endsWith(`/${topic.service}`));
+  if (!service) throw new Error(`unknown service in topics.json: ${topic.service}`);
+  const proof = topic.project ? PROJECTS[topic.project] : "";
+  log(`guide topic: ${topic.keyword} -> ${topic.service}`);
+
+  const system = VOICE
+    .replace(`You write the daily "AI notes" column on the blog of`, `You write practical guides for the blog of`)
+    .replace(/Accuracy rules:[\s\S]*$/, `Accuracy rules:
+- Do not invent statistics, studies, quotes, other companies' prices or client names. Speak from practical experience in general terms, or use the F21 project facts given to you, accurately.
+- Link once to the F21 service page given (exact URL) where it helps the reader, never salesy. If a project is given, link once to its case study (exact URL).
+- Mention Dubai and the UAE naturally where it fits, but the advice must work for any small business.`);
+
+  const post = await ask({
+    system,
+    effort: "high",
+    schema: POST_SCHEMA,
+    user: `Write a practical guide for small business owners who search Google for: "${topic.keyword}".
+
+Angle: ${topic.angle}
+
+The F21 Studio service this guide relates to: ${service[0]} (${service[1]}).
+${proof ? `Real F21 project you can use as an example (use only these facts):\n${proof}\n` : ""}
+Recent pictures (use a different setting):
+${recentImagePrompts().map((t) => `- ${t}`).join("\n") || "- none yet"}
+
+Return:
+${POST_RULES}
+- The title should contain the search phrase or a natural variant of it.
+- blocks: 900-1300 words total. Open with 1-2 paragraphs that answer the search question directly in plain words (this is what Google and AI assistants quote). Then 3-5 "h2" sections in sentence case, phrased the way people search. Include at least one "ul" with concrete steps or checks. Paragraph blocks use "p". For "ul" put bullets in items and leave text empty; for other types leave items empty. End with a short paragraph on the simplest first step the reader can take this week.
+- faq: 3 questions people also search around this topic, answered in 1-3 sentences.
+- imagePrompt: one realistic photo a reader connects to THIS topic at a glance, under 60 words, key object or action sharp in the foreground. Simple icons and coloured cards on screens are fine. No printed menus, posters, signs, books or documents, no readable words, no logos, no robots. 1-2 people at most. Use a different kind of small business from the recent pictures.
+- imageAlt: a plain description of that image.`,
+  });
+
+  const { slug, blocks, words } = tidy(post);
+  await save({
+    slug,
+    kind: "guide",
+    topic: topic.keyword,
+    title: post.title.trim(),
+    description: post.description.trim(),
+    date: today.toISOString(),
+    tags: post.tags.slice(0, 5),
+    imageAlt: post.imageAlt.trim(),
+    imagePrompt: post.imagePrompt.trim(),
+    readingMinutes: Math.max(2, Math.round(words / 220)),
+    blocks,
+    takeaways: post.takeaways.slice(0, 3),
+    faq: post.faq.slice(0, 3),
+    sources: topic.project
+      ? [{ title: `F21 Studio case study: ${topic.project.replace(/-/g, " ")}`, publisher: "F21 Studio", url: `${SITE}/work/${topic.project}` }]
+      : [],
+  }, words);
+  process.exit(0);
+}
+
+// ---------- news ----------
+
 const covered = coveredUrls();
 const cutoff = Date.now() - 4 * 24 * 3600 * 1000;
 const all = (await Promise.all(FEEDS.map(readFeed))).flat();
@@ -346,26 +464,18 @@ const post = await ask({
   effort: "high",
   schema: POST_SCHEMA,
   user: `Today is ${today.toDateString()}. Write today's post from this material.\n\n<source_material>\n${sourceBlock}\n</source_material>\n\nRecent pictures (use a different setting):\n${recentImagePrompts().map((t) => `- ${t}`).join("\n") || "- none yet"}\n\nF21 Studio service pages you may link once if relevant:\n${SERVICES.map(([n, u]) => `- ${n}: ${u}`).join("\n")}\n\nReturn:
-- title: specific and human, 45-60 characters (Google cuts longer titles), no clickbait, no colon-subtitle formula.
-- slug: lowercase-hyphenated, 3-7 words, no dates.
-- description: 140-160 characters for search results.
-- tags: 3-5 short tags.
-- takeaways: exactly 3 one-sentence bullets for busy readers.
+${POST_RULES}
 - blocks: 650-950 words total. Open with 1-2 paragraphs that get straight to the news. Then 2-4 "h2" sections (headings in sentence case). Include one "ul" list of practical ideas or steps. Paragraph blocks use "p". For "ul" put bullets in items and leave text empty; for other types leave items empty. End with a short, human closing paragraph, not a summary.
 - faq: 2-3 questions a small business owner would actually search, answered in 1-3 sentences.
 - imagePrompt: one realistic photo a reader connects to THIS story at a glance, under 60 words. Put the story's key object or action in the sharp foreground as the main subject (for a password story: a phone showing a big green tick and a padlock icon; for a design tool: a tablet showing a colourful food design made of pictures and colour blocks). Simple icons, shapes and coloured cards on screens are fine. The image model writes garbled fake words on anything with lettering, so avoid printed menus, posters, signs, books and documents; no readable words, no logos, no robots. 1-2 people at most. Set it in a different kind of small business from the recent pictures listed below; rotate across salons, gyms, clinics, florists, shops, real-estate offices, workshops, studios, restaurants and offices, and avoid cafés and bakeries unless the story is about food.
 - imageAlt: a plain description of that image.`,
 });
 
-const slug = `${todayKey}-${post.slug.toLowerCase().replace(/[^a-z0-9-]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 70)}`;
-const blocks = post.blocks
-  .map((b) => (b.type === "ul" ? { type: "ul", items: b.items.filter(Boolean) } : { type: b.type, text: b.text.trim() }))
-  .filter((b) => (b.type === "ul" ? b.items.length : b.text));
-const words = blocks.map((b) => (b.type === "ul" ? b.items.join(" ") : b.text)).join(" ").split(/\s+/).length;
-if (words < 400) throw new Error(`post too short (${words} words), not publishing`);
+const { slug, blocks, words } = tidy(post);
 
 const record = {
   slug,
+  kind: "news",
   title: post.title.trim(),
   description: post.description.trim(),
   date: today.toISOString(),
@@ -382,13 +492,4 @@ const record = {
 const video = await findVideo(record.title, main.url);
 if (video) record.video = video;
 
-if (DRY) {
-  console.log(JSON.stringify(record, null, 2));
-  process.exit(0);
-}
-
-fs.mkdirSync(POSTS, { recursive: true });
-const image = await makeImage(record.imagePrompt, slug);
-if (image) record.image = image;
-fs.writeFileSync(path.join(POSTS, `${slug}.json`), JSON.stringify(record, null, 2) + "\n");
-log(`published ${slug} (${words} words${record.image ? ", with image" : ""})`);
+await save(record, words);

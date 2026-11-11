@@ -10,14 +10,14 @@ import { site } from "@/lib/site";
 import { services } from "@/lib/services";
 
 export const metadata: Metadata = {
-  title: "AI News for Small Business — Daily Notes",
+  title: "AI Guides for Small Business in Dubai & Beyond",
   description:
-    "One useful AI story a day, explained for small business owners: what happened, why it matters, and what you can do with it this week.",
+    "Practical AI guides for small business owners: chatbots, automation, SEO, video ads and AI audits, plus the AI news worth knowing. Written from real client work.",
   alternates: { canonical: "/blog" },
   openGraph: {
-    title: "AI News for Small Business — Daily Notes",
+    title: "AI Guides for Small Business in Dubai & Beyond",
     description:
-      "One useful AI story a day, explained for small business owners: what happened, why it matters, and what you can do with it this week.",
+      "Practical AI guides for small business owners: chatbots, automation, SEO, video ads and AI audits, plus the AI news worth knowing. Written from real client work.",
     url: "/blog",
   },
 };
@@ -32,7 +32,7 @@ export default function Blog() {
         data={{
           "@context": "https://schema.org",
           "@type": "Blog",
-          name: "F21 Studio — AI notes",
+          name: "F21 Studio blog — AI guides for small business",
           url: `${site.url}/blog`,
           publisher: { "@id": `${site.url}/#org` },
           blogPost: posts.slice(0, 20).map((p) => ({
@@ -45,17 +45,17 @@ export default function Blog() {
       />
       <Navbar />
       <section className="max-w-6xl mx-auto px-6 md:px-12 pt-36 pb-24">
-        <p className="text-[11px] font-black tracking-[0.45em] uppercase text-[#a855f7] mb-3">AI notes · daily</p>
+        <p className="text-[11px] font-black tracking-[0.45em] uppercase text-[#a855f7] mb-3">Guides &amp; AI notes</p>
         <h1 className="text-5xl md:text-7xl font-black uppercase text-[#fafafa] tracking-[-0.04em] leading-[0.95]">
-          The good AI news,
+          AI for small business,
           <br />
-          <span className="text-[#525252]">made useful.</span>
+          <span className="text-[#525252]">made practical.</span>
         </h1>
         <p className="mt-6 text-lg text-[#a3a3a3] max-w-[58ch]">
-          Every morning we pick one AI story worth your time and explain what it means for a small business — in plain words, with links to the sources.
+          Plain-English guides on putting AI to work in a small business, from real projects we have built, plus the AI news worth your time each week.
         </p>
 
-        {!lead && <p className="mt-16 text-[#737373]">The first note lands tomorrow morning.</p>}
+        {!lead && <p className="mt-16 text-[#737373]">The first guide lands soon.</p>}
 
         {lead && (
           <Link href={`/blog/${lead.slug}`} className="group mt-16 grid md:grid-cols-[1.2fr_1fr] gap-8 items-center">

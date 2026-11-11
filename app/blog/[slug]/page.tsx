@@ -57,10 +57,10 @@ export default function PostPage({ params }: Params) {
               url: `${site.url}/blog/${p.slug}`,
               mainEntityOfPage: `${site.url}/blog/${p.slug}`,
               keywords: p.tags.join(", "),
-              author: { "@type": "Organization", name: site.name, url: site.url },
+              author: { "@type": "Person", name: site.founder, jobTitle: "AI Implementation Consultant", url: `${site.url}/#about`, worksFor: { "@id": `${site.url}/#org` } },
               publisher: { "@id": `${site.url}/#org` },
               ...(p.image ? { image: `${site.url}${p.image}` } : {}),
-              citation: p.sources.map((s) => s.url),
+              ...(p.sources.length ? { citation: p.sources.map((s) => s.url) } : {}),
             },
             ...(p.faq.length
               ? [{
@@ -85,10 +85,13 @@ export default function PostPage({ params }: Params) {
           <Link href="/" className="hover:text-[#fafafa]">Home</Link> / <Link href="/blog" className="hover:text-[#fafafa]">Blog</Link>
         </nav>
         <p className="text-[11px] font-black uppercase tracking-[0.25em] text-[#a855f7]">
-          {formatDate(p.date)} · {p.readingMinutes} min read
+          {p.kind === "guide" ? "Guide" : "AI note"} · {formatDate(p.date)} · {p.readingMinutes} min read
         </p>
         <h1 className="mt-4 text-4xl md:text-5xl font-black text-[#fafafa] tracking-[-0.03em] leading-[1.05]">{p.title}</h1>
         <p className="mt-5 text-xl text-[#a3a3a3]">{p.description}</p>
+        <p className="mt-5 text-sm text-[#737373]">
+          By <Link href="/#about" className="text-[#d4d4d4] hover:text-[#fafafa]">{site.founder}</Link>, founder of F21 Studio · AI Implementation Consultant in Dubai
+        </p>
 
         <figure className="mt-10">
           <div className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-white/5">
@@ -137,8 +140,9 @@ export default function PostPage({ params }: Params) {
           </section>
         )}
 
+        {p.sources.length > 0 && (
         <section className="mt-14">
-          <h2 className="text-sm font-black uppercase tracking-[0.25em] text-[#525252] mb-3">Sources</h2>
+          <h2 className="text-sm font-black uppercase tracking-[0.25em] text-[#525252] mb-3">{p.kind === "guide" ? "Real example" : "Sources"}</h2>
           <ul className="space-y-2 text-sm">
             {p.sources.map((s) => (
               <li key={s.url}>
@@ -150,12 +154,13 @@ export default function PostPage({ params }: Params) {
             ))}
           </ul>
         </section>
+        )}
 
         <PageCTA title="Want AI working in your business?" />
 
         {more.length > 0 && (
           <section className="mt-16">
-            <h2 className="text-sm font-black uppercase tracking-[0.25em] text-[#525252] mb-5">More AI notes</h2>
+            <h2 className="text-sm font-black uppercase tracking-[0.25em] text-[#525252] mb-5">More from the blog</h2>
             <ul className="space-y-4">
               {more.map((m) => (
                 <li key={m.slug}>

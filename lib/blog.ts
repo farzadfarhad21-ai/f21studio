@@ -7,6 +7,10 @@ export type Block =
 
 export type Post = {
   slug: string;
+  /** "guide" = evergreen buyer guide, "news" (or missing on older posts) = AI news note. */
+  kind?: "guide" | "news";
+  /** Search phrase from content/topics.json that a guide targets. */
+  topic?: string;
   title: string;
   description: string;
   date: string;
