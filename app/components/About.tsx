@@ -4,6 +4,7 @@ import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -55,11 +56,20 @@ export default function About() {
               Powered by AI.
             </span>
           </h2>
+          <div className="mt-8 relative w-full max-w-[320px] aspect-[720/828] rounded-2xl overflow-hidden border border-white/10">
+            <Image
+              src="/brand/farzad-adalatnia.jpg"
+              alt="Farzad Adalatnia, founder of F21 Studio and AI implementation consultant in Dubai"
+              fill
+              sizes="(min-width: 640px) 320px, 80vw"
+              className="object-cover grayscale-[15%]"
+            />
+          </div>
         </div>
 
         <div className="about-col space-y-5">
           <div>
-            <p className="text-xl font-black text-[#fafafa]">Farzad</p>
+            <p className="text-xl font-black text-[#fafafa]">Farzad Adalatnia</p>
             <p className="mt-1 text-[11px] font-black uppercase tracking-[0.25em] text-[#c084fc]">
               Founder · AI Implementation Consultant
             </p>

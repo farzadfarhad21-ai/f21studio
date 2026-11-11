@@ -46,7 +46,7 @@ const orgSchema = {
       name: site.name,
       url: site.url,
       description: site.description,
-      founder: { "@type": "Person", name: site.founder, jobTitle: "AI Implementation Consultant" },
+      founder: { "@type": "Person", name: "Farzad Adalatnia", givenName: site.founder, familyName: "Adalatnia", jobTitle: "AI Implementation Consultant", image: `${site.url}/brand/farzad-adalatnia.jpg` },
       address: { "@type": "PostalAddress", addressLocality: "Dubai", addressCountry: "AE" },
       areaServed: site.areaServed,
       knowsLanguage: ["en", "fa"],
