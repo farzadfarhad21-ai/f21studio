@@ -1,0 +1,151 @@
+{
+  "slug": "2026-11-13-what-is-an-ai-audit-small-business",
+  "kind": "guide",
+  "topic": "what is an AI audit for a small business",
+  "title": "What an AI audit for a small business actually covers",
+  "description": "An AI audit maps where your small business loses time, then shows which tasks AI can safely take over. Here's what happens week by week and what you get.",
+  "date": "2026-11-13T11:39:52.024Z",
+  "tags": [
+    "AI audit",
+    "small business",
+    "automation",
+    "AI strategy"
+  ],
+  "imageAlt": "A laptop on a tailor's cutting table showing a colourful process flowchart, with the tailor blurred in the background of a small alterations shop.",
+  "imagePrompt": "Realistic photo inside a small tailoring and alterations shop. In sharp foreground on a cutting table beside fabric rolls and a measuring tape, a laptop screen shows a simple flowchart of coloured cards linked by arrows with small icons. The tailor stands slightly blurred in the background holding a notebook. Warm natural light.",
+  "readingMinutes": 5,
+  "blocks": [
+    {
+      "type": "p",
+      "text": "An AI audit for a small business is a short, structured look at how your business actually runs, followed by a clear list of where AI can save you time or money, and where it can't. Someone sits with you and your team, maps the repetitive work, checks your tools and data, then ranks the opportunities by effort and payoff."
+    },
+    {
+      "type": "p",
+      "text": "You don't walk away with a robot receptionist. You walk away with a plan: usually three to five specific changes, what each one needs in tools and time, and which one to do first. The way we run it, it takes about four weeks and asks surprisingly little of your own diary."
+    },
+    {
+      "type": "p",
+      "text": "Picture a dental clinic in Dubai Marina. The owner assumes the problem is marketing. A week of watching how work moves shows something else: the front desk spends a big chunk of every day answering the same WhatsApp questions about prices, parking and opening hours. That's not a marketing problem. It's a very fixable admin one, and an audit is how you find it."
+    },
+    {
+      "type": "h2",
+      "text": "What does an AI audit actually look at?"
+    },
+    {
+      "type": "p",
+      "text": "A good audit ignores the shiny tools at first and looks at the boring stuff. Where does time go? Where do customers wait? Where does the same information get typed twice? AI only helps when it's pointed at a real, repeated task."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Customer enquiries: how questions arrive (WhatsApp, email, Instagram, phone), how fast they get answered, and which ones repeat.",
+        "Admin and back office: invoicing, booking, follow-ups, reminders, copying data between systems.",
+        "Content and marketing: how often you post, write emails or update your website, and who does it.",
+        "Tools and data: what software you already pay for, what it can already do, and whether your customer data is tidy enough to use.",
+        "Risks: what should never be handed to AI, such as medical advice, legal wording or anything involving payments without a human check."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "That last point matters. Part of an honest audit is telling you what to leave alone. A tool that drafts a polite reply is useful. A tool that confirms a refund on its own is a problem waiting to happen."
+    },
+    {
+      "type": "h2",
+      "text": "How an AI audit runs, week by week"
+    },
+    {
+      "type": "p",
+      "text": "Week one is discovery. We talk to the owner and whoever does the daily work, because they're rarely the same picture. A two-person real-estate team might find one partner thinks leads are followed up within the hour, while the other knows some sit for days. We list every recurring task and every tool in use."
+    },
+    {
+      "type": "p",
+      "text": "Week two is mapping. We trace a few key processes from start to finish, say a new enquiry turning into a booking, or an order turning into an invoice. We look for the handoffs, the copy-pasting and the waiting. Each task gets a rough score for how often it happens, how long it takes and how much judgement it needs."
+    },
+    {
+      "type": "p",
+      "text": "Week three is testing. Ideas are cheap, so we try the best two or three on your real material. That might mean running last month's customer emails through a drafting assistant, or testing whether a chatbot can answer your FAQs accurately in English and Arabic. Some ideas fail here, and that's the point. Better to find out in a test than after you've paid for a year of software."
+    },
+    {
+      "type": "p",
+      "text": "Week four is the roadmap and handover. We write up what worked, what didn't, and the order to do things in. Ideally one quick win is already live by the end, so the audit has paid you back in something real, not just slides."
+    },
+    {
+      "type": "h2",
+      "text": "What you get at the end of an AI audit"
+    },
+    {
+      "type": "p",
+      "text": "The output should be short enough to read over a coffee and specific enough to act on the next morning. If it's a 60-page report full of industry trends, something went wrong."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "A simple map of your main processes, showing where time and money leak.",
+        "A ranked list of AI opportunities, each with effort, rough cost and expected benefit in plain terms.",
+        "Recommendations on tools, including which of your existing subscriptions can already do more.",
+        "At least one working quick win, such as an auto-drafted reply template or a booking reminder flow.",
+        "A short list of things not to automate, and the human checks to keep in place.",
+        "A realistic timeline for the next three to six months, so you can budget properly."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Is an AI audit worth it for a small business?"
+    },
+    {
+      "type": "p",
+      "text": "Honestly, not always. If you're a solo freelancer with one obvious task, like writing social posts, skip the audit and just try a writing assistant for a month. You'll learn more by doing."
+    },
+    {
+      "type": "p",
+      "text": "An audit earns its keep once you have a small team, several tools that don't talk to each other, and customers reaching you through more than one channel. A café chain with three branches, a clinic with a busy front desk, an online shop juggling orders across Instagram and a website. That's where guessing gets expensive, because you can easily buy three tools that overlap and still not fix the real bottleneck."
+    },
+    {
+      "type": "p",
+      "text": "Be wary of audits that end with a deck and a sales pitch for a big custom build. The useful ones start small, prove something works, then grow. That's how we approach our own AI Audit & Implementation work, which you can read more about on our <a href=\"https://www.f21studio.com/services/ai-audit-implementation\">AI audit and implementation page</a>."
+    },
+    {
+      "type": "h2",
+      "text": "How to prepare for an AI audit"
+    },
+    {
+      "type": "p",
+      "text": "You don't need to be technical, and you don't need clean spreadsheets. A bit of preparation does make the four weeks sharper, though."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "List every piece of software you pay for, including the small monthly ones.",
+        "Note the three tasks you personally hate doing every week.",
+        "Ask your team the same question and write down their answers without editing them.",
+        "Gather a handful of real examples: a few typical customer messages, a recent invoice, a sample booking.",
+        "Decide what's off limits, for example patient records or client contracts."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "The simplest first step you can take this week costs nothing. For five working days, keep a running note on your phone of every task you or your team repeat, roughly how long each one takes, and how it reaches you. By Friday you'll have the raw material for an audit, and you'll probably spot your first quick win on your own."
+    }
+  ],
+  "takeaways": [
+    "An AI audit is a short, structured review of how your business runs, ending with a ranked plan of where AI can realistically save time or money.",
+    "A typical audit runs about four weeks: discovery, mapping, testing ideas on real work, then a roadmap with one quick win already in place.",
+    "You can start this week by keeping a simple diary of the repetitive tasks you and your team do every day."
+  ],
+  "faq": [
+    {
+      "q": "How much does an AI audit cost for a small business?",
+      "a": "It depends on the size of the business and how many processes are reviewed. Ask for a fixed fee with a clear list of deliverables up front, and check whether a working quick win is included rather than just a report."
+    },
+    {
+      "q": "Will an AI audit mean replacing my staff?",
+      "a": "Usually not. Most of what an audit finds is repetitive admin that eats into your team's day, so the result is people spending more time with customers and less time copying data or answering the same questions."
+    },
+    {
+      "q": "Is my customer data safe during an AI audit?",
+      "a": "It should be. A good audit agrees up front what data can be used, works with anonymised examples where possible, and flags anything sensitive, such as medical or financial records, that should stay out of AI tools."
+    }
+  ],
+  "sources": [],
+  "image": "/blog/2026-11-13-what-is-an-ai-audit-small-business-mwewo4bl.jpg"
+}
