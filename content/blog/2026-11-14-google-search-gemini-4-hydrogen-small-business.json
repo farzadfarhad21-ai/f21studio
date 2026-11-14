@@ -1,0 +1,126 @@
+{
+  "slug": "2026-11-14-google-search-gemini-4-hydrogen-small-business",
+  "kind": "news",
+  "title": "Google Search now answers the messy, multi-part questions",
+  "description": "Google has put Gemini 4 Hydrogen into Search worldwide. Here's what it means when customers ask long, specific questions, and how your business can prepare.",
+  "date": "2026-11-14T11:01:19.544Z",
+  "tags": [
+    "Google Search",
+    "Gemini",
+    "AI search",
+    "SEO",
+    "Small business"
+  ],
+  "imageAlt": "A smartphone on an optician's glass counter showing a colourful grid of answer blocks and photo tiles, with a customer's hand reaching for it.",
+  "imagePrompt": "Realistic photo inside a small optician's shop. In sharp foreground on a glass counter beside a few spectacle frames, a smartphone screen shows a search answer laid out as a colourful grid of blocks and small photo tiles. A customer's hand reaches toward the phone. Softly blurred shelves of frames behind. No readable text, no logos.",
+  "readingMinutes": 3,
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Google has switched on a new model called Gemini 4 Hydrogen inside Google Search, and it's live globally for everyone. In its [announcement on the Google blog](https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/), the company describes it as the biggest model upgrade Search has had so far. That's a big claim, but the focus is narrow and quite practical: getting better at the long, complicated questions people actually type."
+    },
+    {
+      "type": "p",
+      "text": "According to The Verge, Google says the model handles \"questions with multiple parts, hard-to-understand typos, or highly specific requests.\" It breaks a question into pieces, addresses each one, and lays the answer out with images, tables and links to relevant sites. TechCrunch notes the upgrade is landing in Google's AI Mode, with richer visual answers and better surfacing of links."
+    },
+    {
+      "type": "h2",
+      "text": "What actually changed"
+    },
+    {
+      "type": "p",
+      "text": "Picture someone in Dubai Marina typing this on their phone: dentist near me open friday evening, does invisalign, speaks arabic, has parking. That's four requirements in one messy line. Older search tended to grab a couple of keywords and hope for the best."
+    },
+    {
+      "type": "p",
+      "text": "Google says Hydrogen tries to understand the intent behind the whole thing, runs several searches at the same time, and then pulls the results together into a structured answer. You might see a table comparing options, a few images, and links out to the websites or tools that fit. Google mentions travel, shopping and hobbies as examples, but the same logic applies to anyone searching for a local service."
+    },
+    {
+      "type": "p",
+      "text": "It's also more forgiving of typos. That matters more than it sounds. Plenty of your customers search quickly, on the move, in their second or third language."
+    },
+    {
+      "type": "h2",
+      "text": "Why this matters for a small business"
+    },
+    {
+      "type": "p",
+      "text": "Here's the shift in one sentence. The search query is turning into the customer's full brief, not just a couple of words. When someone asks for a bakery in Toronto that does gluten-free birthday cakes and delivers on Sundays, the answer they get depends on whether any website clearly says those things."
+    },
+    {
+      "type": "p",
+      "text": "Google says the update connects people to more relevant websites and tools. To be relevant to a detailed question, your site has to contain the details. A vague homepage that says you offer quality service tells the model nothing it can use. A page that states your hours, your area, your languages and what's actually included gives it something to work with."
+    },
+    {
+      "type": "p",
+      "text": "We should be honest about the limits. Google hasn't published how it picks which sites appear in these answers, and nobody can promise you a spot in them. What we can say is that clear, specific, well-organised information has always helped search, and a model that builds tables and comparisons leans on that kind of information even more."
+    },
+    {
+      "type": "h2",
+      "text": "A few things you could try this week"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Search for your own type of business the way a fussy customer would: one long sentence with three or four conditions, typos included. See who shows up and why.",
+        "List the specifics people ask you about on the phone or WhatsApp, then check each one is written plainly on your website.",
+        "Put your opening hours, service area, languages spoken and price ranges in normal text on the page, not only inside an image or a PDF.",
+        "Rewrite your FAQ page so each answer is a real answer with a fact in it, not a line asking people to call.",
+        "Add clear photos of your space, products or results, because the new answers lean on visuals.",
+        "Check that your Google Business Profile matches what your website says, so you're not sending mixed signals."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Our take: useful, not magic"
+    },
+    {
+      "type": "p",
+      "text": "This is a genuine improvement for the people searching. Being able to throw a messy, specific question at Google and get a tidy answer back is helpful, and it'll quickly become what customers expect."
+    },
+    {
+      "type": "p",
+      "text": "For business owners, though, it isn't a reason to panic or chase tricks. It rewards the boring basics done well: accurate information, written clearly, kept up to date. AI answers can still get things wrong, so it's worth checking now and then what Search says about you and fixing anything on your site that might confuse it. If you'd like a hand getting that foundation right, that's the kind of work we do in our [SEO and AI search setup](https://www.f21studio.com/services/seo-growth-setup)."
+    },
+    {
+      "type": "p",
+      "text": "Tonight, try one long, picky search for a business like yours and see what comes back. It's a quick way to find out what your next customer is seeing."
+    }
+  ],
+  "takeaways": [
+    "Google has rolled out Gemini 4 Hydrogen to Search globally for all users and calls it the biggest model upgrade to Search yet.",
+    "The new model is built to handle long, multi-part, typo-filled questions and answer each part with tables, images and links.",
+    "If your website clearly states the specifics customers care about, you give the new Search a better chance of matching you to those detailed questions."
+  ],
+  "faq": [
+    {
+      "q": "What is Gemini 4 Hydrogen in Google Search?",
+      "a": "It's a new Google AI model now running in Search for all users worldwide. Google says it's better at understanding complex, multi-part questions and answers them with tables, images and links."
+    },
+    {
+      "q": "Do I need to change my website because of this update?",
+      "a": "You don't need a rebuild, but it helps to make sure your site clearly states the specifics customers ask about, like hours, location, services, languages and prices. Detailed questions can only be matched to detailed information."
+    },
+    {
+      "q": "Will Google's AI answers send fewer visitors to my site?",
+      "a": "Google says the update connects people to more relevant websites and tools, but it hasn't shared traffic figures. Keep an eye on your analytics over the coming weeks and focus on being the most useful answer to specific questions."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Google Search gets a major upgrade with Gemini 4 Hydrogen",
+      "publisher": "Google",
+      "url": "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/"
+    },
+    {
+      "title": "Google's latest Search upgrade promises better answers to your most complicated questions",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/12/googles-latest-search-upgrade-promises-better-answers-to-your-most-complicated-questions/"
+    },
+    {
+      "title": "Google’s new Gemini model is better at understanding complicated questions",
+      "publisher": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1032505/google-search-ai-mode-gemini-4-hydrogen"
+    }
+  ]
+}
