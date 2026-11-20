@@ -341,10 +341,14 @@ async function save(record, words) {
   log(`published ${record.slug} (${record.kind}, ${words} words${record.image ? ", with image" : ""})`);
 }
 
+// The site only renders [text](url) links; models sometimes write HTML anyway.
+const toMarkdown = (t) =>
+  t.replace(/<a\s[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi, "[$2]($1)").replace(/<\/?[a-z][^>]*>/gi, "").trim();
+
 function tidy(post) {
   const slug = `${todayKey}-${post.slug.toLowerCase().replace(/[^a-z0-9-]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 70)}`;
   const blocks = post.blocks
-    .map((b) => (b.type === "ul" ? { type: "ul", items: b.items.filter(Boolean) } : { type: b.type, text: b.text.trim() }))
+    .map((b) => (b.type === "ul" ? { type: "ul", items: b.items.map(toMarkdown).filter(Boolean) } : { type: b.type, text: toMarkdown(b.text) }))
     .filter((b) => (b.type === "ul" ? b.items.length : b.text));
   const words = blocks.map((b) => (b.type === "ul" ? b.items.join(" ") : b.text)).join(" ").split(/\s+/).length;
   if (words < 400) throw new Error(`post too short (${words} words), not publishing`);
@@ -374,6 +378,7 @@ if (mode === "guide") {
     .replace(`You write the daily "AI notes" column on the blog of`, `You write practical guides for the blog of`)
     .replace(/Accuracy rules:[\s\S]*$/, `Accuracy rules:
 - Do not invent statistics, studies, quotes, other companies' prices or client names. Speak from practical experience in general terms, or use the F21 project facts given to you, accurately.
+- Write links only as Markdown, [link text](https://exact-url). Never use HTML tags.
 - Link once to the F21 service page given (exact URL) where it helps the reader, never salesy. If a project is given, link once to its case study (exact URL).
 - Mention Dubai and the UAE naturally where it fits, but the advice must work for any small business.`);
 
