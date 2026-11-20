@@ -129,6 +129,16 @@ function Demo({ p, active }: { p: Project; active: boolean }) {
           ))}
         </div>
       );
+    case "research-workspace":
+      return (
+        <div className="grid grid-cols-3 gap-2 text-[10px] font-black uppercase tracking-wider">
+          {["Forecast", "News", "Social", "Liquidity", "Macro", "AI team"].map((s, i) => (
+            <span key={s} className={`px-2 py-1.5 rounded-md border text-center transition-colors duration-500 ${
+              n % 6 === i ? "border-[#34d399] text-[#86efac] bg-[#34d399]/10" : "border-white/5 text-[#525252]"
+            }`}>{s}</span>
+          ))}
+        </div>
+      );
     default:
       return (
         <div className="font-mono text-[10px] text-[#c084fc]">

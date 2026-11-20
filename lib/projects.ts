@@ -192,6 +192,76 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "research-workspace",
+    name: "Research & Operations Workspace",
+    category: "AI Agents · Research Platform · Client",
+    tagline:
+      "One private workspace for a market-research team: forecasts, news and social intelligence, liquidity and macro dashboards, all run by a coordinated AI team.",
+    color: "#2f6b4f",
+    status: "Live client",
+    log: "News desk · article decomposed → research linked → awaiting review",
+    size: "lg",
+    metrics: [
+      { label: "Connected modules", value: "9" },
+      { label: "AI specialist roles", value: "~7" },
+      { label: "Economic indicators", value: "15–20" },
+      { label: "Social sources", value: "25–30" },
+    ],
+    challenge:
+      "A market-research team was pulling economic releases, news, social sentiment, liquidity data and chart ideas from separate tools. Context had to be re-explained to every AI tool, evidence got separated from conclusions, and work could look finished while review or QA was still missing.",
+    solution: [
+      "An AI operations team: one coordinating assistant routes work to about 7 specialist roles (data, design, engineering, QA, operations) with visible handoffs, a private messaging entry point and an archive worker that checks records every 30 minutes.",
+      "A News Intelligence Desk and Social Intelligence Monitor: scheduled intake of articles and 25–30 approved accounts, separate AI stages for decomposition and deeper research, and every reading kept linked to its original source and review history.",
+      "Financial research dashboards: a Market Forecast workspace linking scenarios to their evidence, a Liquidity Risk Monitor for stablecoin supply and tracked exchange flows, and a Macro Scenario Tracker binding 15–20 indicators to scheduled official-source checks.",
+      "A Research Model Lab and Technical Analysis workspace that turn ideas into reproducible tests and explicit scenario rules, keeping unvalidated signals out of any forecast claims and private analysis under owner control.",
+      "A Dashboard Delivery Pipeline: packages dropped in a shared folder are validated, de-duplicated, reviewed by design, engineering and QA, published, and verified against the live version.",
+    ],
+    results: [
+      "Nine connected workstreams in one private workspace, on desktop and mobile, with owner and guest access separated.",
+      "A verified request-and-return path through the AI team: specialist work comes back through one conversation, and blocked handoffs are shown instead of fake progress.",
+      "Every outlook, sentiment reading and news event traceable back to its source, with corrections preserved as history rather than overwritten.",
+    ],
+    stack: ["OpenBot", "Claude", "GPT", "Grok", "Python", "JavaScript", "PostgreSQL", "Grafana", "Slack", "Box", "Linux services"],
+    services: ["custom-ai-agents", "ai-audit-implementation", "ai-content-automation"],
+    gallery: [
+      {
+        src: "/work/research-workspace/forecast.jpg", width: 1600, height: 1000,
+        alt: "Market Forecast workspace with scenario weights, a normalised market chart and the latest factor observations (demo data)",
+        caption: "Market Forecast: base, upside and downside scenarios linked to the evidence behind them. Shown with synthetic demo data.",
+      },
+      {
+        src: "/work/research-workspace/ai-team.jpg", width: 1600, height: 1000,
+        alt: "Operations Control board showing an AI team queue across data, design, engineering and operations roles (demo data)",
+        caption: "The AI operations team: work routed across specialist roles, with every handoff and QA receipt visible. Synthetic demo data.",
+      },
+      {
+        src: "/work/research-workspace/news-desk.jpg", width: 1600, height: 1000,
+        alt: "News Desk dashboard with daily source intake, a decomposed article and linked research (demo data)",
+        caption: "News Intelligence Desk: articles collected, broken down by AI, researched and kept linked to the original source. Synthetic demo data.",
+      },
+      {
+        src: "/work/research-workspace/dashboard-release.jpg", width: 1600, height: 1000,
+        alt: "Dashboard Delivery release gates: intake, review, browser QA and verified release (demo data)",
+        caption: "Dashboard Delivery Pipeline: every package passes intake, design and engineering review and browser QA before release. Synthetic demo data.",
+      },
+      {
+        src: "/work/research-workspace/macro.jpg", width: 1600, height: 1000,
+        alt: "Macro Scenario Tracker with dated scenario weights and connected economic indicators (demo data)",
+        caption: "Macro Scenario Tracker: new indicator releases shown next to the original dated outlook, never silently rewriting it. Synthetic demo data.",
+      },
+      {
+        src: "/work/research-workspace/technical.jpg", width: 1600, height: 1000,
+        alt: "Technical Analysis details with confirmation and invalidation rules for a chart idea (demo data)",
+        caption: "Technical Analysis workspace: a chart idea turned into explicit confirmation and invalidation rules. Synthetic demo data.",
+      },
+      {
+        src: "/work/research-workspace/mobile.jpg", width: 416, height: 900,
+        alt: "Market Forecast workspace on a phone (demo data)",
+        caption: "Every module works on mobile, so the team can review research away from the desk.",
+      },
+    ],
+  },
+  {
     slug: "deepdive",
     name: "Deepdive",
     category: "AI Research Agent",
