@@ -50,7 +50,12 @@ export default function CinematicScroll() {
     const video = videoRef.current;
     if (!video) return;
 
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    // Phones can't scrub a video frame-by-frame smoothly, so they get a light
+    // portrait clip that simply loops; the text still follows the scroll.
+    const isMobile =
+      /iPad|iPhone|iPod|Android/.test(navigator.userAgent) ||
+      window.matchMedia("(pointer: coarse)").matches ||
+      window.innerWidth < 768;
     let raf = 0;
     let scrollReady = false;
 
@@ -60,12 +65,14 @@ export default function CinematicScroll() {
     gsap.set(dotRefs.current[0], { scale: 1.5, backgroundColor: "#a855f7" });
     dotRefs.current.slice(1).forEach(el => el && gsap.set(el, { scale: 1, backgroundColor: "#3f3f46" }));
 
-    const initScroll = () => {
+    const initScroll = (scrubVideo: boolean) => {
       if (scrollReady) return;
       scrollReady = true;
 
-      video.pause();
-      video.currentTime = 0;
+      if (scrubVideo) {
+        video.pause();
+        video.currentTime = 0;
+      }
 
       ScrollTrigger.create({
         trigger: containerRef.current,
@@ -73,12 +80,14 @@ export default function CinematicScroll() {
         end: "bottom bottom",
         scrub: true,
         onUpdate: (self) => {
-          cancelAnimationFrame(raf);
-          raf = requestAnimationFrame(() => {
-            if (isFinite(video.duration) && video.duration > 0) {
-              video.currentTime = self.progress * video.duration;
-            }
-          });
+          if (scrubVideo) {
+            cancelAnimationFrame(raf);
+            raf = requestAnimationFrame(() => {
+              if (isFinite(video.duration) && video.duration > 0) {
+                video.currentTime = self.progress * video.duration;
+              }
+            });
+          }
 
           const p = self.progress;
           const newIdx = p < 0.2 ? 0 : p < 0.4 ? 1 : p < 0.6 ? 2 : p < 0.8 ? 3 : 4;
@@ -104,47 +113,36 @@ export default function CinematicScroll() {
       });
     };
 
-    // ── iOS ──────────────────────────────────────────────────────────────────
-    if (isIOS) {
-      video.src     = "/hero-scrub.mp4";
-      video.preload = "none";
-
-      const unlockIOS = () => {
-        video.play()
-          .then(() => {
-            video.pause();
-            video.currentTime = 0;
-            document.removeEventListener("touchstart", unlockIOS, { capture: true });
-            initScroll();
-            // Cancel any RAF queued by an immediate onUpdate (section already in
-            // view) and force back to frame 0 so scene 1 always shows first.
-            cancelAnimationFrame(raf);
-            video.currentTime = 0;
-          })
-          .catch(() => {});
-      };
-
-      document.addEventListener("touchstart", unlockIOS, { capture: true, passive: true });
+    // ── Phones: light looping clip ─────────────────────────────────────────
+    if (isMobile) {
+      video.poster = "/hero-mobile-poster.jpg";
+      video.src = "/hero-mobile.mp4";
+      video.loop = true;
+      video.autoplay = true;
+      video.preload = "auto";
+      // Blocked autoplay (e.g. Low Power Mode) just leaves the poster showing.
+      video.play().catch(() => {});
+      initScroll(false);
 
       return () => {
-        cancelAnimationFrame(raf);
-        document.removeEventListener("touchstart", unlockIOS, { capture: true });
         ScrollTrigger.getAll().forEach(t => t.kill());
       };
     }
 
-    // ── Desktop ───────────────────────────────────────────────────────────────
+    // ── Desktop: scroll-scrubbed ──────────────────────────────────────────
+    video.poster = "/hero-poster.jpg";
     video.src = "/hero-scrub.mp4";
     video.preload = "metadata";
     video.load();
 
-    video.addEventListener("loadedmetadata", initScroll, { once: true });
-    const fallback = setTimeout(initScroll, 1500);
+    const start = () => initScroll(true);
+    video.addEventListener("loadedmetadata", start, { once: true });
+    const fallback = setTimeout(start, 1500);
 
     return () => {
       clearTimeout(fallback);
       cancelAnimationFrame(raf);
-      video.removeEventListener("loadedmetadata", initScroll);
+      video.removeEventListener("loadedmetadata", start);
       ScrollTrigger.getAll().forEach(t => t.kill());
     };
   }, []);
