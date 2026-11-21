@@ -1,0 +1,140 @@
+{
+  "slug": "2026-11-21-gemini-mac-computer-use-small-business",
+  "kind": "news",
+  "title": "Gemini can now use your Mac. Here's what to try first",
+  "description": "Google's Gemini app for Mac can now work across your files, apps and the web. What it means for small firms, the privacy trade-offs and a safe way to test it.",
+  "date": "2026-11-21T11:52:17.812Z",
+  "tags": [
+    "Google Gemini",
+    "AI agents",
+    "Mac",
+    "Privacy",
+    "Productivity"
+  ],
+  "imageAlt": "A laptop on a ceramics shop counter showing a live preview window where a cursor fills in coloured form fields beside product photos, with the owner arranging shelves in the background.",
+  "imagePrompt": "Realistic photo inside a small handmade ceramics shop. In sharp foreground on a wooden counter beside glazed bowls, a laptop screen shows a small live preview window with a cursor filling coloured form boxes next to product photo thumbnails. Shop owner blurred in background arranging shelves, warm afternoon light. No readable text.",
+  "readingMinutes": 4,
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Google has given its Gemini app for macOS a new skill: it can now operate your computer. Give it a job that spans several steps and it will work through your local files, desktop apps and the web to get it done, rather than just telling you how. According to [The Verge](https://www.theverge.com/tech/1037902/google-gemini-macos-ai-computer-use), the feature is rolling out now, in English, for users in the US."
+    },
+    {
+      "type": "p",
+      "text": "Google's own suggestions are pleasingly ordinary. Filling in forms. Building presentations. Speeding up repetitive workflows. Listing items for sale. [TechCrunch](https://techcrunch.com/2026/11/19/google-gives-gemini-the-ability-to-use-your-mac-for-you/) adds organising files to the list. None of it is glamorous, which is exactly why it's worth paying attention to."
+    },
+    {
+      "type": "h2",
+      "text": "What computer use actually means"
+    },
+    {
+      "type": "p",
+      "text": "Picture a two-person real-estate team in JLT. Every new listing means the same routine: pull photos from a folder, copy details into a property portal, draft a short description, then drop it all into a slide deck for the owner. Until now, a chatbot could write the description and you did everything else. An agent with computer use can, in principle, handle the clicking and copying too."
+    },
+    {
+      "type": "p",
+      "text": "Two details from Google matter here. You decide which of your apps Gemini is allowed to touch. And it works in its own background window, with a live preview showing in your chat, so you can watch what it's doing instead of trusting it blindly. That second point is bigger than it sounds. Agents get things wrong, and the cheapest way to catch a mistake is to see it happen."
+    },
+    {
+      "type": "p",
+      "text": "Our honest take: this is useful for boring, well-defined chores. It isn't ready to run your back office unattended. Treat it like a new junior on day one, keen and quick, but you check the work."
+    },
+    {
+      "type": "h2",
+      "text": "The privacy pushback has already started"
+    },
+    {
+      "type": "p",
+      "text": "Not everyone is thrilled about AI that can see and operate a screen. The timing of Google's launch tells you something. Apple is preparing tighter rules for Mac apps that want full disk access, pointing to the risks posed by AI agents with computer use, and a preview of those settings appeared in this week's macOS 27.3 beta."
+    },
+    {
+      "type": "p",
+      "text": "On phones, Signal has gone further. The messaging app is [restricting screenshots on Android and iOS](https://www.theverge.com/ai-artificial-intelligence/1038390/signal-blocking-ai-agent-screenshots-mobile-app) to stop AI agents from reading people's messages. Its president said operating-system AI that analyses on-screen content is \"undermining Signal's ability to independently guarantee privacy.\""
+    },
+    {
+      "type": "p",
+      "text": "For a small business, this isn't abstract. A clinic's Mac might have patient notes open in one window and the booking system in another. A consultancy's laptop holds client contracts and invoices. Before you let any agent loose, be clear about exactly what it can see."
+    },
+    {
+      "type": "h2",
+      "text": "How to try it without regretting it"
+    },
+    {
+      "type": "p",
+      "text": "If you're in the US and work on a Mac, here's how we'd run a first test. Keep it small, keep it boring, and keep your eyes on it."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Pick one dull, repeatable task, such as copying product details from a spreadsheet into an online shop listing, or turning a folder of notes into a rough slide deck.",
+        "Give Gemini access only to the apps that task needs. Leave email, banking, and patient or client records off the list.",
+        "Watch the live preview the first few times. If it clicks somewhere odd, stop it and tighten your instructions.",
+        "Use test data or a draft listing before anything goes live to customers.",
+        "Time it. If checking its work takes longer than doing the job yourself, it isn't ready for that task yet.",
+        "Write down what worked, so the next person on your team doesn't start from scratch."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "For readers in the UAE, Canada and Europe, Google has only announced the US English rollout so far. That's no bad thing. It gives you time to decide which tasks you'd happily hand over and which ones stay strictly human."
+    },
+    {
+      "type": "h2",
+      "text": "Where this is heading for small teams"
+    },
+    {
+      "type": "p",
+      "text": "The bigger shift is that AI is moving from answering to doing. A boutique in Abu Dhabi doesn't need another tool that writes captions. It needs something that takes the caption, the photos and the price, and gets the product live. General agents like this one are a first step, flexible but unaware of your systems, your rules or your customers."
+    },
+    {
+      "type": "p",
+      "text": "That's where a bit of planning pays off. Mapping which tasks are safe to automate, and which need guardrails, is most of the real work. If you'd like a second pair of eyes on that, it's the kind of thing we look at in an [AI audit](https://www.f21studio.com/services/ai-audit-implementation)."
+    },
+    {
+      "type": "p",
+      "text": "We're keen to see how this holds up on the tedious stuff nobody in any office enjoys. If it quietly saves a small team an hour a week without opening a privacy hole, that's progress worth having."
+    }
+  ],
+  "takeaways": [
+    "Google's Gemini app for macOS can now carry out multi-step tasks across your files, desktop apps and the web, starting with US users in English.",
+    "You choose which apps it can access and can watch it work in a live preview, which matters because agents still make mistakes.",
+    "Apple and Signal are already tightening controls on AI agents that can see your screen, so keep sensitive apps off limits when you test it."
+  ],
+  "faq": [
+    {
+      "q": "Is Gemini's computer use feature available outside the US?",
+      "a": "Google says it's rolling out now in English for users in the US. It hasn't announced dates for other countries in the reporting so far."
+    },
+    {
+      "q": "Is it safe to let Gemini control my Mac?",
+      "a": "You choose which apps Gemini can access and can watch it work in a live preview window. Still, keep sensitive apps like email, banking and client records off its list, especially as Apple is tightening full disk access rules over AI agent risks."
+    },
+    {
+      "q": "What kind of tasks can Gemini do on a Mac?",
+      "a": "Google suggests filling in forms, making presentations, listing items for sale and speeding up multi-step workflows across files, apps and the web. Organising files is also on the list."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Gemini on Mac can now use your computer",
+      "publisher": "The Verge",
+      "url": "https://www.theverge.com/tech/1037902/google-gemini-macos-ai-computer-use"
+    },
+    {
+      "title": "Google gives Gemini the ability to use your Mac for you",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/19/google-gives-gemini-the-ability-to-use-your-mac-for-you/"
+    },
+    {
+      "title": "Signal is blocking Gemini and Siri AI from reading your screen",
+      "publisher": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1038390/signal-blocking-ai-agent-screenshots-mobile-app"
+    }
+  ],
+  "video": {
+    "id": "dp9x8EMAE9I",
+    "title": "Turn a Sketch Into a Rigged 3D Model With Computer Use in the Gemini App for Mac",
+    "channel": "Google Gemini"
+  },
+  "image": "/blog/2026-11-21-gemini-mac-computer-use-small-business-mwqcndvs.jpg"
+}
