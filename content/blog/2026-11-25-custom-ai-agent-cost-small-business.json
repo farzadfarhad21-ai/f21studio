@@ -1,0 +1,146 @@
+{
+  "slug": "2026-11-25-custom-ai-agent-cost-small-business",
+  "kind": "guide",
+  "topic": "how much does a custom AI agent cost",
+  "title": "How much does a custom AI agent cost for a small business",
+  "description": "Honest price ranges for a custom AI agent, what pushes the cost up or down, and the monthly running costs small businesses often forget to budget for.",
+  "date": "2026-11-25T13:40:33.493Z",
+  "tags": [
+    "AI agents",
+    "Pricing",
+    "Small business",
+    "Automation"
+  ],
+  "imageAlt": "A laptop on a bicycle repair shop workbench showing chat bubbles and simple cost cards, with the owner fixing a bike in the background.",
+  "imagePrompt": "Realistic photo inside a small bicycle repair shop in the morning. In sharp foreground on a wooden workbench beside a wrench and spare inner tube, an open laptop shows simple chat bubbles and coloured cost cards with bar icons. Softly blurred background: the owner adjusting a bike on a repair stand, warm natural light.",
+  "readingMinutes": 5,
+  "blocks": [
+    {
+      "type": "p",
+      "text": "A custom AI agent for a small business usually costs anywhere from a few hundred dollars for a light setup on an existing tool, to low thousands for a focused agent that does one job well, to five figures for an agent wired into your booking system, CRM, WhatsApp and payments. Then there's a monthly running cost on top, which for most small businesses sits in the tens to low hundreds of dollars."
+    },
+    {
+      "type": "p",
+      "text": "That's a wide range, and it's honest. The price depends far less on \"AI\" and far more on what the agent needs to touch, how much it's trusted to do without a human, and how tidy your information already is. Below we break down what pushes the number up or down, and the running costs people tend to forget."
+    },
+    {
+      "type": "h2",
+      "text": "What are the main price levels for an AI agent"
+    },
+    {
+      "type": "p",
+      "text": "Think of it as three levels. They're rough bands from what we see on projects, not a price list, but they'll help you sense-check any quote you get."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Off-the-shelf with your content loaded in. You use an existing chatbot platform, upload your FAQs and prices, and pay a monthly subscription. Cheap to start, quick to launch, limited in what it can actually do.",
+        "A focused custom agent. Built for one clear job, like answering enquiries on your website and WhatsApp, then booking appointments into your calendar. This is where most small businesses get the best value, typically low thousands to build.",
+        "A connected multi-system agent. It reads and updates your CRM, checks stock or availability, sends quotes, follows up leads and hands complex cases to staff. More moving parts means more build time, testing and cost, often into five figures."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Take a two-person real-estate team in Dubai. An agent that answers \"Is this unit still available?\" and books viewings sits comfortably in the middle level. Ask it to also pull live listings from three portals, qualify buyers by budget and send tailored shortlists, and you've moved firmly into the top one."
+    },
+    {
+      "type": "h2",
+      "text": "What makes an AI agent more expensive"
+    },
+    {
+      "type": "p",
+      "text": "Integrations are the big one. Every system the agent connects to, whether that's a booking tool, a clinic management system, Shopify or a spreadsheet, needs to be set up, tested and kept working. A modern tool with a clean API is quick. An old desktop system with no API can turn a simple job into a long one."
+    },
+    {
+      "type": "p",
+      "text": "Autonomy is the second driver. An agent that only answers questions is low risk. An agent that changes bookings, issues refunds or quotes prices needs guardrails, approval steps and careful testing, because a wrong action costs you real money or a real customer. That extra safety work is worth paying for, but it does show up on the invoice."
+    },
+    {
+      "type": "p",
+      "text": "Then there's your information. If your prices, policies and services live in one clean document, great. If they're scattered across old PDFs, staff memory and a WhatsApp group, someone has to pull it together before the agent can be any good. We'd argue this tidy-up is useful for your business anyway, but it's real work."
+    },
+    {
+      "type": "p",
+      "text": "A few other things nudge the price up: multiple languages (Arabic and English is common here in the UAE), several channels like website, WhatsApp and Instagram at once, voice calls instead of text, and strict data requirements for clinics or anyone handling sensitive records."
+    },
+    {
+      "type": "h2",
+      "text": "What brings the cost of an AI agent down"
+    },
+    {
+      "type": "p",
+      "text": "The cheapest agent is the one with a narrow, well-defined job. \"Handle every customer interaction\" is vague and expensive. \"Answer the 20 questions we get most and book tables for parties under eight\" is clear and much cheaper to build and test."
+    },
+    {
+      "type": "p",
+      "text": "Starting with one channel helps too. A bakery in Toronto doesn't need website chat, WhatsApp and Instagram on day one. Pick where most enquiries actually arrive, prove it works there, then expand. And use the tools you already pay for where possible, because connecting to an existing calendar is far cheaper than building a new one."
+    },
+    {
+      "type": "h2",
+      "text": "What are the monthly running costs of an AI agent"
+    },
+    {
+      "type": "p",
+      "text": "This is where budgets get surprised. The build is a one-off, but an agent is closer to a staff member than a website. It has ongoing costs, and you should ask about every one of these before you sign anything."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "AI model usage. Each conversation costs a small amount in fees to the AI provider, usually fractions of a cent to a few cents. For most small businesses this adds up to tens of dollars a month, more if volumes are high or conversations are long.",
+        "Messaging channel fees. WhatsApp Business messaging is charged by Meta, and SMS and voice calls have their own per-message or per-minute costs.",
+        "Hosting and software subscriptions. The server, database or platform the agent runs on, plus any tools it relies on.",
+        "Maintenance. Your booking tool updates its API, the AI model gets retired, a new service needs adding. Someone has to fix and update things, either on a retainer or as needed.",
+        "Your own time. Plan an hour or two a week early on to read conversations, spot wrong answers and update information. This drops once things settle, but it never quite hits zero."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "A good builder will give you a realistic monthly estimate based on your enquiry volume. If a quote only shows the build price, ask for the running costs in writing."
+    },
+    {
+      "type": "h2",
+      "text": "How to tell if an AI agent is worth the money"
+    },
+    {
+      "type": "p",
+      "text": "Do the maths on time first. If your receptionist at a dental clinic in Dubai Marina spends a couple of hours a day answering the same questions about prices, parking and opening hours, an agent that handles most of that pays for itself fairly quickly. If you get five enquiries a week, it probably won't, and a good FAQ page might do the job."
+    },
+    {
+      "type": "p",
+      "text": "Then look at missed opportunities. Enquiries that arrive at 11pm and get answered at 10am the next morning often go to whoever replied first. An agent that answers instantly and books the slot can be worth more than the hours it saves. We cover how we scope these projects on our [custom AI agents service page](https://www.f21studio.com/services/custom-ai-agents), including where we'd tell you not to bother."
+    },
+    {
+      "type": "p",
+      "text": "Be honest about the limits, too. Agents are very good at repetitive questions and structured tasks. They're weaker at judgement calls, complaints and anything that needs a human touch, so the best setups hand those to a person quickly rather than trying to handle everything."
+    },
+    {
+      "type": "h2",
+      "text": "Your simplest first step this week"
+    },
+    {
+      "type": "p",
+      "text": "Spend one week writing down every customer enquiry you or your team answer, with a tick next to the ones you've answered before. By Friday you'll know your top ten repeat questions and roughly how much time they take. That list is the brief for a focused, affordable agent, and it'll make any quote you get far easier to judge."
+    }
+  ],
+  "takeaways": [
+    "A simple AI agent that does one job well usually costs low thousands of dollars to build, while agents connected to several business systems can reach five figures.",
+    "The biggest cost drivers are how many systems the agent connects to, how much it is allowed to do on its own, and how messy your existing information is.",
+    "Budget for monthly running costs too, including AI usage fees, hosting, messaging channel charges and an hour or two of someone's time checking the agent's work."
+  ],
+  "faq": [
+    {
+      "q": "Is it cheaper to use ChatGPT than to build a custom AI agent?",
+      "a": "Using ChatGPT yourself is cheap, but it can't answer your customers, check your calendar or book appointments on its own. A custom agent costs more because it's connected to your business and works directly with customers around the clock."
+    },
+    {
+      "q": "How long does it take to build a custom AI agent for a small business?",
+      "a": "A focused agent doing one job can often be live in a few weeks, depending on how ready your information is. Agents connected to several systems take longer because each integration needs building and testing."
+    },
+    {
+      "q": "Do I have to pay monthly for an AI agent after it's built?",
+      "a": "Yes, almost always. Expect AI usage fees, hosting, any messaging channel charges such as WhatsApp, and some maintenance, so ask for a monthly estimate before you commit."
+    }
+  ],
+  "sources": [],
+  "image": "/blog/2026-11-25-custom-ai-agent-cost-small-business-mww69ify.jpg"
+}
