@@ -1,0 +1,153 @@
+{
+  "slug": "2026-11-27-automate-blog-posts-ai-without-hurting-seo",
+  "kind": "guide",
+  "topic": "automate blog posts with AI without hurting SEO",
+  "title": "How to automate blog posts with AI without hurting SEO",
+  "description": "Automated blog posts can rank if you pick real topics, check every draft and link it into your site. Here's the pipeline we run for small businesses.",
+  "date": "2026-11-27T13:15:38.894Z",
+  "tags": [
+    "AI content",
+    "SEO",
+    "Blogging",
+    "Automation",
+    "Small business"
+  ],
+  "imageAlt": "A baker's hand on a laptop showing a colourful weekly content calendar on a flour-dusted bakery counter, with fresh bread blurred in the background.",
+  "imagePrompt": "Realistic photo inside a small neighbourhood bakery early in the morning. In sharp foreground on a flour-dusted wooden counter, an open laptop shows a weekly content calendar of simple coloured cards with small icons. A baker's hand rests on the trackpad, fresh loaves and croissants softly blurred behind, warm window light.",
+  "readingMinutes": 5,
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Yes, you can automate blog posts with AI and still rank on Google. Google doesn't penalise an article because a machine helped write it. It penalises content that's thin, repetitive or written for search engines instead of people. So the job isn't hiding the AI. It's building a pipeline where every post answers a real question, gets checked before it goes live, and links properly into the rest of your site."
+    },
+    {
+      "type": "p",
+      "text": "In practice, three things decide whether automation helps or hurts you: how you pick topics, what checks sit between the draft and the publish button, and how each new post connects to your service pages. Get those right and a weekly or even daily article becomes a steady source of search traffic. Skip them and you're filling your site with noise."
+    },
+    {
+      "type": "h2",
+      "text": "Does Google penalise AI-written blog posts?"
+    },
+    {
+      "type": "p",
+      "text": "Not for being AI-written. Google has said publicly that it cares about whether content is helpful, not how it was produced, and that it acts against content made mainly to game rankings. That second part is where small businesses get caught out."
+    },
+    {
+      "type": "p",
+      "text": "Picture a café that publishes thirty near-identical posts about the best coffee in Dubai. Each one says roughly the same thing. They compete with each other in search, none of them adds anything new, and together they make the whole site look low effort. That's not an AI problem. It's a volume-without-purpose problem, and AI just makes it faster to create."
+    },
+    {
+      "type": "p",
+      "text": "Our honest view: AI is excellent at drafts, structure and consistency. It's weak at knowing your prices, your neighbourhood and what your customers actually worry about. A good pipeline feeds it that knowledge every single time."
+    },
+    {
+      "type": "h2",
+      "text": "How to choose topics for automated blog posts"
+    },
+    {
+      "type": "p",
+      "text": "Start with questions, not keywords. A dental clinic in Dubai Marina hears the same things at reception every week. Does whitening hurt? Is a crown covered by insurance? How long does Invisalign take? Each of those is a blog post that a real person is already typing into Google."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Questions customers ask on WhatsApp, on the phone or at the counter",
+        "The \"People also ask\" boxes that appear when you search your main services",
+        "Search Console queries where you get impressions but few clicks",
+        "Five to ten supporting questions for each service page, so every article has a page to lead back to",
+        "Seasonal moments your customers care about, like Ramadan opening hours, summer slowdowns or tax deadlines"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Keep these in a simple topic list that the pipeline reads from, and have it check each new topic against what's already published before writing anything. That one rule prevents most of the duplicate-content mess we see on automated blogs."
+    },
+    {
+      "type": "h2",
+      "text": "Quality checks before an AI article goes live"
+    },
+    {
+      "type": "p",
+      "text": "This is where most automated blogs fall over. Draft straight to publish is the risky version. We put a short series of checks in between, some handled by the system and some by a person."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Facts: the prompt forbids invented statistics, prices, quotes and studies, and anything uncertain gets flagged rather than guessed",
+        "Business details come from a fixed brief covering your services, areas, hours and tone, so the AI never improvises them",
+        "Duplication: compare the draft against existing posts and reject it if it overlaps too much",
+        "Answer first: the opening paragraph must answer the question directly, because that's what Google and AI assistants quote",
+        "Readability: short paragraphs, plain language, and a banned list of tired AI phrases",
+        "Sensitive topics: anything medical, legal or financial goes to a human before publishing",
+        "Technical basics: title length, meta description, image alt text and compressed images"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Human review doesn't have to be heavy. Five minutes reading the draft on your phone over breakfast is often enough. For a clinic, a therapist or anyone giving health advice, though, that review is not optional."
+    },
+    {
+      "type": "h2",
+      "text": "How to add internal links to AI blog posts"
+    },
+    {
+      "type": "p",
+      "text": "An article that ranks but leads nowhere is a missed opportunity. Every post should link to the one service page it supports and to one or two related articles. A two-person real-estate team writing about service charges in JVC, for example, should link that post to their property management page, not their homepage."
+    },
+    {
+      "type": "p",
+      "text": "A pipeline can do this automatically if you give it a map of your site: each service page, its URL and the topics it covers. The AI then picks the right link and writes it into a natural sentence. One clear, relevant link beats a block of ten keyword-stuffed ones every time."
+    },
+    {
+      "type": "p",
+      "text": "It works in the other direction too. When a new article goes up, a related reading section on older posts can point to it, so Google finds it faster and readers keep moving through your site."
+    },
+    {
+      "type": "h2",
+      "text": "What a working AI content pipeline looks like"
+    },
+    {
+      "type": "p",
+      "text": "One of our projects shows how this fits together. [Rahil Therapy](https://www.f21studio.com/work/rahil-therapy) is a Dubai-based Persian-speaking psychotherapist. We rebuilt the site as a fast right-to-left Persian site with clear service pages, then built a daily AI pipeline that writes, illustrates, publishes and shares one article to Telegram every morning."
+    },
+    {
+      "type": "p",
+      "text": "The articles only pay off because the foundation is solid. The PageSpeed SEO score went from about 62 to 92, page weight dropped from 33MB to 4.7MB, and Largest Contentful Paint came down from over 5.2 seconds to 2.6. We also set up the Google Business Profile as a service-area business. The lesson is simple: fix the site first, then automate. Daily posts on a slow, confusing site just give Google more reasons to look elsewhere."
+    },
+    {
+      "type": "p",
+      "text": "You can build a lighter version of this yourself with a spreadsheet, an AI tool and a scheduled publishing plugin. If you'd rather have the topic list, checks and linking handled as one system, that's what our [AI Content Automation](https://www.f21studio.com/services/ai-content-automation) work sets up."
+    },
+    {
+      "type": "p",
+      "text": "Your first step this week: pick your most important service page and write down ten questions customers have asked you about it recently. Ask an AI tool to draft an answer to just one, run it through the checklist above, add a link back to that service page and publish it. One careful post will teach you more about what to automate than any plan will."
+    }
+  ],
+  "takeaways": [
+    "Google doesn't punish posts for being AI-assisted, it punishes thin, repetitive content, so your pipeline's job is to keep every article useful.",
+    "Build topics from real customer questions and check new ideas against what you've already published, so posts never compete with each other.",
+    "Put quality checks between draft and publish, and make every article link to the service page it supports."
+  ],
+  "faq": [
+    {
+      "q": "How often should a small business publish AI-assisted blog posts?",
+      "a": "Consistency matters more than volume. One useful post a week beats seven thin ones, and daily publishing only makes sense once your topic list and quality checks are reliable."
+    },
+    {
+      "q": "Should I tell readers an article was written with AI?",
+      "a": "There's no SEO requirement to label it, but you should always stand behind what's published. If a person reviews and approves each post, it's your content, and many businesses simply note that articles are reviewed by their team."
+    },
+    {
+      "q": "Can AI blog posts help me show up in AI assistants like ChatGPT or Google's AI answers?",
+      "a": "They can, if each post answers a clear question directly in the opening lines and your site is fast and well structured. Assistants tend to quote short, plain answers from pages they trust."
+    }
+  ],
+  "sources": [
+    {
+      "title": "F21 Studio case study: rahil therapy",
+      "publisher": "F21 Studio",
+      "url": "https://www.f21studio.com/work/rahil-therapy"
+    }
+  ],
+  "image": "/blog/2026-11-27-automate-blog-posts-ai-without-hurting-seo-mwz09bdx.jpg"
+}
