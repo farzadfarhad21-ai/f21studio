@@ -1,0 +1,122 @@
+{
+  "slug": "2026-11-28-meta-muse-instagram-dms-small-business",
+  "kind": "news",
+  "title": "Meta's Muse assistant now lives inside Instagram DMs",
+  "description": "Meta's Muse AI agent now sits inside Instagram DMs, turning saved posts into plans and shopping lists. Here's what it means for small businesses on Instagram.",
+  "date": "2026-11-28T12:30:27.369Z",
+  "tags": [
+    "Instagram",
+    "Meta Muse",
+    "AI assistants",
+    "Social media marketing",
+    "Small business"
+  ],
+  "imageAlt": "A smartphone on a boutique counter next to folded sweaters, showing a chat with an outfit photo and a sparkle icon, while a shop owner arranges clothes in the background.",
+  "imagePrompt": "Realistic photo inside a small clothing boutique in the afternoon. In sharp foreground on a wooden counter beside folded knit sweaters, a smartphone shows a chat thread with a colourful outfit photo thumbnail and a small sparkle icon. Softly blurred behind, a shop owner hangs clothes on a rail. No readable text, no logos.",
+  "readingMinutes": 3,
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Meta has put its AI agent, Muse, straight into Instagram's direct messages. Since Tuesday, people in the US, Canada, Mexico, Japan and Singapore can open a DM thread with Muse on iOS or Android and ask it about a post, a place or a product they've just scrolled past, according to [TechCrunch](https://techcrunch.com/2026/11/24/meta-brings-its-muse-ai-assistant-directly-into-instagram-dms/)."
+    },
+    {
+      "type": "p",
+      "text": "Before this, using Muse meant hopping over to a separate app. Now it sits where people already browse. You can forward a post and ask Muse to act on it, like adding a coffee shop to a Mexico City trip plan or tracking down a Black Friday deal on shoes. It can also catch you up on DM conversations you've missed."
+    },
+    {
+      "type": "h2",
+      "text": "Saved posts just became a to-do list"
+    },
+    {
+      "type": "p",
+      "text": "The part we find more interesting is what happens to bookmarks. Most of us save dozens of posts and never look at them again. Muse can now sort saved posts and reels into Collections, turn a recipe video into a grocery list, build an itinerary from your favourite travel creators, or suggest outfits based on fashion reels you've saved."
+    },
+    {
+      "type": "p",
+      "text": "In the US and Canada, saving a post now brings up a prompt offering to let Muse organise it. That's a small nudge, but it changes what a save means. A save used to be a vague 'maybe later'. Now it can quickly become a plan, with your business sitting inside it."
+    },
+    {
+      "type": "p",
+      "text": "Picture a boutique in Vancouver posting a reel of three winter looks. A follower saves it, and Muse turns it into outfit ideas. Or a tapas bar in Toronto that sits in someone's saved travel posts and ends up in their weekend itinerary. The save is turning into the first step of a visit or a purchase."
+    },
+    {
+      "type": "h2",
+      "text": "Why the shopping deals matter more than they look"
+    },
+    {
+      "type": "p",
+      "text": "This isn't happening in isolation. TechCrunch also reported that [Walmart now lets shoppers browse its Black Friday deals through Muse](https://techcrunch.com/2026/11/24/walmart-teams-up-with-meta-to-bring-black-friday-deals-to-ai-agent-muse/), and a day later that Amazon and Meta are [reportedly in talks](https://techcrunch.com/2026/11/25/amazon-and-meta-reportedly-in-talks-to-lift-blockade-on-ai-agent-muse/) to end a two-month blockade of the assistant. The biggest retailers are clearly working out whether to let AI agents shop on their customers' behalf."
+    },
+    {
+      "type": "p",
+      "text": "For a small business, that's a signal worth noticing. The way people find and buy things is slowly shifting from search, click and browse towards asking an assistant and approving what it suggests. Instagram is a huge discovery channel for salons, clinics, restaurants and boutiques, so an assistant living in the DMs sits right on top of how your customers already find you."
+    },
+    {
+      "type": "p",
+      "text": "A word on limits. Meta says nothing is shared, published or sent without the user's approval, and people can ask Muse to forget information or undo actions. Good. But the announcement doesn't explain how Muse decides what to recommend, so be wary of anyone already selling a guaranteed trick for getting picked by it."
+    },
+    {
+      "type": "h2",
+      "text": "What to do with your Instagram this week"
+    },
+    {
+      "type": "p",
+      "text": "If your customers are in the UAE or Europe, this isn't live for them yet, since the first rollout covers five countries. If you sell to Canadians or Americans, it already is. Either way, the prep is the same, and it's the same work that helps you show up in Google and other AI search tools."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Put the basics in your captions, not just your bio: what you offer, where you are, when you're open and how to book or buy. An assistant asked about your post can only work with what's there.",
+        "Make posts people actually want to save, like checklists, recipes, styling reels or a short guide to a first visit at your clinic. Saves are now a route into plans and shopping lists.",
+        "Tag your location on every post, because questions about places are one of the headline uses.",
+        "Keep product names and offers consistent between Instagram and your website, so nothing contradicts itself when someone goes looking for a deal.",
+        "If you're in a rollout country, forward one of your own posts to Muse and ask what it is. Whatever it gets wrong becomes your edit list."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "None of this is about gaming a new algorithm. It's about making your content clear enough that a person, a search engine or an assistant understands it in one read. If you'd like a hand getting that structure right across your website and social channels, that's the heart of our [SEO & AI Search Setup](https://www.f21studio.com/services/seo-growth-setup) work."
+    },
+    {
+      "type": "p",
+      "text": "We'll be watching for when Muse reaches the UAE and Europe, and how those retail talks play out. For now, open your three most-saved posts and read them as a stranger would. You'll probably spot something to fix before lunch."
+    }
+  ],
+  "takeaways": [
+    "Meta's AI agent Muse now works directly inside Instagram DMs in the US, Canada, Mexico, Japan and Singapore, so people can ask about posts, places and products without leaving the app.",
+    "Saved posts can now be turned into collections, grocery lists, travel itineraries and outfit ideas, which makes a save closer to a real plan to visit or buy.",
+    "Clear captions, location tags and genuinely saveable content are the simplest way to make sure an assistant describes your business correctly."
+  ],
+  "faq": [
+    {
+      "q": "Is Meta's Muse available on Instagram in the UAE?",
+      "a": "Not yet. The first rollout of Muse in Instagram DMs covers the US, Canada, Mexico, Japan and Singapore on iOS and Android, so UAE and European users will have to wait."
+    },
+    {
+      "q": "Can Muse post or send messages for my customers without asking?",
+      "a": "According to Meta, no. Nothing is shared, published or sent without the user's approval, and users can ask Muse to forget information or undo actions."
+    },
+    {
+      "q": "How can my small business show up well when customers ask Muse about our posts?",
+      "a": "Meta hasn't published how Muse picks its answers, so focus on clarity: say what you offer, where you are and how to book in your captions, and tag your location. Content people want to save, such as guides and checklists, also gives Muse more to work with."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Meta brings its Muse AI assistant directly into Instagram DMs",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/24/meta-brings-its-muse-ai-assistant-directly-into-instagram-dms/"
+    },
+    {
+      "title": "Walmart teams up with Meta to bring Black Friday deals to AI agent Muse",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/24/walmart-teams-up-with-meta-to-bring-black-friday-deals-to-ai-agent-muse/"
+    },
+    {
+      "title": "Amazon and Meta reportedly in talks to lift blockade on AI agent Muse",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/25/amazon-and-meta-reportedly-in-talks-to-lift-blockade-on-ai-agent-muse/"
+    }
+  ],
+  "image": "/blog/2026-11-28-meta-muse-instagram-dms-small-business-mx0e3f5c.jpg"
+}
